@@ -1,0 +1,212 @@
+        <div class="nav-search-tabs search_title">
+            <ul class="nav nav-tabs nav-search ">
+                <li class="active">
+
+                    {dede:channelartlist typeid='1,0'}
+                    <a href="{dede:field name='typeurl'/}" class="title_name title_1"><span class="sprite sprite_select_1"></span> 条件找房</a>
+                    {/dede:channelartlist}
+                    
+                </li>
+
+{dede:include filename="rent_map_id_1.htm"/}
+
+            </ul>
+        </div>
+        <div class="tab-content tab-seach" >
+            <div class="tab-pane fade in active">
+                <div class="selection">
+                    
+<div class="s-box">
+                       
+                       		  <form  name="formsearch" action="{dede:global.cfg_cmsurl/}\plus/search.php">
+ <input type="hidden" name="domains" value="www.dedecms.com">
+   <input type="hidden" name="kwtype" value="0" />
+                        <div class="s-input input-group">
+                            <input name="q" type="text" class="form-control search-input-1 top-search-keydown" id="KKW2" value="" placeholder="输入商圈、地标、景点等" />
+                            <span class="input-group-btn">
+                            <button class="btn btn-orange search-input-1 top-search-button" type="submit"  name="submit"  id="btnSearch">搜 索</button>
+                            </span>
+                        </div>
+                        </form>
+                        
+                        
+                        
+                        <!---这里是全局变量----->
+                        <div class="s-key" style="margin:-13px 0px 0px 20px;">
+                            <a href="#">高新区</a>&nbsp;<a href="/rent/cdjjq/h4/">川师</a>&nbsp;<a href="/rent/cdgxq/h26/">软件园</a>&nbsp;<a href="/rent/cdgxq/h79/">大源</a>&nbsp;<a href="/rent/cdchq/h3/">建设路</a>
+                            
+                        </div>
+                        <div class="bk20"></div>
+                    </div>
+                    
+                    <div class="s-box" style="margin:4px 0px 0px 0px;">
+                        <div class="s-title">区域：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='11,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='12,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='13,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='14,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='15,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='16,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='17,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">租金：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='18,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='19,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='20,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='21,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='22,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+              
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">户型：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='23,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='24,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='25,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='26,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">入住：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='28,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='29,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='30,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+
+                                
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">室友：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">无所谓</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='31,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='32,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='33,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">配置：</div>
+                        <div class="s-l s-checkbox">
+                        
+                                {dede:channelartlist typeid='34,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='35,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='36,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='37,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='38,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>

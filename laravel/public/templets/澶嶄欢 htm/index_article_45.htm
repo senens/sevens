@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    
+<style>
+    body, html {background:#fff;}
+</style>
+
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+    <input id="controller" type="hidden" value="Special" />
+    <input id="action" type="hidden" value="special1" />
+    
+{dede:include filename="head.htm"/}
+
+
+    
+
+
+<div class="special_move_house">
+    <div class="container">
+        <div class="content">
+            <div class="bk20"></div>
+            <h2 class="house_title text-center">首次当天看房缴定金（定金为一个月租金），赠送搬家抵金券</h2>
+            <div class="bk20"></div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <h2 class="house_title title02">怎么用?</h2>
+                </div>
+                <div class="col-sm-10">
+                    <ul class="des list-unstyled">
+                        <li><span class="i i1"></span>需提前1-2天，按照搬家卡片上的联系方式进行联系，QQ最佳，其次是电话。</li>
+                        <li><span class="i i2"></span>告诉客服：大概物品和件数（编织袋）？起点的街道名？楼层？目的地的街道名与楼层？搬运日期和时间？确定搬家金额。</li>
+                        <li><span class="i i3"></span>特别注意：我们是按照普通的公里数和物品件数设置的搬家补贴，肯定不能满足所有亲们的搬家需求。如果搬家金额超过100元，还需按照搬家物品的多少，目的地的远近，现场补给师傅多余的款项。</li>
+                        <li><span class="i i4"></span>搬家师傅很辛苦，请给他微笑和说声谢谢！</li>
+                        <li><span class="i i5"></span>该抵金券只作为搬家金额的抵用，不能用于其它费用的抵用，不兑现，不累加。</li>
+                        <li><span class="i i6"></span>本活动最终解释权归优客逸家所有。</li>
+                    </ul>
+
+                </div>
+                <div class="bk30"></div><div class="bk20"></div>
+                <img src="{dede:global.cfg_templets_skin/}/style/images/03.gif" class="img-responsive" />
+                <div class="bk30"></div><div class="bk30"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+   
+   {dede:include filename="footer.htm"/}
+   
+</body>
+
+</html>

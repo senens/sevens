@@ -1,0 +1,109 @@
+ <div class="tab-pane connect in" id="contact_mess">
+                <div class="can-title">
+                    <h3>我有话要说</h3>
+                    <h6>MESSAGES</h6>
+                </div>
+<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="2" />
+<input type="hidden" name="do" value="2" />
+
+
+           <div class="contact_message">
+                    <h6 class="mini text-brown"></h6>
+                    <h4 class="title text-brown"></h4>
+                    <div class="bk10"></div>
+                    <input type="hidden" id="op" />
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn   btn-message">
+                            <input type="radio" name="options" id="option1" value="我要加盟" />
+                            我要加盟
+                            <span class="caret"></span>
+                        </label>
+                        <label class="btn   btn-message">
+                            <input type="radio" name="options" id="option2" value="我有建议" />
+                            我有建议
+                            <span class="caret"></span>
+                        </label>
+                        <label class="btn   btn-message">
+                            <input type="radio" name="options" id="option3" value="我要投诉" />
+                            我要投诉
+                            <span class="caret"></span>
+                        </label>
+                    </div>
+                    <div class="bk30"></div>
+                    <div class="form" role="form">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="UOKOTALK" class="AreaText">我想说的是：</label>
+                                    <textarea id="UOKOTALK" name="content" class="form-control message_content" rows="8" placeholder="您想对我说？"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-4 hidden-xs hidden-sm">
+                                <div class="form-group AreaInfo">
+                                    <p class="form-control-static AreaText">
+                                        有关业务联络合作事项，<br />
+                                        可以给我们发邮件或者打电话<br />
+                                        或者您在这里提交您的信息<br />
+                                        无需重复提交，我们会在三天内答复您。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="UOKOUSER" class="AreaText">姓名：</label>
+                                    <input id="UOKOUSER" type="text" name="username" class="form-control message_content" check-type="required" />
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="UOKOUSERPHONE" class="AreaText">联系方式：</label>
+                                    <input id="UOKOUSERPHONE" type="text" name="phone" class="form-control message_content" check-type="required tel" />
+
+
+                                </div>
+                            </div>
+                             <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="UOKOUSERPHONE" class="AreaText">验证码：</label>
+                                    
+                                  
+                                    
+                                    <input name="validate" type="text" id="vdcode"  style="text-transform:uppercase;" size="8"/> 
+<img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>  
+<a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bk10"></div>
+                        
+                        <input type="hidden" name="dede_fields" value="options,text;content,multitext;username,text;phone,text" />
+<input type="hidden" name="dede_fieldshash" value="2a877f3b4e324148128709f17726dfd1" />
+
+                        <button type="submit" name="submit" class="btn btn-lg btn-yellow btn-contact btn-valid">提交留言</button>
+                        <div class="bk30"></div>
+                    </div>
+
+                </div>
+</form>            </div>
+
+
+<script type="text/javascript" language="javascript">
+//验证码 
+function changeAuthCode() { 
+    var num =     new Date().getTime();
+    var rand = Math.round(Math.random() * 10000);
+    num = num + rand;
+    $('#ver_code').css('visibility','visible');
+    if ($("#vdimgck")[0]) {
+        $("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+    }
+    return false;    
+}
+</script>

@@ -1,0 +1,27 @@
+<div class="portlet">
+        <div class="portlet-title">
+            <h4 class="caption">管家推荐</h4>
+        </div>
+        <div class="portlet-body rec-list">
+        
+                   {dede:arclist row=6 titlelen=60 addfields='zj' channelid='2' typeid='1'    flag ='c' }
+                    <div class="thumbnail">
+                        <a class="rec-p" href="[field:arcurl/]" title="[field:title/]" target="_blank">
+                            <img src="/templets/htm/style/images/loading.gif" data-original="[field:picname/]" width="158" height="105" alt="[field:title/]">
+                        </a>
+                        <p class="rec-info">
+                            <a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a>
+                        </p>
+                        <div class="rec-price">
+                            ￥<span class="text-orange">
+                                    [field:zj/]
+                            </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    {/dede:arclist}
+
+                    
+                    
+        </div>
+    </div>

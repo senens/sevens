@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    
+    <style>
+        .join-top {
+            background: #88e1da url("{dede:global.cfg_templets_skin/}/style/images/img/job_top_02671.jpg") no-repeat top center;
+            height: 390px;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+
+    {dede:channelartlist typeid='4,0'}
+    <input id="controller" type="hidden" value="{dede:field.seotitle /}" />
+    {/dede:channelartlist}
+    
+    <input id="action" type="hidden" value="Index" />
+    
+    
+
+{dede:include filename="head.htm"/}
+
+
+    
+
+
+<div class="join-top">
+
+</div>
+
+<div class="container">
+    <h3 id="job_content">
+        {dede:field name='typename'/}
+
+{dede:include filename="right_join.htm"/}
+
+    </h3>
+    <div class="bk10"></div>
+    <div class="row join">
+        <div class="col-md-3 join-list">
+                <dl>
+                    <dt>信息技术中心</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/2?#job_content">英俊的.net开发工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/16?#job_content">SEO专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/17?#job_content">高级测试工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/18?#job_content">前端工程师（JS方向）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/159?#job_content">需求分析师-ERP方向</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/160?#job_content">Android开发工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/671?#job_content">内容运营专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/672?#job_content">运营推广专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/673?#job_content">互联网运营专员</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>市场部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/12?#job_content">租房顾问/销售专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/166?#job_content">租房顾问/销售专员-武汉</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/245?#job_content">高级商务BD（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/338?#job_content">销售片区主管</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/617?#job_content">市场推广专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/618?#job_content">市场推广主管</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/619?#job_content">运营专员（SEO优化）</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>运维部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/13?#job_content">维修专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/14?#job_content">物业管家</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/15?#job_content">客服专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/97?#job_content">客服/运维内勤（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/99?#job_content">维修专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/246?#job_content">客服专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/247?#job_content">网络管理员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/286?#job_content">运维部经理</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>房源部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/100?#job_content">房源开发专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/244?#job_content">销售内勤/文员（武汉）</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>产品部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/101?#job_content">设计助理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/102?#job_content">设计师-室内方向（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/103?#job_content">工程助理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/104?#job_content">工程监理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/175?#job_content">采购专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/176?#job_content">库管专员（武汉）</a>
+                        </dd>
+                </dl>
+
+        </div>
+        <div class="col-md-9 join-content">
+            
+
+                    <div class="join-box">
+                            
+                                                
+                                <p style="font-size:14px; line-height:26px;  margin:10px 0px 0px 0px;">{dede:field.content/}</p>
+                 
+                        <div class="bk"></div>
+                    </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+</div>
+
+<script src="{dede:global.cfg_templets_skin/}/style/js/home.min.js"></script>
+
+   
+   {dede:include filename="footer.htm"/}
+
+</body>
+
+</html>

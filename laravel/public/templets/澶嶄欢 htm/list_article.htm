@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field name='keywords'/}" />
+    <meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/dede_pages.css" rel="stylesheet"/>
+    
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+
+    {dede:channelartlist typeid='4,0'}
+    <input id="controller" type="hidden" value="{dede:field.seotitle /}" />
+    {/dede:channelartlist}
+    
+    <input id="action" type="hidden" value="Index" />
+    
+{dede:include filename="head.htm"/}
+
+
+    
+    <div class="container">
+        <ol class="breadcrumb">
+        
+        <li><a href="{dede:global.cfg_indexurl/}"><i class="fa fa-home"></i>首页</a></li>
+        
+            {dede:channelartlist typeid='4,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+
+        {dede:type}
+        <li class="active">
+            <a href="[field:typelink /]">[field:typename /]</a>
+        </li>
+        {/dede:type}
+        
+        </ol>
+        
+<div class="sidebar sidebar-about">
+    <ul class="nav sidenav">
+    
+    
+       {dede:channelartlist typeid='4,0'}
+        <li>
+            <a href="{dede:field name='typeurl'/}">
+                {dede:field name='typename'/}<br />
+                <small>{dede:field.seotitle /}</small>
+            </a>
+        </li>
+        {/dede:channelartlist}
+        
+       {dede:channelartlist typeid='42,0'}
+        <li>
+            <a href="{dede:field name='typeurl'/}">
+                {dede:field name='typename'/}<br />
+                <small>{dede:field.seotitle /}</small>
+            </a>
+        </li>
+        {/dede:channelartlist}
+        
+       {dede:channelartlist typeid='39,0'}
+        <li>
+            <a href="{dede:field name='typeurl'/}">
+                {dede:field name='typename'/}<br />
+                <small>{dede:field.seotitle /}</small>
+            </a>
+        </li>
+        {/dede:channelartlist}
+        
+       {dede:channelartlist typeid='41,0'}
+        <li  class="active">
+            <a href="{dede:field name='typeurl'/}">
+                {dede:field name='typename'/}<br />
+                <small>{dede:field.seotitle /}</small>
+            </a>
+        </li>
+        {/dede:channelartlist}
+        
+       {dede:channelartlist typeid='40,0'}
+        <li>
+            <a href="{dede:field name='typeurl'/}">
+                {dede:field name='typename'/}<br />
+                <small>{dede:field.seotitle /}</small>
+            </a>
+        </li>
+        {/dede:channelartlist}
+        
+        
+    </ul>
+</div>
+        <div class="pull-left portlet col-md-9 portlet-about-content">
+            <div class="portlet-title page-header">
+                <h3 class="caption" id="media">{dede:field name='typename'/}</h3>
+            </div>
+            <div class="portlet-body">
+                <article>
+                
+                    {dede:list pagesize ='5'}
+                    <div class="blog">
+                        <div class="blog_head">
+                            <h4 class="title">
+                                <a href="[field:arcurl/]">[field:title/]</a>
+                            </h4>
+                            <div class="addtime">[field:pubdate function="MyDate('Y-m-d',@me)"/]</div>
+                        </div>
+                        <div class="blog_content">
+                            <p>[field:description function="cn_substr(@me,320)"/] ... </p>
+                            <div class="more">
+                                <a href="[field:arcurl/]">阅读全文></a>
+                            </div>
+                        </div>
+                    </div>
+                    {/dede:list}
+                    
+                    
+
+                </article>
+                
+                    <div class="bk20"></div>
+    
+<div class="dede_pages">  
+   <ul class="pagelist" style="font-size:13px; margin:0px 10px 0px 0px;">
+    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="3"/}
+   </ul>
+  </div> 
+
+
+
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    
+    
+    {dede:include filename="footer.htm"/}
+    
+    
+</body>
+
+</html>

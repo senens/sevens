@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+    <input id="controller" type="hidden" value="AboutUs" />
+    <input id="action" type="hidden" value="ChooseUs" />
+    
+
+{dede:include filename="head.htm"/}
+
+
+    
+
+<div class="about-choose-us">
+    <div class="choose choose-1">
+        <div class="container">
+            <div class="element choose-1-bg"></div>
+            <div class="element choose-1-1"></div>
+            <div class="element choose-1-2"></div>
+            <div class="element choose-1-3"></div>
+            <div class="element choose-1-4"></div>
+        </div>
+    </div>
+    <div class="choose choose-2">
+        <div class="jaggedly jaggedly-1"></div>
+        <div class="container">
+            <div class="element choose-2-bg"></div>
+            <div class="element choose-2-1"></div>
+            <div class="element choose-2-2"></div>
+            <div class="element choose-2-3"></div>
+        </div>
+    </div>
+    <div class="choose choose-3">
+        <div class="jaggedly jaggedly-2"></div>
+        <div class="container">
+            <div class="element choose-3-1">
+                <p>
+                    合乎人性原则的舒适生活空间。让居住者感到身体和精神上的放松。<br />
+                    我们选择环保健康的装修材料。我们遵循轻装修重装饰的原则。我们为房屋购买居屋保险。
+                </p>
+            </div>
+            <div class="element choose-3-2"></div>
+        </div>
+    </div>
+    <div class="choose choose-4">
+        <div class="jaggedly jaggedly-3"></div>
+        <div class="container">
+            <div class="element choose-4-1">
+                <p>
+                    租房是长时间的体验，我们深知。我们坦诚的收集房客意见和建议。<br />
+                    每季度优化或升级三项最突出的问题。提升产品细节，用户体验。
+                </p>
+            </div>
+            <div class="element choose-4-2"></div>
+        </div>
+    </div>
+    <div class="choose choose-5">
+        <div class="jaggedly jaggedly-4"></div>
+        <div class="container">
+            <div class="element choose-5-1"></div>
+            <div class="element choose-5-2">
+                <div class="info">
+                    <p class="info-2">
+                        物业水电气费<br />
+                        <strong>跑腿代收代缴服务</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="element choose-5-3">
+                <div class="info">
+                    <p class="info-3">
+                        家电家具自然损坏<br />
+                        <strong>专人维修服务</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="element choose-5-4">
+                <div class="info ">
+                    <p class="info-4">
+                        每月两次公共区域<br />
+                        <strong>保洁维护服务</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="element choose-5-5">
+                <div class="info ">
+                    <p class="info-5">
+                        管家巡房服务<br />
+                        <strong>安全隐患排查</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="choose choose-6">
+        <div class="jaggedly jaggedly-5"></div>
+        <div class="container">
+            <div class="element choose-6-bg">
+                <div class="info">
+                    <div class="content">
+                        <h2 class="title"> • 租房这点事 • </h2>
+                        <p>
+                            优客逸家的理念是提供一种便利，舒适的生活方式。<br />
+                            如你所见，我们在积极创新尝试许多租后附加服务。<br />
+                            保洁、维修、水电气代收代缴费、管家巡房、屋居保险等等。<br />
+                        </p>
+                        <p>
+                            而租前，我们也是用几乎挑剔的标准为自己设置了许多门槛。<br />
+                            必须留身份证复印件，必须留工作证明或学业证明。<br />
+                            年龄超出年龄限制的不租，带小孩不租，养宠物不租。<br />
+                            宠物当然我们也爱，要不然我们的LOGO也不会是一只等待主人下班的小狗。<br />
+                            考虑有的房客天生会对毛发过敏。我们也认为，狗狗应该生活在更宽敞的环境里。<br />
+                        </p>
+                        <p>
+                            让所有人住得更舒适。我们会严格控制每套房的总人数，房间小两个人不租。<br />
+                            让房客住得心里踏实一些，租约至少签一年。<br />
+                        </p>
+                        <p>
+                            甚至，生活习惯不好的室友会被其他室友联名清退等等。<br />
+                            而哪怕你懂一点点营销，就应该知道，<br />
+                            这些门槛，最后都会成为我们隐形的“成本”，<br />
+                            弄不好，还会“得罪”一些我们的“上帝”。<br />
+                        </p>
+                        <p>
+                            我们必须说抱歉，优客还很小，房屋的类型还不能满足所有人的需求。<br />
+                            然而我们也很清楚，因为我们这种有态度的租房方式收获了不少的信任。<br />
+                            妈妈替女儿在网上找房子，整整一个月，看了无数房子。最后放心的签了我们家。<br />
+                            老爸亲自上阵带着女儿来签约，先是从质疑我们的模式，再到与我们融洽的沟通。<br />
+                            前房客因为工作调动退房，回到成都后直接到公司楼下，给我们打来电话，我！要！签！约！<br />
+                            从外地初到成都的租客，通过网上银行支付定金<br />
+                            房间给我留着，我明天下飞机直接过来签约。<br />
+                            他甚至连房子都没有看过。<br />
+                        </p>
+                        <p>
+                            买着房子，没了生活。<br />
+                            租着房子，享受生活。<br />
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="element choose-6-1"></div>
+            <div class="element choose-6-1-info">
+                <p class="info">
+                    在这里以相对较低的租金,满足品质较高的租房需求。在这里，让陌生的小伙伴在现实世界中聚在一起。<br />
+                    把住所当成自己的家。一起分享房子，一起做饭 ；一起分享心事，彼此照应。做一个贴心并尊重他人的房客。
+                </p>
+            </div>
+            <div class="element choose-6-2-left"></div>
+            <div class="element choose-6-2-right"></div>
+            <div class="element choose-6-2-info">
+                <h3 class="title">大家说：</h3>
+                <div class="info">
+                    我们再过大约半年就会结束在成都的生活，去到其他地方。从一开始得知优客到这两年的优客生活，我们非常欣赏优客的经营理念以及装修风格。<br />
+                    这两年我们生活得非常愉快，这段日子我们也会长久地记得。真心希望优客能够越来越好，我们也会推荐更多的朋友在需要的时候选择优客来度过生命中的一段时光。<br />                    <p class="text-right">——川大研究生杜女士</p>
+                </div>
+                <div class="info info-2">
+                    家里的房子装修好，舍不得走，舍不得小伙伴。<br /><p class="text-right"> ——优客租客 班班</p>
+                </div>
+                <div class="info info-3">
+                    在我比较低落的时候谢谢你们微博励志的语录。<br /><p class="text-right"> ——微博网友</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+   {dede:include filename="footer.htm"/}
+   
+
+</body>
+
+</html>

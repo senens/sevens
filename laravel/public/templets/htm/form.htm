@@ -1,0 +1,133 @@
+<div class="modal fade room_select in" data-mark="ab" id="Room_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" novalidate="novalidate">
+   
+   
+   <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="diyid" value="1" />
+<input type="hidden" name="do" value="2" />
+
+   
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+
+                <h4 class="modal-title">
+                    <b>
+                        我要预约看房<br>
+                        <small>APPOINTMENT FORM</small>
+                    </b>
+                </h4>
+            </div>
+            <div class="modal-body">
+                
+
+                <div class="form-horizontal" role="form">
+                    <p class="help-block">请如实填写信息，我们将尽快与您联系：</p><div class="bk6"></div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">您的名字：</label>
+                        <div class="col-sm-8">
+                            <input name="q1" type="text" class="form-control pro_message_name" id="q1" placeholder="" check-type="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">您的手机：</label>
+                        <div class="col-sm-8">
+                            <input name="q2" type="text" class="form-control pro_message_tel" id="q2" placeholder="" check-type="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">性别：</label>
+                        <div class="col-sm-8">
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="q3" value="男" checked="">
+                                    男
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="q3" value="女">
+                                    女
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">入住人数：</label>
+                        <div class="col-sm-8">
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="people" value="1人" checked="">
+                                    1人
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="people" value="2人">
+                                    2人
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="people" value="3人">
+                                    3人
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="radio" name="people" value="3人以上">
+                                    3人以上
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">个人需求：</label>
+                        <div class="col-sm-8">
+                            <textarea name="q4" rows="3" class="form-control pro_message_remarks" id="q4"></textarea>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">验证码：</label>
+                        <div class="col-sm-8">
+                            <input name="validate" type="text" id="vdcode" style="text-transform:uppercase;" size="8"/> 
+<img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/>  
+<a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+            
+            <input type="hidden" name="dede_fields" value="q1,text;q2,text;q3,text;people,text;q4,multitext;q5,text" />
+<input type="hidden" name="dede_fieldshash" value="6ba1a19f02341f782d91ad8276f4182c" />
+
+                <button type="submit"  name="submit" class="btn btn-orange  btn-valid padding30">提 交</button>
+                <button type="button" class="btn btn-default padding30" data-dismiss="modal">取 消</button>
+                
+            </div>
+        </div>
+    </div>
+    </form>
+    
+    <script type="text/javascript" language="javascript">
+//验证码 
+function changeAuthCode() { 
+    var num =     new Date().getTime();
+    var rand = Math.round(Math.random() * 10000);
+    num = num + rand;
+    $('#ver_code').css('visibility','visible');
+    if ($("#vdimgck")[0]) {
+        $("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
+    }
+    return false;    
+}
+</script>
+
+</div>

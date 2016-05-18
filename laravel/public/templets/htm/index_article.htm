@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    
+    <style>
+        html, body {
+            background: #fff;
+        }
+
+        .room_slide {
+            width: auto;
+        }
+    </style>
+    <link href="{dede:global.cfg_templets_skin/}/style/css/Imagefocus.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+
+    {dede:channelartlist typeid='1,0'}
+    <input id="controller" type="hidden" value="{dede:field.seotitle /}" />
+    {/dede:channelartlist}
+    
+    <input id="action" type="hidden" value="Index" />
+    
+
+{dede:include filename="head.htm"/}
+
+    
+
+<div class="container">
+    <div class="bk20"></div>
+    <div class="alert alert-warning alert-dismissible text-center" role="alert" style="color: #bb6d05; background: #fff6d1; border-color: #fff6d1; ">
+        <strong>优客逸家在线支付全面上线</strong> ，关注官方微信（微信号：UOKOHome）选择自助服务或注册成为优客会员，即可使用线上支付！
+    </div>
+
+    <ol class="breadcrumb">
+    
+        <li><a href="{dede:global.cfg_indexurl/}"><i class="fa fa-home"></i>首页</a></li>
+        
+            {dede:channelartlist typeid='1,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+
+        <li class="active">
+            <a href="#">{dede:field.title/}</a>
+        </li>
+    </ol>
+    <input type="hidden" id="roomCode" />
+    <div class="room-slide-image pull-left">
+        <div class="r-slider">
+            <div class="slide-image-big">
+                <ul class="list-unstyled">
+                
+                
+                
+                            <li class="diagram-img-big">
+                                <a title="C (2).jpg" href="{dede:field.litpic/}">
+                                    <img class="mfp-zoom" alt="" title="" src="{dede:global.cfg_templets_skin/}/style/images/loading.gif" data-src="{dede:field.litpic/}" />
+                                </a>
+                            </li>
+
+                            {dede:productimagelist} 
+                            <li class="diagram-img-big">
+                                <a title="【预租效果图】1558号房 比华利国际城三期 5-1-905.jpg" href="[field:imgsrc/]">
+                                    <img class="mfp-zoom" alt="" title="" src="{dede:global.cfg_templets_skin/}/style/images/loading.gif" data-src="[field:imgsrc/]" />
+                                </a>
+                            </li>
+                            {/dede:productimagelist}
+                </ul>
+
+            </div>
+            <div class="slide-image-small">
+                <div class="image-prev img-navigation">上一张</div>
+                <div class="image-list">
+                    <ul class="image-list-content list-unstyled">
+
+                                <li><img class="current" width="66" height="44" title="" alt="" src="{dede:field.litpic/}" /></li>
+                             
+                                {dede:productimagelist}
+                                <li><img class="" width="66" height="44" title="" alt="" src="[field:imgsrc/]" /></li>
+                                {/dede:productimagelist}
+
+
+                    </ul>
+                </div>
+                <div class="image-next img-navigation">下一张</div>
+            </div>
+        </div>
+        <div class="room_slide_share pull-right">
+            <div class="slide_share_box">
+                <div class="share_ws share_info pull-left">分享到：</div>
+                <div class="bdsharebuttonbox">
+                    <a title="分享到新浪微博"  class="bds_tsina" data-cmd="tsina"></a>
+                    <a title="分享到QQ好友"  class="bds_sqq" data-cmd="sqq"></a>
+                    <a title="分享到豆瓣网"  class="bds_douban" data-cmd="douban"></a>
+                    <a title="分享到人人网"  class="bds_renren" data-cmd="renren"></a>
+                    <a title="分享到QQ空间"  class="bds_qzone" data-cmd="qzone"></a>
+                    <a  class="bds_more" data-cmd="more"></a>
+                </div>
+
+            </div>
+            <button class="btn btn-default pro_share_button" type="button"><i class="fa fa-caret-right"></i></button>
+            
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="product_intro pull-left">
+        <h1 class="intro_title">{dede:field.title/}1</h1>
+        <h5 class="intro_title_sale text-orange">{dede:field.jj/}1</h5>
+        <div class="bk10"></div>
+        <div class="intro_table">
+            <div class="table_lh bar">
+                <div class="pro_name"><span class="pa">编</span>号：</div>
+                <div class="pro_content">
+                
+                    <span class="pro_number">
+                    
+                    {dede:field.bh/}1
+                    
+                    <span>
+                    
+                        <div class="move_house">
+                            <div class="move_box">
+                                <div class="move_info">
+                                    <p>首次当天看房缴定金（一个月房租）,优客立即赠送您搬家抵金券。</p>
+                                    <a href="/special/feature/14/02/index.aspx" target="_blank">怎么用？</a>
+                                    <div class="sprite sprite_move_info"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="table_lh bar">
+                <div class="pro_name text-orange"><span class="pa">租</span>金：</div>
+                <div class="pro_contet">
+                    <div class="pro_price">￥<span id="rental">{dede:field.zj/}1</span> 元/月</div>
+                    
+
+                        <a class="yayi_info"  data-toggle="modal">
+                            <span class="sprite sprite_pro_info_1">{dede:field.fzyf/}1</span>
+                        </a>
+
+
+                </div>
+            </div>
+            <div class="table_lh bar">
+                <div class="pro_name"><span class="pa">地</span>址：</div>
+                <div class="pro_content">
+                    <span class="pro_number">{dede:field.dz/}1</span>
+                </div>
+            </div>
+            <div class="table_lh bar">
+                <div class="pro_name"><span class="pa">类</span>型：</div>
+                <div class="pro_content">
+                    {dede:field.lx/}1
+                </div>
+            </div>
+            <div class="table_lh bar">
+                <div class="pro_name"><span class="pa">房</span>间：</div>
+                <div class="pro_content pro_select pro_room_num" style="width:580px;float:left; line-height:26px;">
+
+{dede:field.fj/}
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="table_lh ">
+                <div class="pro_name">电话咨询：</div>
+                <div class="pro_content pro_tel">
+                    400-000-4170
+                    
+                </div>
+            </div>
+            <div class="table_lh ">
+                <div class="pro-submit">
+                
+                
+                        <button type="button" class="btn btn-orange btn-pro-order btn-pro-valid click_order_kanfang" id="click_order_kanfang" data-toggle="modal" data-target="#Room_box">我要看房</button>
+                       
+                       <a id="QQMessageOnlick" class="btn btn-yellow btn-pro-con" href="http://wpa.qq.com/msgrd?v=3&uin=52019555&site=qq&menu=yes" rel="nofollow" target="_blank">QQ咨询</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="nav-site">
+    <nav id="product_nav" class="navbar navbar-room" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+
+                </button>
+                <input type="hidden" id="sourceNum" value="182401558" />
+            </div>
+
+            <div class="collapse navbar-collapse   bs-js-navbar-scrollspy  ">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#pro_nav_0" class="l">
+                            房子详情<div class="arrow-down"></div>
+                        </a>
+                        
+                  </li>
+                    <li>
+                        <a href="#pro_nav_1">周边配套<div class="arrow-down"></div></a>
+                        
+                    </li>
+<!--                    <li>
+                        <a class="ImageMapNav">地理位置</a>
+                    </li>
+                    <li>
+                        <a class="house_type" href="/Image?imgid=110258&amp;width=800&amp;height=447&amp;w=1&amp;sy=1">户型图</a>
+                    </li>-->
+                </ul>
+                <ul class="nav navbar-nav navbar-right pro_right_info hidden">
+                    <li>
+                        看房咨询：
+                        <span class="pro_tel">400-000-4170</span>
+                    </li>
+                </ul>
+                <input id="hidcity" type="hidden" class="hiddencityId" value="10000" />
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+{dede:include filename="form.htm"/}
+
+
+
+
+
+<div class="container">
+    <div class="room-detail">
+        <!-- data-target="#navbar-example2" data-offset="0"-->
+        <div class="order-ico-group ">
+            <div class="sprite sprite_probox_ico porbox-ico ">详</div>
+            <div class="sprite sprite_probox_ico porbox-ico ">院</div>
+            <div class="sprite sprite_probox_ico porbox-ico ico-s ">WHY</div>
+            <div class="sprite sprite_probox_ico porbox-ico ico-s ">HOW</div>
+
+            <div class="sprite sprite_probox_ico porbox-ico ">荐</div>
+        </div>
+
+
+        <!--pro_nav_1-->
+        <div class="d_shuoshuo">
+            <div class="row">
+            </div>
+        </div>
+
+        <div id="pro_nav_0" class="probox">
+            <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ">详</div>
+                <div class="probox-title">房间基本情况</div>
+            </div>
+            <div class="probox-body-l" style="font-size:14px; line-height:26px; ">{dede:field.body/}</div>
+        </div>
+
+
+        <!--无数据时不显示-->
+                <div class="probox"  id="pro_nav_1">
+                    
+                                <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ">院</div>
+                <div class="probox-title">周边配套</div>
+            </div>
+            <div class="probox-body-l" >
+
+       
+                <div class="panel panel-default d_support">
+               
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>周边配套</strong></h3>
+                    </div>
+        
+                    
+                </div>
+                
+              
+                
+                    
+                    
+               <div style="font-size:14px; line-height:26px; margin:10px 0px 0px 0px;">{dede:field.zbpt/}</div>  
+                
+                
+                
+            </div>
+            
+                </div>
+
+
+
+
+        <!--无数据时不显示-->
+                <div class="probox">
+                    
+                                <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ico-s">WHY</div>
+                <div class="probox-title">为什么选择优客？</div>
+            </div>
+            <div class="probox-body-l">
+                <img data-original="{dede:global.cfg_templets_skin/}/style/images/probox-why.jpg" src="{dede:global.cfg_templets_skin/}/style/images/loading.gif" class="img-responsive " width="805" height="649" />
+            </div>
+                </div>
+
+
+        <!--无数据时不显示-->
+        <div class="probox" >
+        
+        
+                    <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ico-s">HOW</div>
+                <div class="probox-title">怎么租房呐？</div>
+            </div>
+            <div class="probox-body-l">
+                <img data-original="{dede:global.cfg_templets_skin/}/style/images/probox-setup.jpg" src="{dede:global.cfg_templets_skin/}/style/images/loading.gif" class="img-responsive " width="804" height="124" style="display: block;">
+            </div>
+            
+            
+            
+        </div>
+
+        <div class="probox">
+        
+            <div class="probox-heading">
+
+            </div>
+            <div class="probox-body-l">
+                
+            </div>
+            
+        </div>
+        
+        
+        <div class="probox">
+            <div class="probox-heading">
+
+            </div>
+            <div class="probox-body-l">
+               
+            </div>
+            
+        </div>
+
+        <!--没有数据时不显示-->
+            <div class="probox">
+                <div class="probox-heading">
+                    <div class="sprite sprite_probox_ico porbox-ico">荐</div>
+                    <div class="probox-title">猜你喜欢</div>
+                </div>
+                <div class="probox-body-d p_recommend">
+                    <div class=" rec-list row-5">
+                    
+                    
+                          
+                            {dede:arclist row=4 titlelen=70 addfields='zj' channelid='2' typeid='1'   orderby ='rand'}
+                            <div class="col-sm-3 thumbnail thumbnail-c">
+                                <a class="rec-p" title="[field:title/]" href="[field:arcurl/]">
+                                    <img alt="[field:title/]" data-original="[field:picname/]" src="/ccc/templets/htm/style/images/loading.gif" width="158" height="105" />
+                                </a>
+                                <p class="rec-info"> <a title="[field:title/]" href="[field:arcurl/]">[field:title/]</a></p>
+                                <div class="rec-price">
+                                    ¥ <span class="text-orange">
+                                        <strong>
+                                                [field:zj/]
+                                        </strong>
+                                    </span>
+                                </div>
+                            </div>
+                            {/dede:arclist}
+                            
+                            
+                            
+                            
+                            
+                    </div>
+                </div>
+            </div>
+
+
+
+        <div id="pro_nav_2" class="d_dynamic hidden-xs hidden-sm hidden " style="padding-top: 25px;display:none">
+            <div class="line_name text-center">
+                <span class="label label-default">【每一间房子都有一段青春往事】</span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="row" style="display:none">
+                <div class="col-md-5 marg_top">
+
+                                <div class="dynamic_message pull-right">
+                                    <div class="m_arrow_left">
+                                        <i class="fa fa-caret-right m_arrow m_arrow_c "></i>
+                                        <i class="fa fa-caret-right m_arrow m_arrow_b"></i>
+                                    </div>
+
+                                    <p class="message_info">本府竣工，正式开放，欢迎小伙伴们前来入住。</p>
+                                    <div class="text-muted text-right">2015-07</div>
+                                </div>
+                </div>
+                <div class="col-md-2 line_time">
+                    <div class="line_content center-block">
+                                <div class="line_circle"><i class="fa fa-circle circle_c"></i><i class="fa fa-clock-o circle_b"></i></div>
+                    </div>
+                    <div class="line_home ">
+                        <img class="center-block" src="{dede:global.cfg_templets_skin/}/style/images/mushroom.png" width="61" height="55" alt="优客逸家租客互动" />
+                    </div>
+                </div>
+                <div class="col-md-5 marg_top">
+                </div>
+            </div>
+            <div class="bk30"></div>
+        </div>
+
+    </div>
+    <div class=" room_slide" style="width:270px;float:left">
+        
+        <div class="room_nearby">
+            <h5><strong>热租房源</strong></h5>
+              
+              
+             
+                 {dede:arclist row=4 titlelen=100 addfields='zj' channelid='2' typeid='1'   orderby ='rand'}
+                <div class="nearby_box">
+                    <a class="rec-p" href="[field:arcurl/]" title="[field:title/]">
+                            <img src="[field:picname/]" alt="[field:title/]" />
+                    </a>
+                    <p class="rec-info">
+                        <a class="text-song" href="[field:arcurl/]" title="[field:title/]">[field:title/]</a>
+                    </p>
+                    <div class="rec-price">
+                        <span class="text-orange">
+                            ￥
+                                [field:zj/]
+                        </span>
+                    </div>
+                </div>
+                {/dede:arclist}
+                
+                
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="modal fade  modal-lg  modal_room_map in" id="Room_map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title"><strong>地图查看</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class="map-detail">
+                    <div class="list" id="mapSearch">
+                        <a id="eat" href="javascript:void(0)">餐饮</a><span>|</span><a id="supermarket" href="javascript:void(0)">超市</a><span>|</span><a id="movie" href="javascript:void(0)">影院</a><span>|</span><a id="hotel" href="javascript:void(0)">酒店</a><span>|</span><a id="subway" href="javascript:void(0)">地铁站</a><span>|</span><a id="school" href="javascript:void(0)">学校</a><span>|</span><a id="bank" href="javascript:void(0)">银行</a><span>|</span><a id="hospital" href="javascript:void(0)">医院</a><span>|</span><a id="scenic" href="javascript:void(0)">景点</a><span>|</span><a id="fillsta" href="javascript:void(0)">加油站</a>
+                    </div>
+                    <div class="map" style="width: 100%; height: 300px; overflow: hidden; position: relative; z-index: 0; color: rgb(0, 0, 0); text-align: left; background-color: rgb(243, 241, 236);" id="mapDiv"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url({dede:global.cfg_templets_skin/}/style/images/img/openhand.cur) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 1290px; height: 300px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "=" " style=" position absolute; padding 0px; margin 0px; border 0px; cursor pointer; width 19px; height 25px; left 635px; top 125px; z-index -6108810; background url({dede:global.cfg_templets_skin/}/style/images/img/blank.gif);" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 635px; top: 125px; z-index: -6108810;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden; left: 0px; top: -13px;"><img src="{dede:global.cfg_templets_skin/}/style/images/marker_red_sprite.png" style="border:none;left:0px; top:0px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 639px; top: 139px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden; left: 10px; top: -10px;"><img src="{dede:global.cfg_templets_skin/}/style/images/marker_red_sprite.png" style="border:none;left:-19px; top:-13px; position:absolute;"></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; top: 0px; left: 0px; z-index: 1; -webkit-backface-visibility: hidden;"><div style="position: absolute; z-index: -100; left: 645px; top: 150px;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=11315&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -233px; top: -124px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=11314&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -489px; top: -124px; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=11316&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 23px; top: -124px; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=11315&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -233px; top: -380px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=11315&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -233px; top: 132px; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=tile&amp;x=11313&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -745px; top: -124px; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=tile&amp;x=11317&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 279px; top: -124px; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=11316&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 23px; top: 132px; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=11314&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -489px; top: -380px; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=tile&amp;x=11316&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 23px; top: -380px; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=tile&amp;x=11314&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -489px; top: 132px; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=tile&amp;x=11318&amp;y=3468&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 535px; top: -124px; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=tile&amp;x=11317&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 279px; top: 132px; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=tile&amp;x=11317&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 279px; top: -380px; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=tile&amp;x=11313&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -745px; top: 132px; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=tile&amp;x=11318&amp;y=3467&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 535px; top: 132px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=11318&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: 535px; top: -380px; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=tile&amp;x=11313&amp;y=3469&amp;z=16&amp;styles=pl&amp;udt=20140928" style="position: absolute; border: none; width: 256px; height: 256px; left: -745px; top: -380px; opacity: 1;"></div></div><div style="position: absolute; top: 0px; left: 0px; z-index: 2;"></div></div><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 10; bottom: 0px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="{dede:global.cfg_templets_skin/}/style/images/copyright_logo.png"></a></div><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url({dede:global.cfg_templets_skin/}/style/images/img/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_stdMpCtrl BMap_stdMpType0 BMap_noprint anchorTL" style="width: 62px; height: 204px; bottom: auto; right: auto; top: 10px; left: 10px; position: absolute; z-index: 1100;"><div class="BMap_stdMpPan"><div class="BMap_button BMap_panN" title="向上平移"></div><div class="BMap_button BMap_panW" title="向左平移"></div><div class="BMap_button BMap_panE" title="向右平移"></div><div class="BMap_button BMap_panS" title="向下平移"></div><div class="BMap_stdMpPanBg BMap_smcbg"></div></div><div class="BMap_stdMpZoom" style="height: 159px; width: 62px;"><div class="BMap_button BMap_stdMpZoomIn" title="放大一级"><div class="BMap_smcbg"></div></div><div class="BMap_button BMap_stdMpZoomOut" title="缩小一级" style="top: 138px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSlider" style="height: 120px;"><div class="BMap_stdMpSliderBgTop" style="height: 120px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSliderBgBot" style="top: 19px; height: 105px;"></div><div class="BMap_stdMpSliderMask" title="放置到此级别"></div><div class="BMap_stdMpSliderBar" title="拖动缩放" style="cursor: url({dede:global.cfg_templets_skin/}/style/images/img/openhand.cur) 8 8, default; top: 19px;"><div class="BMap_smcbg"></div></div></div><div class="BMap_zlHolder"><div class="BMap_zlSt"><div class="BMap_smcbg"></div></div><div class="BMap_zlCity"><div class="BMap_smcbg"></div></div><div class="BMap_zlProv"><div class="BMap_smcbg"></div></div><div class="BMap_zlCountry"><div class="BMap_smcbg"></div></div></div></div></div><div unselectable="on" class=" BMap_cpyCtrl anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 81px; position: absolute; z-index: 10; background: none;"><span _cid="1"><span style="font-size:11px">© 2014 Baidu&nbsp;- Data © <a target="_blank" href="http://www.navinfo.com/">NavInfo</a> &amp; <a target="_blank" href="http://www.cennavi.com.cn/">CenNavi</a> &amp; <a target="_blank" href="http://www.365ditu.com/">道道通</a></span></span></div></div>
+                </div>
+
+                <div class="traffic">
+                    <div class="bk10"></div>
+                    <div class="borhood">
+                        <p>
+                            所在小区：<span id="ctl00_ContentPlaceHolder1_CommunityName">比华利国际城三期</span>
+                        </p>
+                        <p>小区描述：</p>
+                    </div>
+                    <div class="bk10"></div>
+                    <div class="traffic-des">
+                        <div class="bus-way gongjiaoline">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <span id="this_houseposition" class="input-group-addon input-group-uk">从这里到</span>
+                                        <input id="gongjiaoline_text" type="text" class="form-control ">
+                                        <span class="input-group-btn">
+                                            <button id="busline_querybutton" class="btn  btn-orange" type="button">查询路线</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="taxi">
+                                        <span class="f12 fb">打车费用：</span>
+                                        <span id="bytaxi_price" class="text-orange fb"></span>
+                                        <span class="text">(按最短路程计费)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bk10"></div>
+                            <div id="gjTips" class="alert alert-danger fade " style="display: none">
+                                <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+                                <strong>请您输入有效的精确地址描述</strong>
+                            </div>
+                        </div>
+                        <div class="bk10"></div>
+                        <!--bus-way-style -->
+                        <div id="dvPolicy" class="bus-way-style">
+                            <button type="button" class="btn btn-primary btn-sm selected" id="policy0">
+                                较快捷
+                                <span class="caret"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" id="policy1">
+                                不坐地铁
+                                <span class="caret"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" id="policy2">
+                                少换乘
+                                <span class="caret"></span>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm" id="policy3">
+                                少步行
+                                <span class="caret"></span>
+                            </button>
+                        </div>
+
+                        <div id="results" class="subway-result">
+                        </div>
+                        <!--gongjiaoreasult -->
+
+                        <input type="hidden" id="hidlng" value='104.133648'>
+                        <input type="hidden" id="hidlat" value='30.622653'>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 预约看房反馈 -->
+<div class="modal fade room_select_callback" id="Room_box_callback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">
+                    预约已经提交<br />
+                    <small>SUCCESS</small>
+                </h4>
+            </div>
+            <div class=" modal-body">
+                <p class="room_callback"><b><span class="select_call_name text-info"></span></b>：<span class="room_callback_info">您的看房需求已收到！</span></p>
+                <div class="row">
+                    <div class="col-sm-6">
+                            <img src="{dede:global.cfg_templets_skin/}/style/images/footer-weixin-cd.png" alt="扫一扫加入优客逸家官方微信，有机会赢取大奖！" class="img-responsive" />
+
+                    </div>
+                    <div class="col-sm-6">
+                        <h2 class="text-yellow">
+                            别关！<br />
+                            先扫描二维码！
+                        </h2>
+                        <p>
+                            茫茫人海别轻易失去联系，扫二维码加UOKOHOME为微信好友方便随时勾兑！
+                        </p>
+                        <a class="link underline" href="/AboutUs/contact/">更多联系方式</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">确 定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  {dede:include filename="footer.htm"/}
+
+</body>
+
+</html>

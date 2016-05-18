@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field.keywords/}" />
+    <meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="style/js/jquery-1.9.1.js"></script>
+<script src="style/js/base.min.js"></script>
+<script src="style/js/common.js"></script>
+<script src="style/js/g.js"></script>
+
+    <link href="style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    
+    <style>
+        .join-top {
+            background: #88e1da url("style/images/img/job_top_02671.jpg") no-repeat top center;
+            height: 390px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+    <input id="controller" type="hidden" value="aboutus" />
+    <input id="action" type="hidden" value="join" />
+    
+
+{dede:include filename="head.htm"/}
+
+
+    
+
+
+<div class="join-top">
+
+</div>
+
+<div class="container">
+    <h3 id="job_content">
+        工作机会
+        <a href="/aboutus/join/#job_content" class="pull-right">
+            <img src="style/images/job-message.png" />
+        </a>
+    </h3>
+    <div class="bk10"></div>
+    <div class="row join">
+        <div class="col-md-3 join-list">
+                <dl>
+                    <dt>信息技术中心</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/2?#job_content">英俊的.net开发工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/16?#job_content">SEO专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/17?#job_content">高级测试工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/18?#job_content">前端工程师（JS方向）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/159?#job_content">需求分析师-ERP方向</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/160?#job_content">Android开发工程师</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/671?#job_content">内容运营专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/672?#job_content">运营推广专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/673?#job_content">互联网运营专员</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>市场部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/12?#job_content">租房顾问/销售专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/166?#job_content">租房顾问/销售专员-武汉</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/245?#job_content">高级商务BD（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/338?#job_content">销售片区主管</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/617?#job_content">市场推广专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/618?#job_content">市场推广主管</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/619?#job_content">运营专员（SEO优化）</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>运维部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/13?#job_content">维修专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/14?#job_content">物业管家</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/15?#job_content">客服专员</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/97?#job_content">客服/运维内勤（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/99?#job_content">维修专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/246?#job_content">客服专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/247?#job_content">网络管理员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/286?#job_content">运维部经理</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>房源部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/100?#job_content">房源开发专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/244?#job_content">销售内勤/文员（武汉）</a>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>产品部</dt>
+                        <dd>
+                            <a class="active" href="/aboutus/join/101?#job_content">设计助理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/102?#job_content">设计师-室内方向（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/103?#job_content">工程助理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/104?#job_content">工程监理（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/175?#job_content">采购专员（武汉）</a>
+                        </dd>
+                        <dd>
+                            <a class="active" href="/aboutus/join/176?#job_content">库管专员（武汉）</a>
+                        </dd>
+                </dl>
+
+        </div>
+        <div class="col-md-9 join-content">
+            
+
+                    <div class="join-box">
+                                                    <h3 class="join-name"><span class="fa fa-user"></span>英俊的.net开发工程师<small>（6只）</small></h3>
+                        <h5><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">工作职责</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">1、熟悉项目开发流程。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">2、负责与需求人员接口，熟悉项目的需求规划说明。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">3、熟悉项目的开发计划，及项目的概要设计说明数据库设计。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">4、按计划完成功能模块的功能设计、代码实现,&nbsp;代码编写和单元测试，并提交测试人员进行功能测试。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">5、协助测试人员完成软件系统及模块的测试。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">6、严格遵守相关开发工具的编码规范。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">7、参与需求和设计讨论。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">8、为前端技术人员提供技术支持，解决技服过程中遇到的相关问题。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">9、协调其它软件工程师开发工作。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">10、接受专项任务和临时性任务，保证不殴打产品经理哟。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">&nbsp;</span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">我们欢迎这样的你：</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">1、23-35岁，精通.Net，有B/S结构应用的开发经验。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">2、熟悉SQL&nbsp;Server2008灵活应用数据库设计工具；具有扎实的SQL存储过程编写，熟悉SQL性能优化；熟练使用VS&nbsp;开发工具。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">3、是能独立胜任项目开发的大侠（前期需求分析，文档撰写，代码功能开发实践，后期维护bug处理）。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">4、有良好的解决问题的能力及沟通协调能力。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">5、有强烈的责任心，工作是真爱；有耐心，蹂躏五千遍不炸毛；工作积极主动，鸡血满格一整天。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">6、充满正能量，待人接物态度积极阳光。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p><p class="MsoNormal"><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; ">7、2-10年相关工作经验，有移动互联网、大型电商、社区站长经验、财务软件、ERP开发经验优先。</span><span style="mso-spacerun:'yes'; font-family:微软雅黑; font-size:10.5000pt; mso-font-kerning:1.0000pt; "><o:p></o:p></span></p></h5>
+                        <div class="bk"></div>
+                            <p class="mailto email">
+                                工作地点：<span class="text-orange">成都 </span>，请将简历投递至
+                                <a target="_blank" >hr_cd[-at-]uoko.com</a>邮箱
+                            </p>
+                    </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+</div>
+
+<script src="style/js/home.min.js"></script>
+
+    <footer id="footer_u">
+        <div class="footer-bg">
+            <div class="container">
+                <div class="pull-left f-setup">
+                        <img src="style/images/footer-setup.png" />
+                </div>
+                <div class="pull-left f-follow">
+                        <a href="http://weibo.com/iuoko" target="_blank" rel="nofollow"><span class="sprite-f-weibo"></span>关注新浪微博</a>
+
+                    <a href="/mail.aspx" target="_blank" rel="nofollow"><span class="sprite-f-email"></span>有新房源通知我</a>
+                    <a data-toggle="modal" href="/allother/weixinfoot/" data-target="#weixin_home" rel="nofollow"><span class="sprite-f-weixin"></span>订阅微信公众平台</a>
+                    <a><span class="sprite-f-tel"></span>400-000-4170</a>
+                </div>
+                <div class="pull-left f-weixin">
+                    <!--全局变量-->
+                    <div class="f-w-box">
+                        <img src="style/images/footer-weixin-cd.png" width="100" height="100" alt="成都优客逸家官方微信" />
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+                                            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+
+                <p class="copyright-info">Copyright © 2012-2015 uoko.com ,All Right Reserved 蜀ICP备13015638号-1</p>
+                <ul class="nav nav-pills">
+                        <li><a href="/">首 页</a></li>
+
+                    <li><a href="/youletter/">给你的信</a></li>
+                    <li><a href="/aboutus/about/">关于优客</a></li>
+                    <li><a href="/aboutus/join/">工作机会</a></li>
+                    <li><a href="/aboutus/contact/">联系优客</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+
+    <ul class="float-right-bar ">
+
+        <li class="bar-share">
+            <a href="javascript:void(0);"></a>
+            <div class="bdsharebuttonbox js-bdshare">
+                <a title="分享到新浪微博"  class="bds_tsina" data-cmd="tsina"></a>
+                <a title="分享到QQ好友"  class="bds_sqq" data-cmd="sqq"></a>
+                <a title="分享到豆瓣网"  class="bds_douban" data-cmd="douban"></a>
+                <a title="分享到人人网"  class="bds_renren" data-cmd="renren"></a>
+                <a title="分享到QQ空间"  class="bds_qzone" data-cmd="qzone"></a>
+                <a title="分享到微信"  class="bds_weixin" data-cmd="weixin"></a>
+                
+            </div>
+
+        </li>
+        <li class="bar-custom">
+                <a id="event-cs-cd" class="bar-link " href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDA3Mjc2NF8yMjY4MzRfODAwMDcyNzY0XzJf" target="_blank" rel="nofollow"></a>
+
+            <div class="tooltip fade left in float-bar-tooltip">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-arrow tooltip-arrow-down"></div>
+                <div class="tooltip-inner">在线客服</div>
+            </div>
+        </li>
+        <li class="bar-message">
+            <a class="bar-link" href="/aboutus/contact?op=2#contact_mess" target="_blank" rel="nofollow"></a>
+            <div class="tooltip fade left in float-bar-tooltip">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-arrow tooltip-arrow-down"></div>
+                <div class="tooltip-inner">留言建议</div>
+            </div>
+        </li>
+        <li class="bar-weixin">
+            <a href="javascript:void(0);">
+                <div class="code js-share-weixin">
+                    <img width="131" height="131" src="style/images/footer-weixin-cd01.png" alt="微信找房，扫我吧！" />
+                    <div class="des"><strong>微信找房</strong>，扫我吧！</div>
+                </div>
+            </a>
+        </li>
+        <li class="bar-backtop">
+        </li>
+    </ul>
+
+
+
+    <div class="modal fade full-modal" id="weixin_home" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content weixin_home ">
+
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            Custom.init();
+            SetNavClass('member-nav', 'active');
+            SetNavClass('uoko-nav', 'active');
+        });
+        window._bd_share_config = {
+            common: {
+                "bdSnsKey": {},
+                "bdText": "",
+                "bdMini": "2",
+                "bdMiniList": !1,
+                "bdPic": "",
+                "bdStyle": "0",
+                "bdSize": "16",
+                bdMini: 2,
+                bdPopupOffsetLeft: -207
+            },
+            share: [{
+                "bdSize": 16
+            }]
+        }
+        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+
+
+        function SetNavClass(ulId, className) {
+            var controller = $('#controller').val();
+            var action = $('#action').val();
+            eval('controller_' + controller + ' = true');
+            eval('action_' + action + ' = true');
+            var list = $('#' + ulId + ' *');
+
+            for (var k = 0; k < list.length; k++) {
+                var item = list[k];
+                var str = GetClassName(item);
+                var navClass;
+                navClass = $(item).attr('data-menu-active-class');
+                if (navClass == null || navClass == '') {
+                    navClass = className;
+                }
+                try {
+                    if (eval(str)) $(item).addClass(navClass);
+                } catch (e) { }
+            }
+        }
+        function GetClassName(item) {
+            var classStr = $(item).attr('data-menu-active');
+            if (classStr == null) return "";
+            var classes = classStr.split(' ');
+            for (var k = 0; k < classes.length; k++) {
+                if (classes[k].indexOf('controller') > -1 || classes[k].indexOf('action') > -1) return classes[k];
+            }
+        }
+
+
+        $(".aboutList").hover(function () {
+            $(".aboutList").css({
+                "background": "#2CBCB8"
+            })
+            $(".aboutUoko").stop(true, true).fadeIn(300);
+
+        }, function () {
+            $(".aboutList").css({
+                "background": "#3FCBC0"
+            })
+            $(".aboutUoko").stop(true, true).fadeOut(300);
+        });
+
+    </script>
+
+</body>
+
+</html>

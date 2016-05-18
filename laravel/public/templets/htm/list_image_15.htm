@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+    <meta name="keywords" content="{dede:field name='keywords'/}" />
+    <meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+    
+    {dede:include filename="js.htm"/}
+    
+    <script src="{dede:global.cfg_templets_skin/}/style/js/jquery-1.9.1.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/base.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/common.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/style/js/g.js"></script>
+
+    <link href="{dede:global.cfg_templets_skin/}/style/css/dede_pages.css" rel="stylesheet"/>
+    
+    <link href="{dede:global.cfg_templets_skin/}/style/css/common.min.css" rel="stylesheet"/>
+
+
+
+    
+        <style>
+            body{background:#f4f4f4;}
+        </style>
+
+
+    <script type="text/javascript">
+
+
+        var zd = '0';
+        if (zd == 0 && getCookie("zd") == null) {
+            document.write('<script src="{dede:global.cfg_templets_skin/}/style/js/p.mini.js"><\/script>');
+        } else {
+            if (zd == 1 && getCookie("zd") == null)
+                addCookie(1);
+        }
+
+        function addCookie(objHours) {
+            var str = "zd=1";
+            var date = new Date();
+            var ms = 1000 * 60 * 10;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toGMTString();
+            document.cookie = str;
+        }
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return unescape(arr[2]); return null;
+        }
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+        var mlik = document.getElementsByTagName("mLink");
+        mlik.onclick = function () {
+            delCookie("zd");
+        }
+
+    </script>
+
+</head>
+<body data-spy="scroll">
+
+    {dede:channelartlist typeid='1,0'}
+    <input id="controller" type="hidden" value="{dede:field.seotitle /}" />
+    {/dede:channelartlist}
+    
+    <input id="action" type="hidden" value="Index" />
+    
+
+{dede:include filename="head.htm"/}
+
+
+    
+
+
+<div class="search-box">
+
+    <div class="container-min">
+        <ol class="breadcrumb">
+        
+          <li><a href="{dede:global.cfg_indexurl/}">首页</a></li>
+            
+            {dede:channelartlist typeid='1,0'}
+            <li class="active"><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+            
+      </ol>
+       
+        <div class="nav-search-tabs search_title">
+            <ul class="nav nav-tabs nav-search ">
+                <li class="active">
+
+                    {dede:channelartlist typeid='1,0'}
+                    <a href="{dede:field name='typeurl'/}" class="title_name title_1"><span class="sprite sprite_select_1"></span> 条件找房</a>
+                    {/dede:channelartlist}
+                    
+                </li>
+
+{dede:include filename="rent_map_id_1.htm"/}
+
+            </ul>
+        </div>
+        <div class="tab-content tab-seach">
+            <div class="tab-pane fade in active">
+                <div class="selection">
+                    
+                    {dede:include filename="rent_form_id_1.htm"/}
+                    
+                    <div class="s-box">
+                        <div class="s-title">区域：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='11,0'}
+                                <a class="s-area" href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='12,0'}
+                                <a class="s-area" href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='13,0'}
+                                <a class="s-area" href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='14,0'}
+                                <a class="s-area" href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='15,0'}
+                                <a class="s-area  active" href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='16,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='17,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">租金：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='18,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='19,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='20,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='21,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='22,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+              
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">户型：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='23,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='24,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='25,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='26,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">入住：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">全部</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='28,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='29,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='30,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+
+                                
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">室友：</div>
+                        <div class="s-l">
+                        
+                                {dede:channelartlist typeid='1,0'}
+                                <a class="s-all  active" href="{dede:field name='typeurl'/}">无所谓</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='31,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='32,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='33,0'}
+                                <a class="s-area " href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                        </div>
+                    </div>
+                    <div class="s-box">
+                        <div class="s-title">配置：</div>
+                        <div class="s-l s-checkbox">
+                        
+                                {dede:channelartlist typeid='34,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='35,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='36,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='37,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                                {dede:channelartlist typeid='38,0'}
+                                <a href="{dede:field name='typeurl'/}"><i class="fa fa-square-o"></i> {dede:field name='typename'/}</a>
+                                {/dede:channelartlist}
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{dede:include filename="rent_id_1.htm"/}
+        
+    </div>
+</div>
+<div class="bk20"></div>
+
+<div class="i-list container-min" style="overflow: visible;">
+
+
+         
+         {dede:list pagesize ='30'}
+        <div class="thumb-box ">
+            <a href="[field:arcurl/]" target="_blank">
+                <img src="/templets/htm/style/images/loading.gif" alt="[field:title/]" width="318" height="212" border="0" data-original="[field:picname/]" />
+            </a>
+
+        <h4 class="title"><a href="[field:arcurl/]"><strong>[field:title/]</strong></a></h4>
+            <div class="price">
+                <span>¥</span>
+                    [field:zj/]
+                元/月
+            </div>
+            <p class="des">[field:dz/]</p>
+            <div class="clearfix"></div>
+        </div>
+        {/dede:list}
+        
+        
+        
+        
+    <div class="bk20"></div>
+    
+<div class="dede_pages">  
+   <ul class="pagelist" style="font-size:13px; margin:0px 10px 0px 0px;">
+    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="3"/}
+   </ul>
+  </div> 
+
+
+
+   <div class="bk20"></div>
+   
+    {dede:include filename="footer_rent.htm"/}
+    
+</div>
+
+
+
+    {dede:include filename="footer.htm"/}
+
+</body>
+
+</html>
