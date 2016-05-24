@@ -3,12 +3,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
+header('content-type:text/html;charset=utf8');
 	class IndexController extends Controller
 	{
 		public function index()
 		{
-			return view('index');
+			$data = DB::table('houses')
+			->get();
+			return view('index',['data' => $data]);
 		}
 		/**
 		 * 关于我们
@@ -71,6 +74,15 @@ use App\Http\Controllers\Controller;
 			 */
 			public function details()
 			{
-				return view('xiangqing');
+				// $name = DB::connection()->getDatabaseName();
+				$id=isset($_GET['id'])?$_GET['id']:"";
+				$arr = DB::table('houses')
+				->where('h_id',$id)
+				->get();
+				$data = DB::table('houses')
+				->join('imagess','houses.h_id','=','imagess.h_id')
+				->get();
+				return view('xiangqing',['arr' => $arr,'data' => $data]);
 			}
+
 	}

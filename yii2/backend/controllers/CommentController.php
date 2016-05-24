@@ -27,4 +27,9 @@ class CommentController extends Controller{
 		return $this->render('commentcheck');
 	}
 
+
+	Public function actionDel(){
+		
+	}
+
 }

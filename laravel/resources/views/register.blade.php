@@ -20,7 +20,7 @@ function changeAuthCode() {
 	if ($("#vdimgck")[0]) {
 		$("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
 	}
-	return false;	
+	return false;
 }
 
 function hideVc()
@@ -29,7 +29,7 @@ function hideVc()
 }
 
 
-$(document).ready(function(){ 
+$(document).ready(function(){
 	$("#passwordLevel").removeClass().addClass("rank r0");
 	$("#vdcode").focus(function(){
 	  var leftpos = $("#vdcode").position().left;
@@ -91,18 +91,22 @@ document.write("午夜好，");
 
   <div class="tip1"></div>
   <div class="theme fLeft">
-    <form method="post" action="reg_new.php" id="regUser" name="form2">
+    <form method="post" action="{{URL('login/user_register')}}" id="regUser" name="form2" enctype="multipart/form-data">
+        <input type="hidden" name="_token"    value="<?php echo csrf_token() ?>"/>
       <input type="hidden" value="regbase" name="dopost"/>
       <input type="hidden" value="1" name="step"/>
-      <input type="hidden" value="个人" name="mtype"/>
+      <input type="hidden" value="租客" name="mtype"/>
       <p style="text-align: right;" class="mB10"/>
       <ul>
         <li class="mL68">(带<i class="red"> * </i>号的表示为必填项目，用户名必须大于3位小于20位，密码必须大于3位)</li>
         <li><span>帐号类型：</span>
-          <label><input type="radio" name="mtype" class="usermtype" value="个人" checked/>个人</label> &nbsp; <label><input type="radio" name="mtype" class="usermtype2" value="企业" />企业</label> &nbsp;        </li>
+          <label><input type="radio" name="mtype" class="usermtype" value="0" checked/>租客</label> &nbsp; <label><input type="radio" name="mtype" class="usermtype" value="1" />房东</label> &nbsp;        </li>
         <li><span>用户名：</span>
-          <input type="text" class="intxt w200" id="txtUsername" name="userid"/>
-        <i class="red">*</i> <em id="_userid">(可以使用中文，但禁止除[@][.]以外的特殊符号)</em> </li>
+          <input type="text" class="intxt w200" id="txtUsername" name="userid" onblur="select_users()" onfocus="s_name()"/>
+        <i class="red">*</i> <em id="_userid">(可以使用中文，但禁止除[@][.]以外的特殊符号)</em></br>
+            <span id="s_name"></span>
+        </li>
+
         <li><span id="uwname">用户笔名：</span>
           <input type="text" class="intxt w200" size="20" id="uname" name="uname"/>
           <i class="red">*</i> <em id="_uname"/> </li>
@@ -115,22 +119,21 @@ document.write("午夜好，");
         <li><span>确认密码：</span>
           <input type="password" class="intxt w200" size="20" value="" id="userpwdok" name="userpwdok"/>
           <i class="red">*</i> <em id="_userpwdok"><font color="red"><b>×两次输入密码不一致</b></font></em> </li>
-                    <li><span>电子邮箱：</span>
+          <li>
+              <span>用户头像：</span>
+              <input type="file"  size="20" value=""  name="myfiles"/>
+          </li>
+          <li><span>电子邮箱：</span>
             <input type="text" class="intxt w200" id="email" name="email"/>
-            <i class="red">*</i> <em id="_email">(每个电子邮邮箱只能注册一个帐号)</em> </li>
-          <li><span>安全问题：</span>
-            <select name='safequestion' id='safequestion'><option value='0' selected>没安全提示问题</option>
-<option value='1'>你最喜欢的格言什么？</option>
-<option value='2'>你家乡的名称是什么？</option>
-<option value='3'>你读的小学叫什么？</option>
-<option value='4'>你的父亲叫什么名字？</option>
-<option value='5'>你的母亲叫什么名字？</option>
-<option value='6'>你最喜欢的偶像是谁？</option>
-<option value='7'>你最喜欢的歌曲是什么？</option>
-</select>
-          <em id="_safequestion">(忘记密码时重设密码用)</em> </li>
-          <li><span>问题答案：</span>
-          <input id="safeanswer" class="intxt w200" type="text" value="" name="safeanswer"/>
+            <i class="red">*</i> <em id="_email">(每个电子邮邮箱只能注册一个帐号)</em>
+          </li>
+          <li><span>地址：</span>
+              <input type="text" class="intxt w200" id="email" name="address"/>
+              <i class="red">*</i> <em id="_address"></em>
+          </li>
+          <li><span>电话：</span>
+              <input type="text" class="intxt w200" id="email" name="phone"/>
+              <i class="red">*</i> <em id="_phone"></em>
           </li>
         <li><span>性别：</span>
             <input type="radio" value="男" name="sex"/>
@@ -139,11 +142,12 @@ document.write("午夜好，");
             女
             <input type="radio" checked="checked" value="" name="sex"/>
           保密        </li>
-                </ul>
+      </ul>
       <div><span style="height: 110px; width: 15%;" class="fLeft">会员注册协议：</span>
-        <div class="contract"> 1、在本站注册的会员，必须遵守《互联网电子公告服务管理规定》，不得在本站发表诽谤他人，侵犯他人隐私，侵犯他人知识产权，传播病毒，政治言论，商业讯息等信息。<br/>
-          2、在所有在本站发表的文章，本站都具有最终编辑权，并且保留用于印刷或向第三方发表的权利，如果你的资料不齐全，我们将有权不作任何通知使用你在本站发布的作品。<br/>
-        3、在登记过程中，您将选择注册名和密码。注册名的选择应遵守法律法规及社会公德。您必须对您的密码保密，您将对您注册名和密码下发生的所有活动承担责任。</div>
+        <div class="contract">
+         1、在本站注册的会员，必须遵守《互联网电子公告服务管理规定》，不得在本站发表诽谤他人，侵犯他人隐私，侵犯他人知识产权，传播病毒，政治言论，商业讯息等信息。<br/>
+         2、在所有在本站发表的文章，本站都具有最终编辑权，并且保留用于印刷或向第三方发表的权利，如果你的资料不齐全，我们将有权不作任何通知使用你在本站发布的作品。<br/>
+         3、在登记过程中，您将选择注册名和密码。注册名的选择应遵守法律法规及社会公德。您必须对您的密码保密，您将对您注册名和密码下发生的所有活动承担责任。</div>
       </div>
       <br />
       <ul>
@@ -162,9 +166,28 @@ document.write("午夜好，");
 	window.onload=function (){
 		setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
 	}
+//失焦事件
+function select_users(){
+   // alert(111);
+    var  name=document.getElementById('txtUsername').value;
+   // alert(name);
+    var data={'name':name};
+    var url="{{URL('login/only_name')}}";
+    $.get(url,data,function(msg){
+       if(msg==1){
+           $('#s_name').html("<font color='red'>该用户名已注册</font>");
+       }
+})
+
+}
+//得到焦点
+    function  s_name(){
+        $('#s_name').html('');
+    }
+
 </script>
 <div class="footer bor">
-  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 织梦科技 版权所有</div>
+  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 邻京有屋 版权所有</div>
   <div class="fRight mR10" id="time">  </div>
 </div>
 </body>

@@ -2,13 +2,37 @@
 namespace backend\controllers;
 
 use yii\web\Controller;
-
+use yii\data\Pagination;
+use backend\models\AdminUser;
 class AccountController extends Controller{
 
 	public $layout = 'main.php';
 	public function actionIndex(){
+		// //配置连接组件
+		// $connection = \Yii::$app->db;
+	
+		// $command = $connection->createCommand('SELECT * FROM admin_user');
+		
+		// $data = $command->queryAll();
+		// return $this->render('index',['data' => $data]);
+		
+		$query = AdminUser::find();
 
-		return $this->render('index');	
+        $pagination = new Pagination([
+            'defaultPageSize' => 1,
+            'totalCount' => $query->count(),
+        ]);
+
+        $countries = $query->orderBy('u_id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('index', [
+            'data' => $countries,
+            'pagination' => $pagination,
+        ]);
+	
 	}
 
 

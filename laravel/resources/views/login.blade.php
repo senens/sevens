@@ -61,31 +61,44 @@ document.write("午夜好，");
 </div>
 <div class="login bor">
   <div class="main fLeft">
-    <h3>请在这里登录<em><a href="index_do.php?fmdo=user&dopost=regnew">还没注册 点击这里</a></em></h3>
-    <form name='form1' method='POST' action='index_do.php'>
+    <h3>请在这里登录<em><a href="{{URL('register')}}">还没注册 点击这里</a></em></h3>
+    <form name='form1' method='POST' action="{{URL('login/islogin')}}">
+        <input type="hidden" name="_token"    value="<?php echo csrf_token() ?>"/>
+
       <input type="hidden" name="fmdo" value="login">
       <input type="hidden" name="dopost" value="login">
       <input type="hidden" name="gourl" value="<?php if(!empty($gourl)) echo $gourl;?>">
       <ul>
-        <li> <span>用户名：</span>
-          <input id="txtUsername" class="text login_from" type="text" name="userid"/>
-        </li>
-        <li> <span>密&nbsp;&nbsp;&nbsp;码：</span>
-          <input id="txtPassword" class="text login_from2" type="password" name="pwd"/>
-        </li>
+          <?php
+          $value = Session::get('user_massage');
+          ?>
+          @if($value)
+              <li> <span>用户名：</span>
+                  <input id="txtUsername" class="text login_from" value="<?php echo $value['name']?>" type="text" name="userid"/>
+              </li>
+              <li> <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                <input id="txtPassword" class="text login_from2" type="password" value="<?php echo $value['pawd']?>"  name="pwd"/>
+              </li>
+         @else
+              <li> <span>用户名：</span>
+                  <input id="txtUsername" class="text login_from"  type="text" name="userid"/>
+              </li>
+              <li> <span>密&nbsp;&nbsp;&nbsp;码：</span>
+                  <input id="txtPassword" class="text login_from2" type="password"   name="pwd"/>
+              </li>
+         @endif
         <li> <span>验证码：</span>
           <input id="vdcode" class="text login_from3" type="text" style="width: 50px; text-transform: uppercase;" name="vdcode"/>
           <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
            看不清？ <a href="#" onclick="changeAuthCode();">点击更换</a> </li>
         <li> <span>有效期：</span>
-          <input type="radio" value="2592000" name="keeptime" id="ra1"/>
-          <label for="ra1">一个月</label>
-          <input type="radio" checked="checked" value="604800" name="keeptime" id="ra2"/>
-          <label for="ra2">一周</label>
-          <input type="radio" value="86400" name="keeptime"  id="ra3"/>
-          <label for="ra3">一天</label>
-          <input type="radio" value="0" name="keeptime"  id="ra4"/>
-          <label for="ra4">即时</label></li>
+
+            <input type="radio" name="keeptime" value="month"/>一个月
+            <input type="radio" name="keeptime" checked="checked" value="week"/>一周
+            <input type="radio" name="keeptime" value="day"/>一天
+            <input type="radio" name="keeptime" value="0"/>即使
+
+
         <li>
           <button id="btnSignCheck" class="button2" type="submit">登&nbsp;录</button>
           <a href="resetpassword.php">忘记密码？</a> </li>
@@ -96,7 +109,7 @@ document.write("午夜好，");
     <p><span>还没有注册吗？</span><br />
       本站的账号都没有？你也太落伍了<br />
       赶紧去注册一个吧。</p>
-    <button class="signUp" onclick="javascript:location='index_do.php?fmdo=user&dopost=regnew'">注册</button>
+      <a href="{{URL('register')}}"><button class="signUp">注册</button></a>
   </div>
 </div>
 <script language="javascript" type="text/javascript">

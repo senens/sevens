@@ -40,6 +40,13 @@
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
+<!--<style>
+    #bbig{
+
+        background-image:url('D:/WWW/fmy/linjing/yii2/backend/web/1.jpg');
+    }
+</style>-->
+<div id="bbbig">
 <body  class="login-layout">
 		<div class="main-container">
 			<div class="main-content">
@@ -114,6 +121,27 @@
 														</span>
 													</label>
                                                    <?php  }?>
+                                                <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+
+                                                            <?=\yii\captcha\Captcha::widget([
+                                                                'name' => 'verifyCode', //这里不需要 model 字段，直接自己定义
+                                                                'captchaAction' => 'login/captcha', //验证码的 action 与 Model 是对应的
+                                                                'template' => '{input}{image}', //模板 , 可以自定义
+                                                                'options' => [ //input 的 Html 属性配置
+                                                                    'class' => 'input verifycode',
+                                                                    'id' => 'verifyCode'
+                                                                ],
+                                                                'imageOptions' => [//image 的 Html 属性配置
+                                                                    'class' => 'imagecode',
+                                                                    'alt' => '点击图片刷新'
+                                                                ]
+                                                            ]);
+                                                            ?>
+															<i class="icon-lock"></i>
+														</span>
+                                                </label>
+
 													<div class="space"></div>
 
 													<div class="clearfix">
@@ -332,4 +360,5 @@
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
+    </div>
 </html>

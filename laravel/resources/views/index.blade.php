@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="div1">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -95,11 +95,14 @@ function addCookie(objHours) {
 <div class="i-search">
     <div class="search-main">
     
-        <form  name="formsearch" action="\plus/search.php">
+        <form  name="formsearch" action="{{URL('search')}}" method="get">
+
  <input type="hidden" name="domains" value="www.dedecms.com">
    <input type="hidden" name="kwtype" value="0" />
-        <div class="i-search-box">
-            <input name="q" type="text" class="form-control" id="KKW2" placeholder="请输入关键字查找">
+            <input type="hidden" name="_token" value="{{csrf_token()}}" />
+
+            <div class="i-search-box">
+            <input name="q" type="text" class="form-control" id="sou" placeholder="目前开通北京，可搜索区,地址,地铁/公交线路">
             <i class="i-spring-ice"></i>
         </div>
         
@@ -107,8 +110,6 @@ function addCookie(objHours) {
         <button class="btn  search-btn" name="submit"  id="btnSearch" type="submit"></button>
         <!--<a class="home-map-serach" href="/search_map/" title="地图找房" target="_blank"></a>-->
       </form>
-        
-        
         <div class="clearfix"></div>
         <div class="search-keywords">
             <!--全局变量-->
@@ -121,118 +122,25 @@ function addCookie(objHours) {
 
 <div class="i-list container-min">
     <div class="list-name">今日精选房源</div>
-    
-    
-    
-      
-        <div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/9.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" width=" 318" height="212" alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/9.html" target="_blank">
-                    <strong>蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    650-850
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 蓝光coco蜜城</p>
-            <div class="clearfix"></div>
-        </div>
+    @foreach($data as $v) 
 <div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/8.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" width=" 318" height="212" alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/8.html" target="_blank">
-                    <strong>蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    750-950
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 蓝光coco蜜城</p>
-            <div class="clearfix"></div>
+    <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank">
+        <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="{{URL::asset('../public')}}/{{$v->img}}" width=" 318" height="212" alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费" />
+    </a>
+    <h4 class="title">
+        <a href="/rent/area/cdqyq/2015/0802/9.html" target="_blank">
+            <strong>{{$v->h_title}}</strong>
+        </a>
+    </h4>
+    <div class="price">
+        <span>¥</span>
+            650-850
+        <span class="price-months">元/月</span>
+    </div>
+    <p class="des">青羊区 - 光华 - 蓝光coco蜜城</p>
+    <div class="clearfix"></div>
         </div>
-<div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/6.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=6607&width=800&height=447&w=1" width=" 318" height="212" alt="铸信境界 西三环苏坡立交 清水河附近 非中介精装单间" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/6.html" target="_blank">
-                    <strong>铸信境界 西三环苏坡立交 清水河附近 非中介精装单间</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    600-1050
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 铸信境界</p>
-            <div class="clearfix"></div>
-        </div>
-<div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/5.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" width=" 318" height="212" alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/5.html" target="_blank">
-                    <strong>金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    550-800
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 金沙海棠</p>
-            <div class="clearfix"></div>
-        </div>
-<div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/4.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=6143&width=800&height=447&w=1" width=" 318" height="212" alt="金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/4.html" target="_blank">
-                    <strong>金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    580-700
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 金沙柏林郡</p>
-            <div class="clearfix"></div>
-        </div>
-<div class="thumb-box">
-            <a href="/rent/area/cdqyq/2015/0802/3.html" target="_blank">
-                <img src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" width=" 318" height="212" alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心" />
-            </a>
-            <h4 class="title">
-                <a href="/rent/area/cdqyq/2015/0802/3.html" target="_blank">
-                    <strong>蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心</strong>
-                </a>
-            </h4>
-            <div class="price">
-                <span>¥</span>
-                    1950
-                <span class="price-months">元/月</span>
-            </div>
-            <p class="des">青羊区 - 光华 - 蓝光coco蜜城</p>
-            <div class="clearfix"></div>
-        </div>
-
-
-
-
-        
-        
+       @endforeach
 </div>
 
 <div class="jum-choose">
@@ -388,8 +296,31 @@ function addCookie(objHours) {
             $(".aboutUoko").stop(true, true).fadeOut(300);
         });
 
+        // function xiangQing(id){
+        //     // var data = {'id':id};
+        //     // var url = "{{URL::asset('index/details')}}";
+        //     // $.get(url,data,function(msg){
+        //     //     // if(msg){
+        //             location.href="{{URL::asset('index/details')}}";
+        //         // }
+                
+        //     })
+        // }
     </script>
 
 </body>
 
 </html>
+<script src="./jquery.js"></script>
+<script>
+
+      function sear(){
+
+
+         var sou=$("#sou").val();
+          //alert (sou);
+
+     }
+
+
+</script>

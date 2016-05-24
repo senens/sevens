@@ -2,8 +2,8 @@
         <div class="container">
             <div class="navbar-header">
                 <div class="slogan">
-                        <a class="logo" href="/" title="优客逸家 轻时尚单身公寓">
-                            <img src="{{URL::asset('../public')}}/templets/htm/style/images/logo.png" width="249" height="36" alt="优客逸家 轻时尚单身公寓" />
+                        <a class="logo" href="/" title="邻京有屋 轻时尚单身公寓">
+                            <img src="{{URL::asset('../public')}}/templets/htm/style/images/logo.png" width="249" height="36" alt="邻京有屋 轻时尚单身公寓" />
                         </a>
 
                     <!--<div class="dropdown dropdown-city">
@@ -105,11 +105,18 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="loginbar">
+                         <li class="loginbar">
+                            <?php
+                            $value = Session::get('name');
+                                if($value){ ?>
+                                <a href="{{URL('login/user')}}" rel="nofollow"><font color="#ffe4c4"><?php echo $value?></font></a>
+                                <span class="">|</span>
+                                <a href="{{URL('login/unset')}}">退出</a>
+                                <?php } else{?>
                                 <a href="{{URL('login')}}" rel="nofollow">登录</a>
                                 <span class="">|</span>
                                 <a href="{{URL('register')}}" rel="nofollow">注册</a>
-                        </li>
+                                <?php  } ?>
                     </ul>
             </div>
             <div class="clearfix"></div>

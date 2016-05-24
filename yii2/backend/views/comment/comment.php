@@ -1,8 +1,6 @@
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
-		<script type="text/javascript">
-			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-		</script>
+		
 
 		<ul class="breadcrumb">
 			<li>
@@ -49,7 +47,7 @@
 						</div>
 
 						<div class="table-responsive">
-							<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+							<table  class="table table-striped table-bordered table-hover">
 								<thead>
 									<tr>
 										<th class="center">
@@ -64,6 +62,7 @@
 										<th>时间</th>
 										<th>状态</th>
 										<th>发表人</th>
+										<th>操作</th>
 									</tr>
 								</thead>
 								<?php foreach($posts as $key=>$arr){ ?>
@@ -80,7 +79,53 @@
 										<td><?php echo $arr['c_desc'] ?></td>
 										<td><?php echo $arr['c_time'] ?></td>
 										<td><?php echo $arr['c_status'] ?></td>
-										<td><?php echo $arr['c_people'] ?></td>
+										<td><?php echo $arr['u_id'] ?></td>
+										<td>
+											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+												
+												<a class="green" href="index.php?r=account/edit">
+													<i class="icon-pencil bigger-130"></i>
+												</a>
+
+												<a class="red" href="index.php?r=comment/del" onclick="dels()">
+													<i class="icon-trash bigger-130"></i>
+												</a>
+											</div>
+
+											<div class="visible-xs visible-sm hidden-md hidden-lg">
+												<div class="inline position-relative">
+													<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
+														<i class="icon-caret-down icon-only bigger-120"></i>
+													</button>
+
+													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+														<li>
+															<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																<span class="blue">
+																	<i class="icon-zoom-in bigger-120"></i>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																<span class="green">
+																	<i class="icon-edit bigger-120"></i>
+																</span>
+															</a>
+														</li>
+
+														<li>
+															<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																<span class="red">
+																	<i class="icon-trash bigger-120"></i>
+																</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 								<?php } ?>
@@ -89,119 +134,7 @@
 					</div>
 				</div>
 
-				<div id="modal-table" class="modal fade" tabindex="-1">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header no-padding">
-								<div class="table-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-										<span class="white">&times;</span>
-									</button>
-									Results for "Latest Registered Domains
-								</div>
-							</div>
 
-							<div class="modal-body no-padding">
-								<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
-									<thead>
-										<tr>
-											<th>Domain</th>
-											<th>Price</th>
-											<th>Clicks</th>
-
-											<th>
-												<i class="icon-time bigger-110"></i>
-												Update
-											</th>
-										</tr>
-									</thead>
-
-									<tbody>
-										<tr>
-											<td>
-												<a href="#">ace.com</a>
-											</td>
-											<td>$45</td>
-											<td>3,330</td>
-											<td>Feb 12</td>
-										</tr>
-
-										<tr>
-											<td>
-												<a href="#">base.com</a>
-											</td>
-											<td>$35</td>
-											<td>2,595</td>
-											<td>Feb 18</td>
-										</tr>
-
-										<tr>
-											<td>
-												<a href="#">max.com</a>
-											</td>
-											<td>$60</td>
-											<td>4,400</td>
-											<td>Mar 11</td>
-										</tr>
-
-										<tr>
-											<td>
-												<a href="#">best.com</a>
-											</td>
-											<td>$75</td>
-											<td>6,500</td>
-											<td>Apr 03</td>
-										</tr>
-
-										<tr>
-											<td>
-												<a href="#">pro.com</a>
-											</td>
-											<td>$55</td>
-											<td>4,250</td>
-											<td>Jan 21</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-							<div class="modal-footer no-margin-top">
-								<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
-									<i class="icon-remove"></i>
-									Close
-								</button>
-
-								<ul class="pagination pull-right no-margin">
-									<li class="prev disabled">
-										<a href="#">
-											<i class="icon-double-angle-left"></i>
-										</a>
-									</li>
-
-									<li class="active">
-										<a href="#">1</a>
-									</li>
-
-									<li>
-										<a href="#">2</a>
-									</li>
-
-									<li>
-										<a href="#">3</a>
-									</li>
-
-									<li class="next">
-										<a href="#">
-											<i class="icon-double-angle-right"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div><!-- /.modal-content -->
-					</div><!-- /.modal-dialog -->
-				</div><!-- PAGE CONTENT ENDS -->
-			</div><!-- /.col -->
-		</div><!-- /.row -->
 	</div><!-- /.page-content -->
 </div><!-- /.main-content -->
 
@@ -209,7 +142,7 @@
 
 		<!--[if !IE]> -->
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!--	<script src="assets/js/ajaxgoogle.js"></script>-->
 
 		<!-- <![endif]-->
 

@@ -1,4 +1,4 @@
-﻿<div class="main-content">
+<div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
 			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
@@ -41,67 +41,75 @@
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
 
-				<form class="form-horizontal" role="form" action="index.php?r=house/houseinsert" method="post">
+				<form class="form-horizontal" role="form" action="index.php?r=house/houseinsert" method="post" enctype="multipart/form-data">
+
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题： </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 出租方式： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_title" placeholder="title"  class="col-xs-10 col-sm-5" />
+							<input type="radio" id="form-field-1" name="h_rent_type" value="0" />整套出租　
+							<input type="radio" id="form-field-1" name="h_rent_type" value="1" />单间出租　
+							<input type="radio" id="form-field-1" name="h_rent_type" value="2" />床位出租
 						</div>
 					</div>
 
-					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 小区名称： </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" name="h_plot_name" placeholder="plot_name"  class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 详细地址： </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" name="h_loc_detail" placeholder="loc_detail"  class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 性别： </label>
+
+						<div class="col-sm-9">
+							<input type="radio" id="form-field-1" name="h_gender_demand" value="0" />男
+							<input type="radio" id="form-field-1" name="h_gender_demand" value="1" />女
+						</div>
+					</div>
+					
+
+					<div class="space-4"></div>				
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 房屋户型： </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" name="h_room_num" placeholder="doors_type" />室
+							<input type="text" id="form-field-1" name="h_hall_num" placeholder="doors_type" />厅
+							<input type="text" id="form-field-1" name="h_toilet_num" placeholder="doors_type" />卫
+						</div>
+					</div>
+
+					
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 楼层： </label>
+
+						<div class="col-sm-9">
+							第<input type="text" id="form-field-1" name="h_floor_st" height="20px" weith="20px" />层</br>
+							共<input type="text" id="form-field-1" name="h_floor_all" height="20px" weith="20px" />层
+						</div>
+					</div>
+
 
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 面积： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_area" placeholder="area"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 价格： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_price" placeholder="price"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 户型： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_doors_type" placeholder="doors_type"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 位置： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_location" placeholder="location"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 楼层： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_floors" placeholder="floors"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 电梯： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_elevator" placeholder="elevator"  class="col-xs-10 col-sm-5" />
+							<input type="text" id="form-field-1" name="h_area" placeholder="h_area"  class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
@@ -110,49 +118,135 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 类型： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_type" placeholder="type"  class="col-xs-10 col-sm-5" />
+							<select name="h_orientation" id="">
+								<option value="0">选择朝向</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+							</select>　
+							<select name="h_decorate" id="">
+								<option value="0">装修情况</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+							</select>　
+							<select name="h_type" id="">
+								<option value="0">普通住户</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+								<option value="0">向北</option>
+							</select>
 						</div>
 					</div>
 
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 卧室类型： </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1" > 房屋配置： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_bedroom_type" placeholder="bedroom_type"  class="col-xs-10 col-sm-5" />
+							<input type="checkbox" id="form-field-1" name="h_facility">床
+							<input type="checkbox" id="form-field-1" name="h_facility">衣柜
+							<input type="checkbox" id="form-field-1" name="h_facility">沙发
+							<input type="checkbox" id="form-field-1" name="h_facility">电视
+							<input type="checkbox" id="form-field-1" name="h_facility">冰箱
+							<input type="checkbox" id="form-field-1" name="h_facility">洗衣机
+							<input type="checkbox" id="form-field-1" name="h_facility">空调
+							<input type="checkbox" id="form-field-1" name="h_facility">热水器
+							<input type="checkbox" id="form-field-1" name="h_facility">宽带
+							<input type="checkbox" id="form-field-1" name="h_facility">暖气
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 出租方式： </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 租金： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_rental_way" placeholder="rental_way"  class="col-xs-10 col-sm-5" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 押金： </label>
-
-						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_deposit" placeholder="deposit"  class="col-xs-10 col-sm-5" />
+							<input type="text" id="form-field-1" name="h_price" placeholder="面议"  class="col-xs-10 col-sm-5" />
+							资金类型：<input type="text" id="form-field-1" name="h_price_type" placeholder="押一付三" />
 						</div>
 					</div>
 
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 介绍： </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 标题： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_introduce" placeholder="introduce"  class="col-xs-10 col-sm-5" />
+							<input type="text" id="form-field-1" name="h_title" placeholder="location"  class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 房源描述： </label>
+
+						<div class="col-sm-9">
+							<textarea name="" id="" cols="100" rows="6" class="col-sm-3 control-label no-padding-right" name="h_description"></textarea>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 上传图片： </label>
+
+						<div class="col-sm-9">
+							<input type="file" id="form-field-1" name="h_photo" class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 状态： </label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 房屋联系人： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_status" placeholder="status"  class="col-xs-10 col-sm-5" />
+							<input type="text" id="form-field-1" name="h_contact_name" placeholder="h_contact_name"  class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 联系电话： </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" name="h_contact_phonenumber" placeholder="introduce"  class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 发布时间： </label>
+
+                        <div class="col-sm-9">
+                            <input type="text" id="form-field-1" name="h_pub_date" placeholder="introduce"  class="col-xs-10 col-sm-5" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 审核状态： </label>
+
+                       
+                        <div class="col-sm-9">
+							<input type="radio" id="form-field-1" name="h_ischeck" value="0" />通过
+							<input type="radio" id="form-field-1" name="h_ischeck" value="1" />未通过
+						</div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 出租状态： </label>
+
+                       
+                        <div class="col-sm-9">
+							<input type="radio" id="form-field-1" name="h_issell" value="0" />在租
+							<input type="radio" id="form-field-1" name="h_issell" value="1" />租完
+						</div>
+                    </div>
+
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 最短租期： </label>
+
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" name="h_timelimit" placeholder="status"  class="col-xs-10 col-sm-5" />
 						</div>
 					</div>
 
@@ -163,7 +257,7 @@
 								<i class="icon-ok bigger-110"></i>
 								<input type="submit" class="btn btn-info" >
 							
-
+ 
 							&nbsp; &nbsp; &nbsp;
 							
 								<i class="icon-undo bigger-110"></i>

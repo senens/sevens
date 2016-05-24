@@ -1,8 +1,6 @@
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
-		<script type="text/javascript">
-			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-		</script>
+		
 
         <ul class="breadcrumb">             <li>                 <i
 class ="icon-home home-icon"></i>                 <a href="#">首页</a>
@@ -46,7 +44,11 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 						</div>
 
 						<div class="table-responsive">
-							<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+
+
+
+
+<table  class="table table-striped table-bordered table-hover">
 								<thead>
 									<tr>
 										<th class="center">房源ID
@@ -55,22 +57,30 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 												<span class="lbl"></span>
 											</label>
 										</th>
-										<th>标题</th>
-										<th>面积</th>
-										<th>价格</th>
-										<th>点击量</th>
-										<th>成交次数</th>
-										<th>户型</th>
-										<th>位置</th>
-										<th>楼层</th>
-										<th>电梯</th>
-										<th>类型</th>
-										<th>卧室类型</th>
 										<th>出租方式</th>
-										<th>押金</th>
-										<th>介绍</th>
-										<th>状态</th>
-										
+										<th>小区名称</th>
+										<th>详细地址</th>
+										<th>性别</th>
+										<th>房屋户型</th>
+										<th>楼层</th>
+										<th>总楼层</th>
+										<th>面积</th>
+										<th>朝向</th>
+										<th>装修情况</th>
+										<th>住户</th>
+										<th>房屋配置</th>
+										<th>租金</th>
+										<th>租金类型</th>
+										<th>标题</th>
+										<th>房源描述</th>
+										<th>图片</th>
+										<th>联系人</th>
+										<th>联系电话</th>
+										<th>发布时间</th>
+										<th>审核状态</th>
+										<th>出租状态</th>
+										<th>最短租期</th>
+										<th>操作</th>
 									</tr>
 								</thead>
 								<?php foreach($posts as $key=>$arr){ ?>
@@ -84,27 +94,53 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 											</label>
 										</td>
 
-										<td><?php echo $arr['h_title'] ?></td>
+										<td><?php echo $arr['h_rent_type'] ?></td>
+										<td><?php echo $arr['h_plot_name'] ?></td>
+										<td><?php echo $arr['h_loc_detail'] ?></td>
+										<td><?php echo $arr['h_gender_demand'] ?></td>
+										<td><?php echo $arr['h_room_num'] ?>室<?php echo $arr['h_hall_num'] ?>厅<?php echo $arr['h_toilet_num'] ?>卫</td>
+										<td><?php echo $arr['h_floor_st'] ?></td>
+										<td><?php echo $arr['h_floor_all'] ?></td>
 										<td><?php echo $arr['h_area'] ?></td>
-										<td><?php echo $arr['h_price'] ?></td>
-										<td><?php echo $arr['h_click'] ?></td>
-										<td><?php echo $arr['h_dealings_num'] ?></td>
-										<td><?php echo $arr['h_doors_type'] ?></td>
-										<td><?php echo $arr['h_location'] ?></td>
-										<td><?php echo $arr['h_floors'] ?></td>
-										<td><?php echo $arr['h_elevator'] ?></td>
+										<td><?php echo $arr['h_orientation'] ?></td>
+										<td><?php echo $arr['h_decorate'] ?></td>
 										<td><?php echo $arr['h_type'] ?></td>
-										<td><?php echo $arr['h_bedroom_type'] ?></td>
-										<td><?php echo $arr['h_rental_way'] ?></td>
-										<td><?php echo $arr['h_deposit'] ?></td>
-										<td><?php echo $arr['h_introduce'] ?></td>
-										<td><?php echo $arr['h_status'] ?></td>
+										<td><?php echo $arr['h_facility'] ?></td>
+										<td><?php echo $arr['h_price'] ?></td>
+										<td><?php echo $arr['h_price_type'] ?></td>
+										<td><?php echo $arr['h_title'] ?></td>
+										<td><?php echo $arr['h_description'] ?></td>
+										<td><?php echo $arr['h_photo'] ?></td>
+										<td><?php echo $arr['h_contact_name'] ?></td>
+										<td><?php echo $arr['h_contact_phonenumber'] ?></td>
+										<td><?php echo $arr['h_pub_date'] ?></td>
+										<td><?php echo $arr['h_ischeck'] ?></td>
+										<td><?php echo $arr['h_issell'] ?></td>
+										<td><?php echo $arr['h_timelimit'] ?></td>
+										<td>
+											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+												<a class="blue" href="index.php?r=house/houseadd">
+													<i class="icon-zoom-in bigger-130"></i>
+												</a>
+
+												<a class="green" href="index.php?r=house/houseupdate">
+													<i class="icon-pencil bigger-130"></i>
+												</a>
+
+												<a class="red" href="index.php?r=house/housedel">
+													<i class="icon-trash bigger-130"></i>
+												</a>
+											</div>
+
+											
+											</div>
+										</td>
 									</tr>
 									<?php } ?>
 									</tbody>
 								</table>
-							</div>
 
+							</div>
 							<div class="modal-footer no-margin-top">
 								<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
 									<i class="icon-remove"></i>
@@ -149,7 +185,7 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 
 		<!--[if !IE]> -->
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
 
 		<!-- <![endif]-->
 

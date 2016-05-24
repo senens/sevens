@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     
-    <title>蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-优客逸家 轻时尚单身公寓</title>
+    <title>蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓</title>
     <meta name="keywords" content="" />
     <meta name="description" content="这套房子都有些啥？ 室友 面积 飘窗 阳台 独卫 2人 空调 价格 最早入住日 更多 A房间 9.00 ㎡ 已租出 B房间 12.00 ㎡ 已租出 C房间 10.00 ㎡ 750 立即入住 D房间 15.00 ㎡ 已租出 每个房间都有这" />
     
     <script language="javascript">
-msg = "蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-优客逸家 轻时尚单身公寓";
+msg = "蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓";
 
 msg = "" + msg;pos = 0;
 function scrollMSG() {
@@ -95,7 +95,7 @@ scrollMSG();
 <div class="container">
     <div class="bk20"></div>
     <div class="alert alert-warning alert-dismissible text-center" role="alert" style="color: #bb6d05; background: #fff6d1; border-color: #fff6d1; ">
-        <strong>优客逸家在线支付全面上线</strong> ，关注官方微信（微信号：UOKOHome）选择自助服务或注册成为优客会员，即可使用线上支付！
+        <strong>邻京有屋在线支付全面上线</strong> ，关注官方微信（微信号：UOKOHome）选择自助服务或注册成为邻京会员，即可使用线上支付！
     </div>
 
     <ol class="breadcrumb">
@@ -105,7 +105,10 @@ scrollMSG();
             <li><a href="/plus/list.php?tid=1">我要租房</a></li>
 
         <li class="active">
-            <a href="#">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费</a>
+         @foreach($arr as $v)
+        <a href="#">{{$v->h_title}}</a>
+         @endforeach 
+            
         </li>
         
     </ol>
@@ -116,13 +119,13 @@ scrollMSG();
                 <ul class="list-unstyled">
                 
                 
-                
+                @foreach($arr as $v)
                             <li class="diagram-img-big">
-                                <a title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费" href="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1">
-                                    <img class="mfp-zoom" alt="" title="" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-src="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" />
+                                <a title="{{$v->h_title}}" href="{{URL::asset('../public')}}/{{$v->img}}">
+                                    <img class="mfp-zoom" alt="" title="" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-src="{{URL::asset('../public')}}/{{$v->img}}" />
                                 </a>
                             </li>
-
+                @endforeach
                             
                 </ul>
 
@@ -131,9 +134,9 @@ scrollMSG();
                 <div class="image-prev img-navigation">上一张</div>
                 <div class="image-list">
                     <ul class="image-list-content list-unstyled">
-
-                                <li><img class="current" width="66" height="44" title="" alt="" src="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" /></li>
-                             
+                            @foreach($arr as $v)
+                                <li><img class="current" width="66" height="44" title="" alt="" src="{{URL::asset('../public')}}//{{$v->img}}" /></li>
+                            @endforeach
                                 
 
 
@@ -163,7 +166,9 @@ scrollMSG();
     </div>
 
     <div class="product_intro pull-left">
-        <h1 class="intro_title">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费</h1>
+    @foreach($arr as $v)
+        <h1 class="intro_title">{{$v->h_title}}</h1>
+    @endforeach    
         <h5 class="intro_title_sale text-orange"></h5>
         <div class="bk10"></div>
         <div class="intro_table">
@@ -182,7 +187,7 @@ scrollMSG();
                             <div class="move_box">
                                 <div class="move_info">
                                  
-                                    <p>首次当天看房缴定金（一个月房租）,优客立即赠送您搬家抵金券。</p>
+                                    <p>首次当天看房缴定金（一个月房租）,邻京立即赠送您搬家抵金券。</p>
                                     <a href="/plus/list.php?tid=45" target="_blank">怎么用？</a>
                                     
                                     
@@ -721,10 +726,10 @@ function changeAuthCode() {
                     
                                 <div class="probox-heading">
                 <div class="sprite sprite_probox_ico porbox-ico ico-s">WHY</div>
-                <div class="probox-title">为什么选择优客？</div>
+                <div class="probox-title">为什么选择邻京？</div>
             </div>
             <div class="probox-body-l">
-                <img data-original="templets/htm/style/images/probox-why.jpg" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" class="img-responsive " width="805" height="649" />
+                <img data-original="{{URL::asset('../public')}}/templets/htm/style/images/probox-why.jpg" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" class="img-responsive " width="805" height="649" />
             </div>
                 </div>
 
@@ -738,7 +743,7 @@ function changeAuthCode() {
                 <div class="probox-title">怎么租房呐？</div>
             </div>
             <div class="probox-body-l">
-                <img data-original="templets/htm/style/images/probox-setup.jpg" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" class="img-responsive " width="804" height="124" style="display: block;">
+                <img data-original="{{URL::asset('../public')}}/templets/htm/style/images/probox-setup.jpg" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" class="img-responsive " width="804" height="124" style="display: block;">
             </div>
             
             
@@ -779,7 +784,7 @@ function changeAuthCode() {
                     
                             <div class="col-sm-3 thumbnail thumbnail-c">
                                 <a class="rec-p" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">
-                                    <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" src="templets/htm/style/images/loading.gif" width="158" height="105" />
+                                    <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
                                 </a>
                                 <p class="rec-info"> <a title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单</a></p>
                                 <div class="rec-price">
@@ -792,7 +797,7 @@ function changeAuthCode() {
                             </div>
 <div class="col-sm-3 thumbnail thumbnail-c">
                                 <a class="rec-p" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">
-                                    <img alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" src="templets/htm/style/images/loading.gif" width="158" height="105" />
+                                    <img alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
                                 </a>
                                 <p class="rec-info"> <a title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品</a></p>
                                 <div class="rec-price">
@@ -805,7 +810,7 @@ function changeAuthCode() {
                             </div>
 <div class="col-sm-3 thumbnail thumbnail-c">
                                 <a class="rec-p" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">
-                                    <img alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" src="templets/htm/style/images/loading.gif" width="158" height="105" />
+                                    <img alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
                                 </a>
                                 <p class="rec-info"> <a title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</a></p>
                                 <div class="rec-price">
@@ -818,7 +823,7 @@ function changeAuthCode() {
                             </div>
 <div class="col-sm-3 thumbnail thumbnail-c">
                                 <a class="rec-p" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">
-                                    <img alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" src="templets/htm/style/images/loading.gif" width="158" height="105" />
+                                    <img alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
                                 </a>
                                 <p class="rec-info"> <a title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路</a></p>
                                 <div class="rec-price">
@@ -950,9 +955,9 @@ function changeAuthCode() {
 
 
     
-    <script src="templets/htm/style/js/jquery.lazyload.min.js"></script>
-    <script src="templets/htm/style/js/datouwang.js"></script>
-    <script src="templets/htm/style/js/home.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery.lazyload.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/datouwang.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/home.min.js"></script>
 
 
 
@@ -1027,9 +1032,9 @@ function changeAuthCode() {
 
     </script>
   
-          <script src="templets/htm/style/js/image-margnific.min.js"></script>
-    <script src="templets/htm/style/js/jquery.lazyload.min.js"></script>
-    <script src="templets/htm/style/js/_product.js"></script>
+          <script src="{{URL::asset('../public')}}/templets/htm/style/js/image-margnific.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery.lazyload.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/_product.js"></script>
 
 </body>
 
