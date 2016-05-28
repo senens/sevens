@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- <title><?php  $cfg_webname; ?>- 会员登录</title> -->
-<link href="{{URL::asset('../public')}}/templets/style/login.css" rel="stylesheet" type="text/css" />
-<script src="{{URL::asset('../public')}}/templets/js/j.js" language="javascript" type="text/javascript"></script>
+<link href="http://www.linjing.com/public/templets/style/login.css" rel="stylesheet" type="text/css" />
+<script src="http://www.linjing.com/public/templets/js/j.js" language="javascript" type="text/javascript"></script>
 <script type="text/javascript">
 function changeAuthCode() {
 	var num = 	new Date().getTime();
@@ -87,19 +87,19 @@ document.write("午夜好，");
                   <input id="txtPassword" class="text login_from2" type="password"   name="pwd"/>
               </li>
          @endif
-        <li> <span>验证码：</span>
+        <!-- <li> <span>验证码：</span>
           <input id="vdcode" class="text login_from3" type="text" style="width: 50px; text-transform: uppercase;" name="vdcode"/>
           <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
            看不清？ <a href="#" onclick="changeAuthCode();">点击更换</a> </li>
         <li> <span>有效期：</span>
-
+        
             <input type="radio" name="keeptime" value="month"/>一个月
             <input type="radio" name="keeptime" checked="checked" value="week"/>一周
             <input type="radio" name="keeptime" value="day"/>一天
             <input type="radio" name="keeptime" value="0"/>即使
-
-
-        <li>
+        
+        
+        <li> -->
           <button id="btnSignCheck" class="button2" type="submit">登&nbsp;录</button>
           <a href="resetpassword.php">忘记密码？</a> </li>
       </ul>
@@ -118,7 +118,7 @@ document.write("午夜好，");
 	}
 </script>
 <div class="footer bor">
-  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 织梦科技 版权所有</div>
+  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 用友科技 版权所有</div>
   <div class="fRight mR10" id="time">  </div>
 </div>
 </body>

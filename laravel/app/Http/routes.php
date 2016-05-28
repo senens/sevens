@@ -43,6 +43,12 @@ Route::get('index/details','IndexController@details');
 
 //搜索页面
 Route::get('search', 'SearchController@index');
+//多条件搜索
+Route::get('search/all', 'SearchController@search');
+
+
+
+
 //判断登陆	
 Route::any('login/islogin','LoginController@islogin');
 //登录页
@@ -59,14 +65,17 @@ Route::any('login/up_house','LoginController@uphouse');
 Route::any('user/upload_p','LoginController@uploadp');
 //房东信息
 Route::any('user/tenantmessage','LoginController@tenantmessage');
-//售出房源
+//租出房源
 Route::any('user/sellh','LoginController@sellh');
-//在售房源
+//在租房源
 Route::any('user/sellingh','LoginController@sellingh');
 //求组信息
 Route::any('tenant/please_zu','LoginController@pleasezu');
 Route::any('tenant/wangted_zu','LoginController@wangted_zu');
-
+//租客信息
+Route::any('tenant/tenantmessage','LoginController@zu_message');
+//房东信息
+Route::any('user/tenantmessage','LoginController@tenantmessage');
 
 //注册
 Route::get('register','LoginController@register');

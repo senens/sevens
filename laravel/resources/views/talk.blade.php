@@ -137,7 +137,7 @@ scrollMSG();
 		<div class="addr addr_chengdu" style="box-sizing: border-box; margin-bottom: 30px;">
 			<div class="title" style="box-sizing: border-box;">
 				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 优客逸家</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">成都总部</small></h4>
+					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">成都总部</small></h4>
 			</div>
 			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
 				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
@@ -147,7 +147,7 @@ scrollMSG();
 				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
 					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">成都分部</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">028-68730946</span></div>
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@优客逸家</a></span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋</a></span></div>
 				<div class="info-box  col-sm-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px; margin-bottom: 20px;">
 					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">四川省成都市高新区益州大道北段锦晖西一街99号布鲁明顿广场1栋2单元10楼</span></div>
 			</div>
@@ -161,7 +161,7 @@ scrollMSG();
 		<div class="addr  addr_wuhan" style="box-sizing: border-box; margin-bottom: 30px;">
 			<div class="title" style="box-sizing: border-box;">
 				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 优客逸家</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">武汉</small></h4>
+					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">武汉</small></h4>
 			</div>
 			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
@@ -173,7 +173,7 @@ scrollMSG();
 				<div class="clearfix" style="box-sizing: border-box;">
 					&nbsp;</div>
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/wuhanyoukeyijia" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@优客逸家武汉</a></span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/wuhanyoukeyijia" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋武汉</a></span></div>
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
 					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">投诉电话</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
@@ -191,13 +191,13 @@ scrollMSG();
 		<div class="addr addr_chengdu" style="box-sizing: border-box; margin-bottom: 30px;">
 			<div class="title" style="box-sizing: border-box;">
 				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 优客逸家</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">北京</small></h4>
+					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">北京</small></h4>
 			</div>
 			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
 				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
 					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">客服热线</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">010-84610808</span></div>
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@优客逸家</a></span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋</a></span></div>
 				<div class="info-box  col-sm-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px; margin-bottom: 20px;">
 					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">北京东城区夕照寺大街东玖大厦B座401C</span></div>
 			</div>

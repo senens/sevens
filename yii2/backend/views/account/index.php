@@ -76,7 +76,7 @@ use yii\widgets\LinkPager;
 								<?php foreach ($data as $key => $v) {?>
 									
 								
-									<tr>
+									<tr id="s<?=$v['u_id']?>">
 										<td class="center">
 											<label>
 												<input type="checkbox" class="ace" />
@@ -92,16 +92,16 @@ use yii\widgets\LinkPager;
 										</td>
 
 										<td>
-											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons" >
 												<a class="blue" href="index.php?r=account/add">
 													<i class="icon-zoom-in bigger-130"></i>
 												</a>
 
-												<a class="green" href="index.php?r=account/edit">
+												<a class="green" href="index.php?r=account/edits&id=<?=$v['u_id']?>">
 													<i class="icon-pencil bigger-130"></i>
 												</a>
 
-												<a class="red" href="index.php?r=account/del">
+												<a class="red" href="javascript:del(<?=$v['u_id']?>)" >
 													<i class="icon-trash bigger-130"></i>
 												</a>
 											</div>
@@ -278,7 +278,6 @@ use yii\widgets\LinkPager;
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <![endif]-->
 
 		<!--[if !IE]> -->
@@ -348,5 +347,25 @@ use yii\widgets\LinkPager;
 					return 'left';
 				}
 			})
+			//删除
+			function del(id){
+				var data = {'id':id};
+				var url = "index.php?r=account/dels";
+				$.get(url,data,function(msg){
+					if(msg == 1){
+						$('#s'+id).remove();
+					}else{
+						alert("删除失败");
+					}
+				})
+			}
+			//修改
+			// function edit(id){
+			// 	var data = {'id':id};
+			// 	var url = "index.php?r=account/edits";
+			// 	$.get(url,data,function(msg){
+			// 		alert(msg)
+			// 	})
+			// }
 		</script>
 	

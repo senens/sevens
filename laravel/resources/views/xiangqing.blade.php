@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     
-    <title>蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓</title>
+    <title>{{$arr->h_title}}</title>
     <meta name="keywords" content="" />
     <meta name="description" content="这套房子都有些啥？ 室友 面积 飘窗 阳台 独卫 2人 空调 价格 最早入住日 更多 A房间 9.00 ㎡ 已租出 B房间 12.00 ㎡ 已租出 C房间 10.00 ㎡ 750 立即入住 D房间 15.00 ㎡ 已租出 每个房间都有这" />
     
     <script language="javascript">
-msg = "蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓";
+        msg = "蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓";
 
-msg = "" + msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
+        msg = "" + msg;pos = 0;
+        function scrollMSG() {
+        document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+        pos++;
+        if (pos >  msg.length) pos = 0
+        window.setTimeout("scrollMSG()",200);
+        }
+        scrollMSG();
     </script> 
     
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery-1.9.1.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
 
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>
 
@@ -82,7 +82,6 @@ scrollMSG();
 <body data-spy="scroll">
 
     <input id="controller" type="hidden" value="Rent" />
-    
     <input id="action" type="hidden" value="Index" />
     
     <!-- 引入公共头 -->
@@ -90,24 +89,16 @@ scrollMSG();
 
     <div class="clearfix"></div>
 
-    
-
 <div class="container">
     <div class="bk20"></div>
     <div class="alert alert-warning alert-dismissible text-center" role="alert" style="color: #bb6d05; background: #fff6d1; border-color: #fff6d1; ">
-        <strong>邻京有屋在线支付全面上线</strong> ，关注官方微信（微信号：UOKOHome）选择自助服务或注册成为邻京会员，即可使用线上支付！
+        <strong>邻京有屋在线支付全面上线</strong> ，关注官方微信（微信号：LinJing）选择自助服务或注册成为邻京会员，即可使用线上支付！
     </div>
-
-    <ol class="breadcrumb">
-    
+    <ol class="breadcrumb">   
         <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-        
-            <li><a href="/plus/list.php?tid=1">我要租房</a></li>
-
+        <li><a href="/plus/list.php?tid=1">我要租房</a></li>
         <li class="active">
-         @foreach($arr as $v)
-        <a href="#">{{$v->h_title}}</a>
-         @endforeach 
+        <a href="{{URL('index/details')}}?id={{$arr->h_id}}">{{$arr->h_title}}</a>
             
         </li>
         
@@ -117,16 +108,12 @@ scrollMSG();
         <div class="r-slider">
             <div class="slide-image-big">
                 <ul class="list-unstyled">
-                
-                
-                @foreach($arr as $v)
-                            <li class="diagram-img-big">
-                                <a title="{{$v->h_title}}" href="{{URL::asset('../public')}}/{{$v->img}}">
-                                    <img class="mfp-zoom" alt="" title="" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" data-src="{{URL::asset('../public')}}/{{$v->img}}" />
-                                </a>
-                            </li>
-                @endforeach
-                            
+                    <li class="diagram-img-big">
+                        <a title="{{$arr->h_title}}" href="{{URL('index/details')}}?id={{$arr->h_id}}">
+                        <img class="mfp-zoom" alt="" title="" src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" data-src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" />
+                        </a>
+                    </li>
+                                       
                 </ul>
 
             </div>
@@ -134,12 +121,8 @@ scrollMSG();
                 <div class="image-prev img-navigation">上一张</div>
                 <div class="image-list">
                     <ul class="image-list-content list-unstyled">
-                            @foreach($arr as $v)
-                                <li><img class="current" width="66" height="44" title="" alt="" src="{{URL::asset('../public')}}//{{$v->img}}" /></li>
-                            @endforeach
-                                
-
-
+                       
+                        <li><img class="current" width="66" height="44" title="" alt="" src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" /></li>
                     </ul>
                 </div>
                 <div class="image-next img-navigation">下一张</div>
@@ -166,19 +149,19 @@ scrollMSG();
     </div>
 
     <div class="product_intro pull-left">
-    @foreach($arr as $v)
-        <h1 class="intro_title">{{$v->h_title}}</h1>
-    @endforeach    
+  
+        <h1 class="intro_title">{{$arr->h_title}}</h1>
+  
         <h5 class="intro_title_sale text-orange"></h5>
         <div class="bk10"></div>
         <div class="intro_table">
-            <div class="table_lh bar">
+            <!-- <div class="table_lh bar">
                 <div class="pro_name"><span class="pa">编</span>号：</div>
                 <div class="pro_content">
                 
                     <span class="pro_number">
                     
-                    NO.CDZ59846499
+                    
                     
                     <span>
                     
@@ -194,30 +177,23 @@ scrollMSG();
                                     <div class="sprite sprite_move_info"></div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        
-                        
+                        </div>                        
                 </div>
-            </div>
+            </div> -->
             
             <div class="table_lh bar">
                 <div class="pro_name text-orange"><span class="pa">租</span>金：</div>
                 <div class="pro_contet">
-                    <div class="pro_price">￥<span id="rental">650-850</span> 元/月</div>
-                    
-
-                        <a class="yayi_info"  data-toggle="modal">
-                            <span class="sprite sprite_pro_info_1">房租月付</span>
-                        </a>
-
-
+                    <div class="pro_price">￥<span id="rental">{{$arr->h_price}}</span> 元/月</div>
+                    <a class="yayi_info"  data-toggle="modal">
+                        <span class="sprite sprite_pro_info_1">房租月付</span>
+                    </a>
                 </div>
             </div>
             <div class="table_lh bar">
-                <div class="pro_name"><span class="pa">地</span>址：</div>
+                <div class="pro_name"><span class="pa">小</span>区：</div>
                 <div class="pro_content">
-                    <span class="pro_number">青羊区 - 光华 - 蓝光coco蜜城</span>
+                    <span class="pro_number">{{$arr->h_plot_name}}</span>
                 </div>
             </div>
             <div class="table_lh bar">
@@ -226,15 +202,15 @@ scrollMSG();
                     合租 13/20楼
                 </div>
             </div>
-            <div class="table_lh bar">
+            <!-- <div class="table_lh bar">
                 <div class="pro_name"><span class="pa">房</span>间：</div>
                 <div class="pro_content pro_select pro_room_num" style="width:580px;float:left; line-height:26px;">
-
-<button class="btn_room btn btn-default disabled" d="A" price="650.00" s="0" sales="0" type="button" y=" 0">A房间 已租出</button><button class="btn_room btn btn-default disabled" d="B" price="750.00" s="0" sales="0" type="button" y=" 0">B房间 已租出</button><button bprice="0" class="btn_room btn btn-default current" d="C" price="750" r="CDZ01423C" s="0" sales="0" t="0" type="button" y=" 0">C房间 带飘窗 750元</button><button class="btn_room btn btn-default disabled" d="D" price="850.00" s="0" sales="0" type="button" y=" 0">D房间 已租出</button>
-
+            
+                <button class="btn_room btn btn-default disabled" d="A" price="650.00" s="0" sales="0" type="button" y=" 0">A房间 已租出</button><button class="btn_room btn btn-default disabled" d="B" price="750.00" s="0" sales="0" type="button" y=" 0">B房间 已租出</button><button bprice="0" class="btn_room btn btn-default current" d="C" price="750" r="CDZ01423C" s="0" sales="0" t="0" type="button" y=" 0">C房间 带飘窗 750元</button><button class="btn_room btn btn-default disabled" d="D" price="850.00" s="0" sales="0" type="button" y=" 0">D房间 已租出</button>
+            
                 </div>
                 <div class="clearfix"></div>
-            </div>
+            </div> -->
             <div class="table_lh ">
                 <div class="pro_name">电话咨询：</div>
                 <div class="pro_content pro_tel">
@@ -248,7 +224,7 @@ scrollMSG();
                 
                         <button type="button" class="btn btn-orange btn-pro-order btn-pro-valid click_order_kanfang" id="click_order_kanfang" data-toggle="modal" data-target="#Room_box">我要看房</button>
                        
-                       <a id="QQMessageOnlick" class="btn btn-yellow btn-pro-con" href="http://wpa.qq.com/msgrd?v=3&uin=52019555&site=qq&menu=yes" rel="nofollow" target="_blank">QQ咨询</a>
+                       <a id="QQMessageOnlick" class="btn btn-yellow btn-pro-con" href="http://wpa.qq.com/msgrd?v=3&uin=578258572&site=qq&menu=yes" rel="nofollow" target="_blank">QQ咨询</a>
                     
                 </div>
             </div>
@@ -397,14 +373,14 @@ scrollMSG();
                     </div>
                     
                     
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="" class="col-sm-3 control-label">验证码：</label>
                         <div class="col-sm-8">
                             <input name="validate" type="text" id="vdcode" style="text-transform:uppercase;" size="8"/> 
-<img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/>  
-<a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
+                    <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/>  
+                    <a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
 
@@ -710,10 +686,7 @@ function changeAuthCode() {
 	</li>
 </ul>
 <br />
-</div>  
-                
-                
-                
+</div>                
             </div>
             
                 </div>
@@ -722,9 +695,8 @@ function changeAuthCode() {
 
 
         <!--无数据时不显示-->
-                <div class="probox">
-                    
-                                <div class="probox-heading">
+                <div class="probox">                    
+                <div class="probox-heading">
                 <div class="sprite sprite_probox_ico porbox-ico ico-s">WHY</div>
                 <div class="probox-title">为什么选择邻京？</div>
             </div>
@@ -738,7 +710,7 @@ function changeAuthCode() {
         <div class="probox" >
         
         
-                    <div class="probox-heading">
+                <div class="probox-heading">
                 <div class="sprite sprite_probox_ico porbox-ico ico-s">HOW</div>
                 <div class="probox-title">怎么租房呐？</div>
             </div>
@@ -749,29 +721,7 @@ function changeAuthCode() {
             
             
         </div>
-
-        <div class="probox">
         
-            <div class="probox-heading">
-
-            </div>
-            <div class="probox-body-l">
-                
-            </div>
-            
-        </div>
-        
-        
-        <div class="probox">
-            <div class="probox-heading">
-
-            </div>
-            <div class="probox-body-l">
-               
-            </div>
-            
-        </div>
-
         <!--没有数据时不显示-->
             <div class="probox">
                 <div class="probox-heading">
@@ -779,67 +729,59 @@ function changeAuthCode() {
                     <div class="probox-title">猜你喜欢</div>
                 </div>
                 <div class="probox-body-d p_recommend">
-                    <div class=" rec-list row-5">
-                    
-                    
-                            <div class="col-sm-3 thumbnail thumbnail-c">
-                                <a class="rec-p" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">
-                                    <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                                </a>
-                                <p class="rec-info"> <a title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单</a></p>
-                                <div class="rec-price">
-                                    ¥ <span class="text-orange">
-                                        <strong>
-                                                550-800
-                                        </strong>
-                                    </span>
-                                </div>
+                    <div class=" rec-list row-5">                  
+                        <div class="col-sm-3 thumbnail thumbnail-c">
+                            <a class="rec-p" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">
+                            <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
+                            </a>
+                            <p class="rec-info"> <a title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单</a></p>
+                            <div class="rec-price">
+                                ¥ <span class="text-orange">
+                                    <strong>
+                                            550-800
+                                    </strong>
+                                </span>
                             </div>
-<div class="col-sm-3 thumbnail thumbnail-c">
-                                <a class="rec-p" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">
-                                    <img alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                                </a>
-                                <p class="rec-info"> <a title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品</a></p>
-                                <div class="rec-price">
-                                    ¥ <span class="text-orange">
-                                        <strong>
-                                                650-850
-                                        </strong>
-                                    </span>
-                                </div>
+                        </div>
+                        <div class="col-sm-3 thumbnail thumbnail-c">
+                            <a class="rec-p" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">
+                            <img alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
+                            </a>
+                            <p class="rec-info"> <a title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品</a></p>
+                            <div class="rec-price">
+                                ¥ <span class="text-orange">
+                                    <strong>
+                                            650-850
+                                    </strong>
+                                </span>
                             </div>
-<div class="col-sm-3 thumbnail thumbnail-c">
-                                <a class="rec-p" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">
-                                    <img alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                                </a>
-                                <p class="rec-info"> <a title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</a></p>
-                                <div class="rec-price">
-                                    ¥ <span class="text-orange">
-                                        <strong>
-                                                750-950
-                                        </strong>
-                                    </span>
-                                </div>
+                        </div>
+                        <div class="col-sm-3 thumbnail thumbnail-c">
+                            <a class="rec-p" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">
+                            <img alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
+                            </a>
+                            <p class="rec-info"> <a title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</a></p>
+                            <div class="rec-price">
+                                ¥ <span class="text-orange">
+                                    <strong>
+                                            750-950
+                                    </strong>
+                                </span>
                             </div>
-<div class="col-sm-3 thumbnail thumbnail-c">
-                                <a class="rec-p" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">
-                                    <img alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                                </a>
-                                <p class="rec-info"> <a title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路</a></p>
-                                <div class="rec-price">
-                                    ¥ <span class="text-orange">
-                                        <strong>
-                                                1950
-                                        </strong>
-                                    </span>
-                                </div>
+                        </div>
+                        <div class="col-sm-3 thumbnail thumbnail-c">
+                            <a class="rec-p" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">
+                            <img alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
+                            </a>
+                            <p class="rec-info"> <a title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路</a></p>
+                            <div class="rec-price">
+                                ¥ <span class="text-orange">
+                                    <strong>
+                                            1950
+                                    </strong>
+                                </span>
                             </div>
-
-                            
-                            
-                            
-                            
-                            
+                        </div>                                                 
                     </div>
                 </div>
             </div>
@@ -898,7 +840,7 @@ function changeAuthCode() {
                         </span>
                     </div>
                 </div>
-<div class="nearby_box">
+                <div class="nearby_box">
                     <a class="rec-p" href="/rent/area/cdqyq/2015/0802/9.html" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出">
                             <img src="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出" />
                     </a>
@@ -912,7 +854,7 @@ function changeAuthCode() {
                         </span>
                     </div>
                 </div>
-<div class="nearby_box">
+                <div class="nearby_box">
                     <a class="rec-p" href="/rent/area/cdqyq/2015/0802/8.html" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心">
                             <img src="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" />
                     </a>
@@ -927,15 +869,10 @@ function changeAuthCode() {
                     </div>
                 </div>
 
-                
-                
-
         </div>
     </div>
     <div class="clearfix"></div>
 </div>
-
-
 
 <!-- 预约看房反馈 -->
 
@@ -1032,7 +969,7 @@ function changeAuthCode() {
 
     </script>
   
-          <script src="{{URL::asset('../public')}}/templets/htm/style/js/image-margnific.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/image-margnific.min.js"></script>
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery.lazyload.min.js"></script>
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/_product.js"></script>
 

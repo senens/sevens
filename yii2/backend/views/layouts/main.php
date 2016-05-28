@@ -325,7 +325,7 @@ AppAsset::register($this);
 					</li>
 
 					<li>
-						<a href="#" class="dropdown-toggle">
+						<a href="index.php?r=account/index" class="dropdown-toggle">
 							<i class="icon-desktop"></i>
 							<span class="menu-text"> 账号管理 </span>
 							<b class="arrow icon-angle-down"></b>

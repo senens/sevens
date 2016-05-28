@@ -14,7 +14,7 @@
 
         </li>
         <li class="bar-custom">
-                <a id="event-cs-cd" class="bar-link " href="http://wpa.qq.com/msgrd?v=3&uin=380608063&site=qq&menu=yes" target="_blank" rel="nofollow"></a>
+                <a id="event-cs-cd" class="bar-link " href="http://wpa.qq.com/msgrd?v=3&uin=578258572&site=qq&menu=yes" target="_blank" rel="nofollow"></a>
 
             <div class="tooltip fade left in float-bar-tooltip">
                 <div class="tooltip-arrow"></div>
@@ -33,14 +33,14 @@
                 <div class="tooltip-inner">留言建议</div>
             </div>
         </li>
-        <li class="bar-weixin">
+        <!-- <li class="bar-weixin">
             <a href="javascript:void(0);">
                 <div class="code js-share-weixin">
                     <img width="131" height="131" src="{{URL::asset('../public')}}/templets/htm/style/images/footer-weixin-cd01.png" alt="微信找房，扫我吧！" />
                     <div class="des"><strong>微信找房</strong>，扫我吧！</div>
                 </div>
             </a>
-        </li>
+        </li> -->
         <li class="bar-backtop">
         </li>
     </ul>

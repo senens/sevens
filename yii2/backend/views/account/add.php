@@ -41,7 +41,7 @@
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
 
-				<form class="form-horizontal" role="form" action="index.php?r=house/houseinsert" method="post" enctype="multipart/form-data">
+				<form class="form-horizontal" role="form" action="index.php?r=account/inserts" method="post"  onsubmit ="return froms()">
 
 					
 
@@ -49,8 +49,8 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 管理员姓名： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_plot_name" placeholder="username"  class="col-xs-10 col-sm-5" />
-						</div>
+							<input type="text" id="user" name="username" onblur="usernames()" placeholder="username"  class="col-xs-10 col-sm-5" />
+						</div><span id="sp1"></span>
 					</div>
 
 
@@ -58,15 +58,15 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 设置密码： </label>
 
 						<div class="col-sm-9">
-							<input type="password" id="form-field-1" name="pwd" placeholder="password"  class="col-xs-10 col-sm-5" />
-						</div>
+							<input type="password" id="pwdd" onblur="passwords()" name="pwd" placeholder="password"  class="col-xs-10 col-sm-5" />
+						</div><span id="sp2"></span>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 确认密码： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="is_password" placeholder=""  class="col-xs-10 col-sm-5" />
-						</div>
+							<input type="password" id="is_pwd" onblur="passwordsT()" name="is_password" placeholder=""  class="col-xs-10 col-sm-5" />
+						</div><span id="sp3"></span>
 					</div>
 
 
@@ -74,31 +74,11 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 性别： </label>
 
 						<div class="col-sm-9">
-							<input type="radio" id="form-field-1" name="h_gender_demand" value="0" />男
-							<input type="radio" id="form-field-1" name="h_gender_demand" value="1" />女
+							<input type="radio" id="form-field-1" name="sex" value="0" />男
+							<input type="radio" id="form-field-1" name="sex" value="1" />女
 						</div>
 					</div>
-					
-
-					<div class="space-4"></div>				
-
-					
-
-				
-
-
-
-
-
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 审核状态： </label>
-
-                       
-                        <div class="col-sm-9">
-							<input type="radio" id="form-field-1" name="h_ischeck" value="0" />通过
-							<input type="radio" id="form-field-1" name="h_ischeck" value="1" />未通过
-						</div>
-                    </div>			
+					<div class="space-4"></div>					
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
 							
@@ -123,12 +103,10 @@
 
 <!--[if !IE]> -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <![endif]-->
 
 <!--[if !IE]> -->
@@ -456,5 +434,57 @@ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+
 		*/
 	
 	});
+var res;
+	function usernames(){
+		var name = $('#user').val();
+		if(name == ""){
+			$('#sp1').attr('style',"color:red").html("&nbsp;&nbsp;&nbsp;请输入管理员姓名");
+			return false;
+		}else{
+			var data = {'name':name};
+			var url = "index.php?r=account/onlys";
+			$.get(url,data,function(msg){
+				if(msg == 1){
+					$('#sp1').attr('style',"color:red").html("&nbsp;&nbsp;&nbsp;管理员已存在！！！");
+					res = false;
+				}else{
+					$('#sp1').attr('style',"color:green").html("&nbsp;&nbsp;&nbsp;管理员名称可用");
+					res = true;
+				}
+			})
+		}
+		return true;	
+		
+	}
+	/**验证密码*/
+	function passwords(){
+		var pwd = $('#pwdd').val();
+		var r_pwd = /^\d{4,}$/;
+		if(!r_pwd.test(pwd)){
+			$('#sp2').attr('style',"color:red").html("密码必须为4位以上纯数字");
+			return false;
+		}else{
+			$('#sp2').attr('style',"color:green").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√");
+			return true;
+		}
+	}
+	/**两次密码一致*/
+	function passwordsT(){
+		var pwd = $('#pwdd').val();
+		var pwds = $('#is_pwd').val();
+		if(pwd !== pwds){
+			$('#sp3').attr('style',"color:red").html("两次密码必须一致");
+			return false;
+		}else{
+			$('#sp3').attr('style',"color:green").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√");
+			return true;
+		}
+	}
+	function froms(){
+		if(usernames()&&passwords()&&passwordsT()){
+			return true;
+		}else{
+			return false;
+		}
+	}	
 </script>
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
