@@ -21,14 +21,14 @@ use yii\widgets\LinkPager;
 			<li class="active">房东账号管理</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
@@ -88,7 +88,6 @@ use yii\widgets\LinkPager;
 												<span class="lbl"></span>
 											</label>
 										</td>
-
 										
 										<td>
 											<?=$v['u_name']?>

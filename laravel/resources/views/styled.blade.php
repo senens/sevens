@@ -9,16 +9,16 @@
     <meta name="description" content="" />
     
     <script language="javascript">
-msg = "房东加盟 > 装修风格_邻京有屋 轻时尚单身公寓";
+        msg = "房东加盟 > 装修风格_邻京有屋 轻时尚单身公寓";
 
-msg = "" + msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
+        msg = "" + msg;pos = 0;
+        function scrollMSG() {
+        document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+        pos++;
+        if (pos >  msg.length) pos = 0
+        window.setTimeout("scrollMSG()",200);
+        }
+        scrollMSG();
     </script> 
     
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery-1.9.1.js"></script>

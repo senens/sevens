@@ -120,13 +120,6 @@ scrollMSG();
 <div class="sidebar sidebar-about">
     <ul class="nav sidenav">
 
-        <li class="active">
-        <li class="active">
-            <a href="{{URL('tenant/please_zu')}}">
-                求租<br />
-                <small>About_us</small>
-            </a>
-        </li>
 
         <li>
             <a href="{{URL('tenant/tenantmessage')}}">
@@ -134,6 +127,14 @@ scrollMSG();
                 <small>Choose</small>
             </a>
         </li>
+        <li>
+            <a href="{{URL('tenant/please_zu')}}">
+                求租<br />
+                <small>About_us</small>
+            </a>
+        </li>
+
+
 
         <li >
             <a href="{{URL('tenant/selling')}}">

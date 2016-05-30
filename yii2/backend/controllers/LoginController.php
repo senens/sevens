@@ -2,8 +2,20 @@
 namespace backend\controllers;
 use yii\web\Controller;
 use backend\models\Login;
+/**
+ * 邻京有屋   用户登陆注册
+ * ============================================================================
+ * * 版权所有 2005-2012 北京用友技术有限公司
+ * 网站地址: http://www.youwu.com；
+ * ----------------------------------------------------------------------------
+ * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
+ * 使用；不允许对程序代码以任何形式任何目的的再发布。
+ * ============================================================================
+ * $Author:冯梦颖
+ *
+ */
 class LoginController extends Controller{
-    public $enableCsrfValidation = false;
+    public $enableCsrfValidation = true;
 	public $layout = 'public.php';
      //验证码
     public function actions()
@@ -72,6 +84,9 @@ class LoginController extends Controller{
                  $command = $connection->createCommand("SELECT * FROM admin_user WHERE u_name='$name'");
                  $post = $command->queryOne();
                  $pp = $post["u_pawd"];
+				 $state=$post["u_num"];
+				// echo $state;die;
+				 if($state<3){
                  if ($post) {
                      if ($pp == $pawd) {
                          $session->set('username', $name);
@@ -91,12 +106,18 @@ class LoginController extends Controller{
                                 echo "<script>alert('密码错误，您的账户已锁定');location.href='index.php?r=center/index'</script>";
                            }
                      }
+                   
                  } else {
                      echo "<script>alert('用户名不存在');location.href='index.php?r=login/index'</script>";
                  }
+				}else{
+				 echo "<script>alert('您的账号已锁定');location.href='index.php?r=login/index'</script>";
+				          
+				}
              } else{
                 echo "<script>alert('验证码输入有误');location.href='index.php?r=login/index'</script>";
-             }
+             
+			}
         }
     }
 	//退出

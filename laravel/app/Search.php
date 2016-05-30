@@ -16,6 +16,8 @@ class Search extends Model
 {
     /**
      * 查询小区名对应的房源
+     * 
+     * @return  obj
      */
     public function plotHouses($data){
         $h_data = DB::table('housese')
@@ -28,6 +30,8 @@ class Search extends Model
 
     /**
      * 查询商圈对应的房源
+     * 
+     * @return  obj
      */
     public function areaHouse($data){
         $a_data = DB::table('housese')
@@ -40,6 +44,8 @@ class Search extends Model
 
     /**
      * 查询区域对应的房源
+     * 
+     * @return  obj
      */
     public function zoneHouse($data){
         $z_data = DB::table('zone')
@@ -58,6 +64,8 @@ class Search extends Model
     }
 	/**
 	 * 查询所有
+     *
+     * @return  obj
 	 */
     public function select($table){
 
@@ -68,6 +76,8 @@ class Search extends Model
 
     /**
      * 查询区域信息
+     *
+     * @return  obj
      */
     public function selectHouse($data){
         $arr =array();
@@ -96,11 +106,13 @@ class Search extends Model
 
     /**
      * 查询评论数
+     *
+     * @return  obj
      */
     public function comcount($data){
         foreach ($data as $k => $v) {
             $comcount = DB::table('comment')
-                            ->where('h_id', $v->h_id)
+                            ->where('ho_id', $v->h_id)
                             ->where('c_status', 1)
                             ->get();
             $count[$k] = count($comcount); 
@@ -110,12 +122,29 @@ class Search extends Model
     }
 
     /**
-     * 查询价格对应的房源
+     * 查询房屋类型为别墅的房源
+     *
+     * @return  obj
      */
-    public function allHouse($price, $h_type, $types){
+    public function villaHouse(){
         $data = DB::table('housese')
                     ->join('area', 'housese.area_id', '=', 'area.area_id')
-                    ->where('h_ischeck', 1);        
+                    ->where('h_ischeck', 1)
+                    ->where('h_type', 3)
+                    ->paginate(2);
+        return $data;
+    }
+
+    /**
+     * 查询价格对应的房源
+     *
+     * @return  obj
+     */
+    public function allHouse($price, $h_type, $types, $h_facility, $zone, $area){
+        $data = DB::table('housese')
+                    ->join('area', 'housese.area_id', '=', 'area.area_id')
+                    ->where('h_ischeck', 1);   
+        //价格     
         if($price == '500以下'){
             $data = $data->where('h_price', '<=', 500);   
         }elseif($price == '500-1000'){
@@ -134,6 +163,7 @@ class Search extends Model
             $data = $data->where('h_price', '>', 4000);
         }   
         
+        //居室
         if($h_type == '一居'){
             $data = $data->where('h_room_num', 1);   
         }elseif($h_type == '二居'){
@@ -144,6 +174,7 @@ class Search extends Model
             $data = $data->where('h_room_num', '>', 4);
         } 
         
+        //房屋类型
         if($types == '普通住房'){
             $data = $data->where('h_type', 0);   
         }elseif($types == '公寓'){
@@ -155,7 +186,21 @@ class Search extends Model
         }elseif($types == '农家乐'){
             $data = $data->where('h_type', 4);
         }
-        $data = $data->paginate(2);
-        return $data;
+
+        //设施
+        if($h_facility){
+            $h_facility = explode(',', $h_facility);
+            foreach ($h_facility as $v) {
+                $data = $data->where('h_facility', 'like', '%'.$v.'%');
+            }
+        }
+
+        //行政区
+        if($area){
+            $data = $data->where('housese.area_id', $area);
+        }
+
+            $data = $data->paginate(2);
+            return $data;
     }
 }

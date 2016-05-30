@@ -22,15 +22,10 @@ scrollMSG();
     </script> 
     
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery-1.9.1.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
-
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>
-
-
-
-    
     <style>
         footer {
             position: absolute;
@@ -95,10 +90,6 @@ scrollMSG();
     
      <!-- 引入公共头 -->
      @include('header')
-
-    <div class="clearfix"></div>
-
-
     <div class="container">
     <ol class="breadcrumb">
     
@@ -106,32 +97,29 @@ scrollMSG();
         <?php
         $value = Session::get('name');
         ?>
-
-            <li class="active"><a href="/plus/list.php?tid=4">用户中心</a></li>
-            
+        <li class="active">用户中心</li>
     </ol>
     <div class="row">
         <div class="col-md-3">
             <div class="sidebar sidebar-about">
     <ul class="nav sidenav">
-        <li class="active">
-        <li class="active">
-            <a href="{{URL('tenant/please_zu')}}">
-                求租<br />
-                <small>About_us</small>
-            </a>
-        </li>
 
         <li>
             <a href="{{URL('tenant/tenantmessage')}}">
-                租客信息<br />
-                <small>Choose</small>
+                个人信息<br />
+                <small>personal Information</small>
+            </a>
+        </li>
+        <li >
+            <a href="{{URL('tenant/please_zu')}}">
+                求租<br />
+                <small>For the group</small>
             </a>
         </li>
 
         <li >
-            <a href="{{URL('tenant/selling')}}">
-                租住中<br />
+            <a href="{{URL('tenant/wangtend_list')}}">
+                求组列表<br />
                 <small>Blog</small>
             </a>
         </li>
@@ -142,17 +130,40 @@ scrollMSG();
             <div class="article">
                 <div class="content" style="clear: both">
                     <div class="content-1" style="line-height:26px;"><div class="content-1">
-	<h2>租客信息</h2>
-                   @foreach($valls as $vv)
+	              <h2>个人信息</h2>
 
-                   <h4>头像</h4>
-                   <h4><img src="{{URL::asset('../public/uploads')}}/{{$vv->u_header_url}}" width="200px" height="200px"/></h4>
-                   <h4><font color="#00ced1">用户名：</font>{{$vv->u_name}} <br /> </h4>
-                   <h4><font color="#00ced1"> 昵称：</font>{{$vv->u_nickname}} <br /></h4>
-                    <h4><font color="#00ced1">性别：</font>{{$vv->u_sex}} <br /></h4>
-                   <h4><font color="#00ced1">电话：</font> {{$vv->u_phone}} <br /></h4>
-                   <h4><font color="#00ced1">email：</font> {{$vv->u_email}} <br /></h4>
-                    @endforeach
+                   @foreach($valls as $vv)
+                     <div>
+                         <table width="100%" class="table" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+
+                             <tr><h4><img src="{{URL::asset('../public/uploads')}}/{{$vv->u_header_url}}" width="111px" height="111px"/></h4></tr>
+                             <tr>
+                                 <td><h4> 昵称:</h4></td>
+                                 <td width="72%" align="left" > {{$vv->u_nickname}}</td>
+                             </tr>
+                             <tr>
+                                 <td><h4>性别：</h4></td>
+                                 <td width="72%" align="left" > {{$vv->u_sex}}</td>
+                             </tr>
+                             <tr>
+                                 <td><h4>电话：</h4></td>
+                                 <td width="72%" align="left" >{{$vv->u_phone}}</td>
+                             </tr>
+                             <tr>
+                                 <td> <h4>email：</h4></td>
+                                 <td width="72%" align="left" > {{$vv->u_email}}</td>
+                             </tr>
+                             <tr>
+                                 <td> <h4>地址：</h4></td>
+                                 <td width="72%" align="left" > {{$vv->u_address}}</td>
+                             </tr>
+                             <tr>
+                                 <td><a href="{{URL('tenant/town_massage')}}?id={{$vv->u_id}}"><input type="button" value="修改个人资料"/></a></td>
+
+                             </tr>
+                         </table></div>
+                            @endforeach
+
                             <br />
 
                         </div>

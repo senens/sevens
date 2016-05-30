@@ -3,7 +3,7 @@ namespace backend\controllers;
 
 use yii\web\Controller;
 
-class HouseseeController extends Controller{
+class HouseseeController extends CommonController{
 
 	public $layout = 'main.php';
 	/**

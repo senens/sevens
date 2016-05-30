@@ -1,0 +1,1126 @@
+2016-05-24 10:23:44 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: c_people' in C:\server\WWW\linjing\yii2\backend\views\comment\comment.php:82
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\backend\views\comment\comment.php(82): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\server\\WWW\\l...', 82, Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(325): require('C:\\server\\WWW\\l...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\server\\WWW\\l...', Array)
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\server\\WWW\\l...', Array, Object(backend\controllers\CommentController))
+#4 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('comment', Array, Object(backend\controllers\CommentController))
+#5 C:\server\WWW\linjing\yii2\backend\controllers\CommentController.php(17): yii\base\Controller->render('comment', Array)
+#6 [internal function]: backend\controllers\CommentController->actionIndex()
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('comment/index', Array)
+#11 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-05-24 10:23:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'comment/index'
+]
+
+$_COOKIE = [
+    'CNZZDATA1254043655' => '1619125326-1463983209-http%3A%2F%2Flocalhost%2F|1464051798'
+    '_ga' => 'GA1.1.595754891.1463985888'
+    'Hm_lvt_43f73d73e0de165dc19e11405bb50510' => '1463957979,1463986014,1464007582,1464049665'
+    'Hm_lvt_9efdb82a30972ce34071a031946aa933' => '1463957979,1463986014,1464007582,1464054595'
+    'Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9' => '1463957979,1463986014,1464007582,1464049662'
+    '_jzqco' => '|||||1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71'
+    'accessId' => '797098a0-b29d-11e5-b3b1-49764155fe50'
+    'Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1463917932,1463988063,1464007595,1464049674'
+    'XSRF-TOKEN' => 'eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0='
+    'laravel_session' => 'eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ=='
+    'Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9' => '1464055747'
+    'Hm_lpvt_43f73d73e0de165dc19e11405bb50510' => '1464055745'
+    'Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1464053684'
+    'tuJiaAnalyticsSessionId' => '69b80476-f9cd-fdd0-fc91-a4e795b34f57'
+    'Hm_lpvt_9efdb82a30972ce34071a031946aa933' => '1464055745'
+    'PHPSESSID' => 'vactg4nrubeuomvc228trq96c2'
+    'CNZZDATA155540' => 'cnzz_eid=1609227653-1464054033-http%3A%2F%2Flocalhost%2F&ntime=1464054033'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1760'
+    'SCRIPT_NAME' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_URI' => '/linjing/yii2/backend/web/index.php?r=comment/index'
+    'QUERY_STRING' => 'r=comment/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55712'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA1254043655=1619125326-1463983209-http%253A%252F%252Flocalhost%252F%7C1464051798; _ga=GA1.1.595754891.1463985888; Hm_lvt_43f73d73e0de165dc19e11405bb50510=1463957979,1463986014,1464007582,1464049665; Hm_lvt_9efdb82a30972ce34071a031946aa933=1463957979,1463986014,1464007582,1464054595; Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9=1463957979,1463986014,1464007582,1464049662; _jzqco=%7C%7C%7C%7C%7C1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71; accessId=797098a0-b29d-11e5-b3b1-49764155fe50; Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5=1463917932,1463988063,1464007595,1464049674; XSRF-TOKEN=eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0%3D; laravel_session=eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ%3D%3D; Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9=1464055747; Hm_lpvt_43f73d73e0de165dc19e11405bb50510=1464055745; Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5=1464053684; tuJiaAnalyticsSessionId=69b80476-f9cd-fdd0-fc91-a4e795b34f57; Hm_lpvt_9efdb82a30972ce34071a031946aa933=1464055745; PHPSESSID=vactg4nrubeuomvc228trq96c2; CNZZDATA155540=cnzz_eid%3D1609227653-1464054033-http%253A%252F%252Flocalhost%252F%26ntime%3D1464054033'
+    'HTTP_REFERER' => 'http://localhost/linjing/yii2/backend/web/index.php?r=house/index'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1464056624.2198
+    'REQUEST_TIME' => 1464056624
+]
+2016-05-24 10:23:44 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-05-24 10:23:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'comment/index'
+]
+
+$_COOKIE = [
+    'CNZZDATA1254043655' => '1619125326-1463983209-http%3A%2F%2Flocalhost%2F|1464051798'
+    '_ga' => 'GA1.1.595754891.1463985888'
+    'Hm_lvt_43f73d73e0de165dc19e11405bb50510' => '1463957979,1463986014,1464007582,1464049665'
+    'Hm_lvt_9efdb82a30972ce34071a031946aa933' => '1463957979,1463986014,1464007582,1464054595'
+    'Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9' => '1463957979,1463986014,1464007582,1464049662'
+    '_jzqco' => '|||||1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71'
+    'accessId' => '797098a0-b29d-11e5-b3b1-49764155fe50'
+    'Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1463917932,1463988063,1464007595,1464049674'
+    'XSRF-TOKEN' => 'eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0='
+    'laravel_session' => 'eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ=='
+    'Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9' => '1464055747'
+    'Hm_lpvt_43f73d73e0de165dc19e11405bb50510' => '1464055745'
+    'Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1464053684'
+    'tuJiaAnalyticsSessionId' => '69b80476-f9cd-fdd0-fc91-a4e795b34f57'
+    'Hm_lpvt_9efdb82a30972ce34071a031946aa933' => '1464055745'
+    'PHPSESSID' => 'vactg4nrubeuomvc228trq96c2'
+    'CNZZDATA155540' => 'cnzz_eid=1609227653-1464054033-http%3A%2F%2Flocalhost%2F&ntime=1464054033'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1760'
+    'SCRIPT_NAME' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_URI' => '/linjing/yii2/backend/web/index.php?r=comment/index'
+    'QUERY_STRING' => 'r=comment/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55712'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA1254043655=1619125326-1463983209-http%253A%252F%252Flocalhost%252F%7C1464051798; _ga=GA1.1.595754891.1463985888; Hm_lvt_43f73d73e0de165dc19e11405bb50510=1463957979,1463986014,1464007582,1464049665; Hm_lvt_9efdb82a30972ce34071a031946aa933=1463957979,1463986014,1464007582,1464054595; Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9=1463957979,1463986014,1464007582,1464049662; _jzqco=%7C%7C%7C%7C%7C1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71; accessId=797098a0-b29d-11e5-b3b1-49764155fe50; Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5=1463917932,1463988063,1464007595,1464049674; XSRF-TOKEN=eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0%3D; laravel_session=eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ%3D%3D; Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9=1464055747; Hm_lpvt_43f73d73e0de165dc19e11405bb50510=1464055745; Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5=1464053684; tuJiaAnalyticsSessionId=69b80476-f9cd-fdd0-fc91-a4e795b34f57; Hm_lpvt_9efdb82a30972ce34071a031946aa933=1464055745; PHPSESSID=vactg4nrubeuomvc228trq96c2; CNZZDATA155540=cnzz_eid%3D1609227653-1464054033-http%253A%252F%252Flocalhost%252F%26ntime%3D1464054033'
+    'HTTP_REFERER' => 'http://localhost/linjing/yii2/backend/web/index.php?r=house/index'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1464056624.2198
+    'REQUEST_TIME' => 1464056624
+]
+2016-05-24 10:23:59 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: c_people' in C:\server\WWW\linjing\yii2\backend\views\comment\comment.php:82
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\backend\views\comment\comment.php(82): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\server\\WWW\\l...', 82, Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(325): require('C:\\server\\WWW\\l...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('C:\\server\\WWW\\l...', Array)
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('C:\\server\\WWW\\l...', Array, Object(backend\controllers\CommentController))
+#4 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('comment', Array, Object(backend\controllers\CommentController))
+#5 C:\server\WWW\linjing\yii2\backend\controllers\CommentController.php(17): yii\base\Controller->render('comment', Array)
+#6 [internal function]: backend\controllers\CommentController->actionIndex()
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('index', Array)
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('comment/index', Array)
+#11 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-05-24 10:23:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'comment/index'
+]
+
+$_COOKIE = [
+    'CNZZDATA1254043655' => '1619125326-1463983209-http%3A%2F%2Flocalhost%2F|1464051798'
+    '_ga' => 'GA1.1.595754891.1463985888'
+    'Hm_lvt_43f73d73e0de165dc19e11405bb50510' => '1463957979,1463986014,1464007582,1464049665'
+    'Hm_lvt_9efdb82a30972ce34071a031946aa933' => '1463957979,1463986014,1464007582,1464054595'
+    'Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9' => '1463957979,1463986014,1464007582,1464049662'
+    '_jzqco' => '|||||1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71'
+    'accessId' => '797098a0-b29d-11e5-b3b1-49764155fe50'
+    'Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1463917932,1463988063,1464007595,1464049674'
+    'XSRF-TOKEN' => 'eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0='
+    'laravel_session' => 'eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ=='
+    'Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9' => '1464055747'
+    'Hm_lpvt_43f73d73e0de165dc19e11405bb50510' => '1464055745'
+    'Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1464053684'
+    'tuJiaAnalyticsSessionId' => '69b80476-f9cd-fdd0-fc91-a4e795b34f57'
+    'Hm_lpvt_9efdb82a30972ce34071a031946aa933' => '1464055745'
+    'PHPSESSID' => 'vactg4nrubeuomvc228trq96c2'
+    'CNZZDATA155540' => 'cnzz_eid=1609227653-1464054033-http%3A%2F%2Flocalhost%2F&ntime=1464054033'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1760'
+    'SCRIPT_NAME' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_URI' => '/linjing/yii2/backend/web/index.php?r=comment/index'
+    'QUERY_STRING' => 'r=comment/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55723'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA1254043655=1619125326-1463983209-http%253A%252F%252Flocalhost%252F%7C1464051798; _ga=GA1.1.595754891.1463985888; Hm_lvt_43f73d73e0de165dc19e11405bb50510=1463957979,1463986014,1464007582,1464049665; Hm_lvt_9efdb82a30972ce34071a031946aa933=1463957979,1463986014,1464007582,1464054595; Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9=1463957979,1463986014,1464007582,1464049662; _jzqco=%7C%7C%7C%7C%7C1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71; accessId=797098a0-b29d-11e5-b3b1-49764155fe50; Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5=1463917932,1463988063,1464007595,1464049674; XSRF-TOKEN=eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0%3D; laravel_session=eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ%3D%3D; Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9=1464055747; Hm_lpvt_43f73d73e0de165dc19e11405bb50510=1464055745; Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5=1464053684; tuJiaAnalyticsSessionId=69b80476-f9cd-fdd0-fc91-a4e795b34f57; Hm_lpvt_9efdb82a30972ce34071a031946aa933=1464055745; PHPSESSID=vactg4nrubeuomvc228trq96c2; CNZZDATA155540=cnzz_eid%3D1609227653-1464054033-http%253A%252F%252Flocalhost%252F%26ntime%3D1464054033'
+    'HTTP_REFERER' => 'http://localhost/linjing/yii2/backend/web/index.php?r=house/index'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1464056638.8746
+    'REQUEST_TIME' => 1464056638
+]
+2016-05-24 10:23:59 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-05-24 10:23:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'comment/index'
+]
+
+$_COOKIE = [
+    'CNZZDATA1254043655' => '1619125326-1463983209-http%3A%2F%2Flocalhost%2F|1464051798'
+    '_ga' => 'GA1.1.595754891.1463985888'
+    'Hm_lvt_43f73d73e0de165dc19e11405bb50510' => '1463957979,1463986014,1464007582,1464049665'
+    'Hm_lvt_9efdb82a30972ce34071a031946aa933' => '1463957979,1463986014,1464007582,1464054595'
+    'Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9' => '1463957979,1463986014,1464007582,1464049662'
+    '_jzqco' => '|||||1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71'
+    'accessId' => '797098a0-b29d-11e5-b3b1-49764155fe50'
+    'Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1463917932,1463988063,1464007595,1464049674'
+    'XSRF-TOKEN' => 'eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0='
+    'laravel_session' => 'eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ=='
+    'Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9' => '1464055747'
+    'Hm_lpvt_43f73d73e0de165dc19e11405bb50510' => '1464055745'
+    'Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1464053684'
+    'tuJiaAnalyticsSessionId' => '69b80476-f9cd-fdd0-fc91-a4e795b34f57'
+    'Hm_lpvt_9efdb82a30972ce34071a031946aa933' => '1464055745'
+    'PHPSESSID' => 'vactg4nrubeuomvc228trq96c2'
+    'CNZZDATA155540' => 'cnzz_eid=1609227653-1464054033-http%3A%2F%2Flocalhost%2F&ntime=1464054033'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1760'
+    'SCRIPT_NAME' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_URI' => '/linjing/yii2/backend/web/index.php?r=comment/index'
+    'QUERY_STRING' => 'r=comment/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55723'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA1254043655=1619125326-1463983209-http%253A%252F%252Flocalhost%252F%7C1464051798; _ga=GA1.1.595754891.1463985888; Hm_lvt_43f73d73e0de165dc19e11405bb50510=1463957979,1463986014,1464007582,1464049665; Hm_lvt_9efdb82a30972ce34071a031946aa933=1463957979,1463986014,1464007582,1464054595; Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9=1463957979,1463986014,1464007582,1464049662; _jzqco=%7C%7C%7C%7C%7C1.677396001.1463986452013.1464053640988.1464053682694.1464053640988.1464053682694.0.0.0.71.71; accessId=797098a0-b29d-11e5-b3b1-49764155fe50; Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5=1463917932,1463988063,1464007595,1464049674; XSRF-TOKEN=eyJpdiI6IkxwQUV3UUMzZUVXOWdGeDNyR25zNkE9PSIsInZhbHVlIjoiSkNSTkFWUFMzaWxMdHQ5NVdjZm5aOU1IaXdHZ3RcLys4aG5wb2gybWpqNkwreXlOVXN1WlNVNEpGUTlyR29Cd0l1Ym1tYnBXZ3Z2anZ4WU9NaUl3WFRRPT0iLCJtYWMiOiIxZjcxMTYzODdjM2VjMGJjNzMyZjQxYTU4Nzk5MTI0MTFjMzk4MDY5OTg0YzFlM2YwZWYxOGU0ZTQwY2E3NTFkIn0%3D; laravel_session=eyJpdiI6ImZYQU1ibTdZQXVvQUVuQ3ZENVpPT0E9PSIsInZhbHVlIjoiSUtUMk1RdThFUXQxOU5cL0FHcGdDQ05LMFZQYkEwa1U2STBTSkt4aytKbFwvR2xoNk5xK3FlT3poMTJWbFwvOE1HQmw4WW85SzIxZWREZzl3dnJCRXNodHc9PSIsIm1hYyI6Ijk4NjlkODdiZWViMjY1MTdmOWQzNjQ2MDhhMmZlMjM3Zjk1ZWM0Y2U3MTQ3OTM2YzMwNWY1MDM3MjdmNjUwMzMifQ%3D%3D; Hm_lpvt_446885dbdcc717aebe49f46f61c5cdf9=1464055747; Hm_lpvt_43f73d73e0de165dc19e11405bb50510=1464055745; Hm_lpvt_405c96e7f6bed44fb846abfe1f65c6f5=1464053684; tuJiaAnalyticsSessionId=69b80476-f9cd-fdd0-fc91-a4e795b34f57; Hm_lpvt_9efdb82a30972ce34071a031946aa933=1464055745; PHPSESSID=vactg4nrubeuomvc228trq96c2; CNZZDATA155540=cnzz_eid%3D1609227653-1464054033-http%253A%252F%252Flocalhost%252F%26ntime%3D1464054033'
+    'HTTP_REFERER' => 'http://localhost/linjing/yii2/backend/web/index.php?r=house/index'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1464056638.8746
+    'REQUEST_TIME' => 1464056638
+]
+2016-05-25 20:19:18 [127.0.0.1][-][24aqp0vcmfu9v6mppqed15icg7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "housess/index".' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('housess/index', Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-05-25 20:19:18 [127.0.0.1][-][24aqp0vcmfu9v6mppqed15icg7][info][application] $_GET = [
+    'r' => 'housess/index'
+]
+
+$_COOKIE = [
+    'CNZZDATA1254043655' => '1619125326-1463983209-http%3A%2F%2Flocalhost%2F|1464138869'
+    '_ga' => 'GA1.1.595754891.1463985888'
+    'Hm_lvt_43f73d73e0de165dc19e11405bb50510' => '1463986014,1464007582,1464049665,1464138006'
+    'Hm_lvt_9efdb82a30972ce34071a031946aa933' => '1463986014,1464007582,1464054595,1464138006'
+    'Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9' => '1463986014,1464007582,1464049662,1464138006'
+    '_jzqco' => '|||||1.677396001.1463986452013.1464138996314.1464139040778.1464138996314.1464139040778.0.0.0.105.105'
+    'accessId' => '797098a0-b29d-11e5-b3b1-49764155fe50'
+    'Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5' => '1463988063,1464007595,1464049674,1464138018'
+    'CNZZDATA155540' => 'cnzz_eid=1609227653-1464054033-http%3A%2F%2Flocalhost%2F&ntime=1464178124'
+    'PHPSESSID' => '24aqp0vcmfu9v6mppqed15icg7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/linjing/yii2/backend/web/'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2020'
+    'SCRIPT_NAME' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_URI' => '/linjing/yii2/backend/web/index.php?r=housess/index'
+    'QUERY_STRING' => 'r=housess/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '64615'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA1254043655=1619125326-1463983209-http%253A%252F%252Flocalhost%252F%7C1464138869; _ga=GA1.1.595754891.1463985888; Hm_lvt_43f73d73e0de165dc19e11405bb50510=1463986014,1464007582,1464049665,1464138006; Hm_lvt_9efdb82a30972ce34071a031946aa933=1463986014,1464007582,1464054595,1464138006; Hm_lvt_446885dbdcc717aebe49f46f61c5cdf9=1463986014,1464007582,1464049662,1464138006; _jzqco=%7C%7C%7C%7C%7C1.677396001.1463986452013.1464138996314.1464139040778.1464138996314.1464139040778.0.0.0.105.105; accessId=797098a0-b29d-11e5-b3b1-49764155fe50; Hm_lvt_405c96e7f6bed44fb846abfe1f65c6f5=1463988063,1464007595,1464049674,1464138018; CNZZDATA155540=cnzz_eid%3D1609227653-1464054033-http%253A%252F%252Flocalhost%252F%26ntime%3D1464178124; PHPSESSID=24aqp0vcmfu9v6mppqed15icg7'
+    'HTTP_REFERER' => 'http://localhost/linjing/yii2/backend/web/index.php?r=active/index'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_HOST' => 'localhost'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/linjing/yii2/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1464178758.1293
+    'REQUEST_TIME' => 1464178758
+]
+2016-05-26 08:06:15 [127.0.0.1][-][prssoj7bv73pdu9n7vgoj5c3d7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "housess/index".' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('housess/index', Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-05-26 08:06:14 [127.0.0.1][-][prssoj7bv73pdu9n7vgoj5c3d7][info][application] $_GET = [
+    'r' => 'housess/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'prssoj7bv73pdu9n7vgoj5c3d7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=housess/index'
+    'QUERY_STRING' => 'r=housess/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50797'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'PHPSESSID=prssoj7bv73pdu9n7vgoj5c3d7'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.youwu.com/index.php?r=account/renter'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464221174.9768
+    'REQUEST_TIME' => 1464221174
+]
+2016-05-26 08:08:46 [127.0.0.1][-][prssoj7bv73pdu9n7vgoj5c3d7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "housess/index".' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('housess/index', Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-05-26 08:08:46 [127.0.0.1][-][prssoj7bv73pdu9n7vgoj5c3d7][info][application] $_GET = [
+    'r' => 'housess/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'prssoj7bv73pdu9n7vgoj5c3d7'
+    'CNZZDATA155540' => 'cnzz_eid=1157866256-1464216493-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464216493'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1784'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=housess/index'
+    'QUERY_STRING' => 'r=housess/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '50850'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'PHPSESSID=prssoj7bv73pdu9n7vgoj5c3d7; CNZZDATA155540=cnzz_eid%3D1157866256-1464216493-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464216493'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.youwu.com/index.php?r=house/housecheck'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464221326.1625
+    'REQUEST_TIME' => 1464221326
+]
+2016-05-29 21:41:34 [127.0.0.1][-][qt51kk6mc578gmi5pqq3lnl4k0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "housess/index".' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('housess/index', Array)
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-05-29 21:41:34 [127.0.0.1][-][qt51kk6mc578gmi5pqq3lnl4k0][info][application] $_GET = [
+    'r' => 'housess/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qt51kk6mc578gmi5pqq3lnl4k0'
+    'CNZZDATA155540' => 'cnzz_eid=63653705-1464524027-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464524027'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1844'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=housess/index'
+    'QUERY_STRING' => 'r=housess/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '51112'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => 'PHPSESSID=qt51kk6mc578gmi5pqq3lnl4k0; CNZZDATA155540=cnzz_eid%3D63653705-1464524027-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464524027'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_REFERER' => 'http://www.youwu.com/index.php?r=house/index'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 BIDUBrowser/6.x Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464529294.6536
+    'REQUEST_TIME' => 1464529294
+]
+2016-05-30 08:54:49 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'
+The SQL being executed was: SELECT * FROM `active` ORDER BY `0` LIMIT 3' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '0' in 'order clause'
+)
+
+2016-05-30 08:54:48 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][info][application] $_GET = [
+    'r' => 'active/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1\";}'
+    'PHPSESSID' => 'quqd8mf0mn0t40p1lub75bfr12'
+    'CNZZDATA155540' => 'cnzz_eid=1908205774-1464562547-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464567310'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__captcha/login/captcha' => 'joff'
+    '__captcha/login/captchacount' => 1
+    'name' => [
+        'name' => ''
+        'pawd' => ''
+    ]
+    'username' => 'zhangsan'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1744'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=active/index'
+    'QUERY_STRING' => 'r=active/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '54601'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_csrf=84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1%22%3B%7D; PHPSESSID=quqd8mf0mn0t40p1lub75bfr12; CNZZDATA155540=cnzz_eid%3D1908205774-1464562547-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464567310'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.youwu.com/index.php?r=active/index'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464569688.7594
+    'REQUEST_TIME' => 1464569688
+]
+2016-05-30 09:39:33 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'
+The SQL being executed was: SELECT * FROM `active` ORDER BY `0` LIMIT 3' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '0' in 'order clause'
+)
+
+2016-05-30 09:39:33 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][info][application] $_GET = [
+    'r' => 'active/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1\";}'
+    'PHPSESSID' => 'quqd8mf0mn0t40p1lub75bfr12'
+    'CNZZDATA155540' => 'cnzz_eid=1908205774-1464562547-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464567310'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__captcha/login/captcha' => 'joff'
+    '__captcha/login/captchacount' => 1
+    'name' => [
+        'name' => ''
+        'pawd' => ''
+    ]
+    'username' => 'zhangsan'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=active/index'
+    'QUERY_STRING' => 'r=active/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55001'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_csrf=84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1%22%3B%7D; PHPSESSID=quqd8mf0mn0t40p1lub75bfr12; CNZZDATA155540=cnzz_eid%3D1908205774-1464562547-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464567310'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464572373.0639
+    'REQUEST_TIME' => 1464572373
+]
+2016-05-30 09:40:28 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'
+The SQL being executed was: SELECT * FROM `active` ORDER BY `0` LIMIT 3' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '0' in 'order clause'
+)
+
+2016-05-30 09:40:28 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][info][application] $_GET = [
+    'r' => 'active/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1\";}'
+    'PHPSESSID' => 'quqd8mf0mn0t40p1lub75bfr12'
+    'CNZZDATA155540' => 'cnzz_eid=1908205774-1464562547-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464567310'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__captcha/login/captcha' => 'joff'
+    '__captcha/login/captchacount' => 1
+    'name' => [
+        'name' => ''
+        'pawd' => ''
+    ]
+    'username' => 'zhangsan'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=active/index'
+    'QUERY_STRING' => 'r=active/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55006'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_csrf=84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1%22%3B%7D; PHPSESSID=quqd8mf0mn0t40p1lub75bfr12; CNZZDATA155540=cnzz_eid%3D1908205774-1464562547-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464567310'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464572427.99
+    'REQUEST_TIME' => 1464572427
+]
+2016-05-30 09:40:47 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'
+The SQL being executed was: SELECT * FROM `active` ORDER BY `0` LIMIT 3' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '0' in 'order clause'
+)
+
+2016-05-30 09:40:47 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][info][application] $_GET = [
+    'r' => 'active/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1\";}'
+    'PHPSESSID' => 'quqd8mf0mn0t40p1lub75bfr12'
+    'CNZZDATA155540' => 'cnzz_eid=1908205774-1464562547-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464567310'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/'
+    '__captcha/login/captcha' => 'joff'
+    '__captcha/login/captchacount' => 1
+    'name' => [
+        'name' => ''
+        'pawd' => ''
+    ]
+    'username' => 'zhangsan'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1900'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=active/index'
+    'QUERY_STRING' => 'r=active/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55009'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_csrf=84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1%22%3B%7D; PHPSESSID=quqd8mf0mn0t40p1lub75bfr12; CNZZDATA155540=cnzz_eid%3D1908205774-1464562547-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464567310'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464572447.1631
+    'REQUEST_TIME' => 1464572447
+]
+2016-05-30 09:42:00 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'order clause'
+The SQL being executed was: SELECT * FROM `active` ORDER BY `0` LIMIT 3' in C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\db\ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 C:\server\WWW\linjing\yii2\backend\controllers\ActiveController.php(32): yii\db\ActiveQuery->all()
+#5 [internal function]: backend\controllers\ActiveController->actionIndex()
+#6 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 C:\server\WWW\linjing\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\server\WWW\linjing\yii2\backend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '0' in 'order clause'
+)
+
+2016-05-30 09:42:00 [127.0.0.1][-][quqd8mf0mn0t40p1lub75bfr12][info][application] $_GET = [
+    'r' => 'active/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1\";}'
+    'CNZZDATA155540' => 'cnzz_eid=1908205774-1464562547-http%3A%2F%2Fwww.youwu.com%2F&ntime=1464567310'
+    'PHPSESSID' => 'quqd8mf0mn0t40p1lub75bfr12'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/index.php'
+    '__captcha/login/captcha' => 'joff'
+    '__captcha/login/captchacount' => 1
+    'name' => [
+        'name' => ''
+        'pawd' => ''
+    ]
+    'username' => 'zhangsan'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Files\\cpp\\bin\\Intel64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\3.0\\bin\\x64;C:\\server\\mysql\\bin;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Program Files\\VisualSVN Server\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\apple\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Program Files (x86)\\Sublime Text 3;C:\\server\\phpStudy\\php55n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\TortoiseGit\\bin'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'C:/server/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1840'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=active/index'
+    'QUERY_STRING' => 'r=active/index'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '55013'
+    'SCRIPT_FILENAME' => 'C:/server/WWW/linjing/yii2/backend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'C:/server/WWW/linjing/yii2/backend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.youwu.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_COOKIE' => '_csrf=84f54a76e5bfb5d9e836ca2b8a71b4023f97cfc27e20c2eb92ade09af1d2af50a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22bNEUzoN0k-H2CQnCARss9CBe7BcNg9L1%22%3B%7D; CNZZDATA155540=cnzz_eid%3D1908205774-1464562547-http%253A%252F%252Fwww.youwu.com%252F%26ntime%3D1464567310; PHPSESSID=quqd8mf0mn0t40p1lub75bfr12'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_REFERER' => 'http://www.youwu.com/index.php?r=site%2Flogin'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2188.2 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_HOST' => 'www.youwu.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464572520.6943
+    'REQUEST_TIME' => 1464572520
+]

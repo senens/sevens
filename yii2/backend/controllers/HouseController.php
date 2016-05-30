@@ -3,6 +3,17 @@ namespace backend\controllers;
 
 use yii\web\Controller;
 use Yii;
+use yii\data\Pagination;
+use backend\models\HouseDatabase;
+use app\models\Housese;
+use backend\models\AdminUser;
+use backend\models\AdminDatabase;
+use backend\models\UserDatabase;
+use yii\web\Request; 
+
+use yii\web\UploadedFile;
+
+
 class HouseController extends Controller{
 	public $enableCsrfValidation = false;
 
@@ -14,33 +25,63 @@ class HouseController extends Controller{
 	 */
 	public function actionIndex(){
 
-		$connection=\Yii::$app->db;
-		$sql="select * from housese";
-		//echo $sql;die;
-		$command=$connection->createCommand($sql);
-		$posts=$command->queryall();
-		return $this->render("house",array('posts'=>$posts));
+		$query = Housese::find()->where(['h_ischeck' => 1]);
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count(),
+        ]);
+
+        $countries = $query->orderBy('h_id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('house', [
+            'data' => $countries,
+            'pagination' => $pagination,
+        ]);
+	
+
+		
 	}
 
 	/**
 	 * 房源添加
 	 */
 	public function actionHouseadd(){
+		$model=new Housese();
 
-		return $this->render('houseadd');
+		return $this->render('houseadd',['model'=>$model]);
 	}
 
 	/**
 	 * 房源审核
 	 */
 	public function actionHousecheck(){
+		$query = Housese::find()->where(['h_ischeck' => 0]);
 
-		return $this->render('housecheck');
+        $pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count(),
+        ]);
+
+        $countries = $query->orderBy('h_id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('housecheck', [
+            'data' => $countries,
+            'pagination' => $pagination,
+        ]);
+	
+		
 	}
 
-
+	//添加房源
 	Public function actionHouseinsert(){
-		$request = Yii::$app->request;
+	/*	$request = Yii::$app->request;
 		//接值
 		//$h_title=$_POST['h_title'];
 		$h_rent_type= $request->post('h_rent_type'); 
@@ -61,26 +102,70 @@ class HouseController extends Controller{
 		$h_price_type= $request->post('h_price_type');
 		$h_title= $request->post('h_title'); 
 		$h_description= $request->post('h_description'); 
-		$h_photo= $request->post('h_photo'); 
 		$h_contact_name= $request->post('h_contact_name');
 		$h_contact_phonenumber= $request->post('h_contact_phonenumber'); 
 		$h_pub_date= $request->post('h_pub_date');
 		$h_ischeck= $request->post('h_ischeck');
 		$h_issell= $request->post('h_issell');
 		$h_timelimit= $request->post('h_timelimit');
+		$photo=$_FILES;
+		$h_photo=$photo["Housese"]["name"]["h_photo"];
+		$model = new Housese();
 
-		//添加
-		$sql="insert into housese (h_rent_type,h_plot_name,h_loc_detail,h_gender_demand,h_room_num,h_hall_num,h_toilet_num,h_floor_st,h_floor_all,h_area,h_orientation,h_decorate,h_type,h_facility,h_price,h_price_type,h_title,h_description,h_photo,h_contact_name,h_contact_phonenumber,h_pub_date,h_ischeck,h_issell,h_timelimit)values('$h_rent_type','$h_plot_name','$h_loc_detail','$h_gender_demand','$h_room_num','$h_hall_num','$h_toilet_num','$h_floor_st','$h_floor_all','$h_area','$h_orientation','$h_decorate','$h_type','$h_facility','$h_price','$h_price_type','$h_title','$h_description','$h_photo','$h_contact_name','$h_contact_phonenumber','$h_pub_date','$h_ischeck','$h_issell','$h_timelimit')";
+        if (Yii::$app->request->isPost) {
+            $model->h_photo = UploadedFile::getInstance($model, 'h_photo');
+            if ($model->upload()) {
+                // 文件上传成功
+                $sql="insert into housese(h_rent_type,h_plot_name,h_loc_detail,h_gender_demand,h_room_num,h_hall_num,h_toilet_num,h_floor_st,h_floor_all,h_area,h_orientation,h_decorate,h_type,h_facility,h_price,h_price_type,h_title,h_description,h_photo,h_contact_name,h_contact_phonenumber,h_pub_date,h_ischeck,h_issell,h_timelimit)values('$h_rent_type','$h_plot_name','$h_loc_detail','$h_gender_demand','$h_room_num','$h_hall_num','$h_toilet_num','$h_floor_st','$h_floor_all','$h_area','$h_orientation','$h_decorate','$h_type','$h_facility','$h_price','$h_price_type','$h_title','$h_description','$h_photo','$h_contact_name','$h_contact_phonenumber','$h_pub_date','$h_ischeck','$h_issell','$h_timelimit')";
+				$connection=Yii::$app->db;
+				$command=$connection->createCommand($sql);
+				//var_dump($command);die;
+				$command->execute();*/
+				return $this->redirect("index.php?r=house/index");
+                
+           // }
+       // }
 		
-		$connection=Yii::$app->db;
-		$command=$connection->createCommand($sql);
-		//var_dump($command);die;
-		$command->execute();
-		return $this->redirect("index.php?r=house/index");
 	}
 
-	Public function actionHouseDel(){
-		echo 123;die;
+
+	//删除房源
+	Public function actionHousedel(){
+		$request=Yii::$app->request;
+		$id=$request->get("id");
+		// $connection=\Yii::$app->db;
+		// $sql="delete from housese where h_id='$id'";
+		// $command=$connection->createCommand($sql);
+		// $posts=$command->execute();
+		// if($posts){
+		// 	echo 1;
+		// }else{
+		// 	echo 0;
+		// }
+		$HouseDatabase = new HouseDatabase();
+		$HouseDatabase = HouseDatabase::findOne($id);
+		$bool = $HouseDatabase->delete();
+		if($bool){
+			echo '1';
+		}else{
+			echo '0';
+		}
+	}
+
+	//房源审核
+	Public function actionHouseupdate(){
+		$request=Yii::$app->request;
+		$id=$request->get("id");
+		//实例化model
+		$HouseDatabase = new HouseDatabase();
+		$HouseDatabase = HouseDatabase::findOne($id);
+		$HouseDatabase ->h_ischeck = 1;
+		$bool = $HouseDatabase->save();
+		if($bool){
+			echo '1';
+		}else{
+			echo '0';
+		}
 	}
 
 	//权限

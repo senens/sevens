@@ -1,3 +1,8 @@
+<?php
+use yii\widgets\ActiveForm;
+ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']])
+?>
+
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
@@ -16,23 +21,23 @@
 			<li class="active">活动添加</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
 		<div class="page-header">
 			<h1>
-				活动管理
+				广告管理
 				<small>
 					<i class="icon-double-angle-right"></i>
-					活动添加
+					广告添加
 				</small>
 			</h1>
 		</div><!-- /.page-header -->
@@ -41,9 +46,9 @@
 			<div class="col-xs-12">
 				<!-- PAGE CONTENT BEGINS -->
 
-				<form class="form-horizontal" role="form" action="index.php?r=active/activeinsert" method="post">
+				<form class="form-horizontal" role="form" action="index.php?r=active/activeinsert" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">活动名称：</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">广告主题：</label>
 
 						<div class="col-sm-9">
 							<input type="text" id="form-field-1" name="act_name" placeholder="Username" class="col-xs-10 col-sm-5" />
@@ -53,64 +58,41 @@
 					<div class="space-4"></div>
 
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">活动详情 ：</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2" >广告图片 ：</label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-2" name="act_desc" placeholder="desc" class="col-xs-10 col-sm-5" />
-						
+							<?= $form->field($model, 'act_url')->fileInput() ?>
 						</div>
 					</div>
 
-					<div class="space-4"></div>
-
 					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" >活动类型：</label>
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">图片背景 ：</label>
 
 						<div class="col-sm-9">
-							<input type="text" class="col-xs-10 col-sm-5" name="act_type" id="form-input-readonly" placeholder="type" />
+							<input type="color" id="flat" name="act_bgcolor" >
 							
 						</div>
 					</div>
 
 					<div class="space-4"></div>
 
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-4">开始时间：</label>
+					
 
-						<div class="col-sm-9">
-							<input class="input-sm" type="text" id="form-field-4" naem="act_start" placeholder="begintimes" />
-							<div class="space-2"></div>
-
-							
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-5">结束时间：</label>
-
-						<div class="col-sm-9">
-							<div class="clearfix">
-								<input class="col-xs-1" type="text" name="act_end" id="form-field-5" placeholder="endtime" />
-							</div>
-
-							<div class="space-2"></div>
-
-						</div>
-					</div>
-
+					
+<!--
 					<div class="form-group">
 						<label class="col-sm-3 control-label no-padding-right">状态：</label>
 
 						<div class="col-sm-9">
 							<span class="input-icon">
-								<input type="text" id="form-field-icon-1" name="act_state" placeholder="status"/>
+								<input type="text" id="form-field-icon-1" name="act_status" placeholder="status"/>
 								<i class="icon-leaf blue"></i>
 							</span>
 
 							
 						</div>
 					</div>
-
+-->
 
 					<div class="clearfix form-actions">
 						<div class="col-md-offset-3 col-md-9">
@@ -136,7 +118,7 @@
 
 <!--[if !IE]> -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="assets/js/ajaxgoogle.js"></script>
 
 <!-- <![endif]-->
 
@@ -467,7 +449,19 @@ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+
 			$(this).find('.modal-chosen').chosen();
 		})
 		*/
+
 	
 	});
 </script>
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
+
+<script>
+	//选择背景颜色
+		$("#flat").spectrum({
+		    flat: true,
+		    showInput: true
+		});
+		
+
+</script>

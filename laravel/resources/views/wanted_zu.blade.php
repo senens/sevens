@@ -115,29 +115,25 @@
 
             <div class="sidebar sidebar-about">
                 <ul class="nav sidenav">
-                    <li class="active">
-                    <li class="active">
-                    <li class="active">
-                        <a href="{{URL('tenant/please_zu')}}">
-                            求租<br />
-                            <small>About_us</small>
-                        </a>
-                    </li>
-
                     <li>
                         <a href="{{URL('tenant/tenantmessage')}}">
-                            租客信息<br />
-                            <small>Choose</small>
+                            个人信息<br />
+                            <small>personal Information</small>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="{{URL('tenant/please_zu')}}">
+                            求租<br />
+                            <small>For the group</small>
                         </a>
                     </li>
 
                     <li >
-                        <a href="{{URL('tenant/selling')}}">
-                            租住中<br />
+                        <a href="{{URL('tenant/wangtend_list')}}">
+                            求组列表<br />
                             <small>Blog</small>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>

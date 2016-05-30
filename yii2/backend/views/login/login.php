@@ -83,8 +83,6 @@
                                                     'action' => "index.php?r=login/id_login",
                                                     'method' => 'post',
                                                 ]); ?>
-
-
                                             <fieldset>
                                                 <?php $session = Yii::$app->session;
                                                 // 检查session是否开启 if ($session->isActive) ...
@@ -123,7 +121,6 @@
                                                    <?php  }?>
                                                 <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-
                                                             <?=\yii\captcha\Captcha::widget([
                                                                 'name' => 'verifyCode', //这里不需要 model 字段，直接自己定义
                                                                 'captchaAction' => 'login/captcha', //验证码的 action 与 Model 是对应的

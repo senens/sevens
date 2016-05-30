@@ -6,10 +6,10 @@
     
     <title>{{$arr->h_title}}</title>
     <meta name="keywords" content="" />
-    <meta name="description" content="这套房子都有些啥？ 室友 面积 飘窗 阳台 独卫 2人 空调 价格 最早入住日 更多 A房间 9.00 ㎡ 已租出 B房间 12.00 ㎡ 已租出 C房间 10.00 ㎡ 750 立即入住 D房间 15.00 ㎡ 已租出 每个房间都有这" />
+    <meta name="description" content="" />
     
     <script language="javascript">
-        msg = "蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出门58路等公交直达市中心 免中介费_成都合租房,成都租房网,成都房屋出租信息-邻京有屋 轻时尚单身公寓";
+        msg = "邻京有屋";
 
         msg = "" + msg;pos = 0;
         function scrollMSG() {
@@ -25,9 +25,9 @@
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
-
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3GABwNY8GhSDqGz7R1lx33dW4oAQ7krF"></script>
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>
-
+    <link href="{{URL::asset('../public')}}/templets/discuss/style/talk.css" rel="stylesheet"/>
 
 
     
@@ -39,6 +39,18 @@
         .room_slide {
             width: auto;
         }
+      ul li ,ol li{
+        list-style-type: none;
+      }
+      .containers{
+         width:90%;
+      }
+      .containers ul li{
+
+            float: left;
+            width: 20px;
+      }
+
     </style>
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/Imagefocus.min.css" rel="stylesheet" />
 
@@ -90,10 +102,10 @@
     <div class="clearfix"></div>
 
 <div class="container">
-    <div class="bk20"></div>
+    <!-- <div class="bk20"></div>
     <div class="alert alert-warning alert-dismissible text-center" role="alert" style="color: #bb6d05; background: #fff6d1; border-color: #fff6d1; ">
         <strong>邻京有屋在线支付全面上线</strong> ，关注官方微信（微信号：LinJing）选择自助服务或注册成为邻京会员，即可使用线上支付！
-    </div>
+    </div> -->
     <ol class="breadcrumb">   
         <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
         <li><a href="/plus/list.php?tid=1">我要租房</a></li>
@@ -109,20 +121,20 @@
             <div class="slide-image-big">
                 <ul class="list-unstyled">
                     <li class="diagram-img-big">
-                        <a title="{{$arr->h_title}}" href="{{URL('index/details')}}?id={{$arr->h_id}}">
-                        <img class="mfp-zoom" alt="" title="" src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" data-src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" />
+                        <a title="{{$arr->h_title}}" href="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif" data-src="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif">
+                        <img class="mfp-zoom" alt="" title="" src="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif" data-src="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif" />
                         </a>
                     </li>
                                        
                 </ul>
 
             </div>
-            <div class="slide-image-small">
+          <div class="slide-image-small">
                 <div class="image-prev img-navigation">上一张</div>
                 <div class="image-list">
                     <ul class="image-list-content list-unstyled">
                        
-                        <li><img class="current" width="66" height="44" title="" alt="" src="{{URL::asset('../public')}}/images/{{$arr->h_photo}}" /></li>
+                        <li><img class="current" width="66" height="44" title="" alt="" src="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif" data-src="http://www.linjing.com/public/images/@if(strstr($arr->h_photo, '|', TRUE)){{strstr($arr->h_photo, '|', TRUE)}}@else{{$arr->h_photo}}@endif" /></li>
                     </ul>
                 </div>
                 <div class="image-next img-navigation">下一张</div>
@@ -199,7 +211,13 @@
             <div class="table_lh bar">
                 <div class="pro_name"><span class="pa">类</span>型：</div>
                 <div class="pro_content">
-                    合租 13/20楼
+                        @if($arr->h_rent_type == 0)
+                            整套出租
+                        @elseif($arr->h_rent_type == 1)
+                            单间出租
+                        @else($arr->h_rent_type== 2)
+                            床位出租
+                            @endif
                 </div>
             </div>
             <!-- <div class="table_lh bar">
@@ -214,7 +232,7 @@
             <div class="table_lh ">
                 <div class="pro_name">电话咨询：</div>
                 <div class="pro_content pro_tel">
-                    400-000-4170
+                    {{$arr->h_contact_phonenumber}}
                     
                 </div>
             </div>
@@ -248,16 +266,24 @@
 
             <div class="collapse navbar-collapse   bs-js-navbar-scrollspy  ">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#pro_nav_0" class="l">
-                            房子详情<div class="arrow-down"></div>
+                     <li class="active">
+                        <a href="#pro_nav_0" >
+                            地理位置<div class="arrow-down"></div>
                         </a>
                         
                   </li>
-                    <li>
-                        <a href="#pro_nav_1">周边配套<div class="arrow-down"></div></a>
+                  <li >
+                        <a href="#pro_nav_1" >
+                            选择邻京<div class="arrow-down"></div>
+                        </a>
                         
-                    </li>
+                  </li>
+                    <li >
+                        <a href="#pro_nav_2" >
+                            评论<div class="arrow-down"></div>
+                        </a>
+                        
+                  </li>
 <!--                    <li>
                         <a class="ImageMapNav">地理位置</a>
                     </li>
@@ -268,7 +294,7 @@
                 <ul class="nav navbar-nav navbar-right pro_right_info hidden">
                     <li>
                         看房咨询：
-                        <span class="pro_tel">400-000-4170</span>
+                        <span class="pro_tel">{{$arr->h_contact_phonenumber}}</span>
                     </li>
                 </ul>
                 <input id="hidcity" type="hidden" class="hiddencityId" value="10000" />
@@ -284,10 +310,11 @@
 <div class="modal fade room_select in" data-mark="ab" id="Room_box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" novalidate="novalidate">
    
    
-   <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
-<input type="hidden" name="action" value="post" />
-<input type="hidden" name="diyid" value="1" />
-<input type="hidden" name="do" value="2" />
+   <form action="{{URL('index')}}" enctype="multipart/form-data"   onsubmit="return froms()">
+<!-- <input type="hidden" name="action" value="post" /> -->
+<!-- <input type="hidden" name="diyid" value="1" /> -->
+<!-- <input type="hidden" name="do" value="2" /> -->
+<!-- <input type="hidden" name="_token" value="{{csrf_token()}}" /> -->
 
    
     <div class="modal-dialog">
@@ -310,13 +337,13 @@
                     <div class="form-group">
                         <label for="" class="col-sm-3 control-label">您的名字：</label>
                         <div class="col-sm-8">
-                            <input name="q1" type="text" class="form-control pro_message_name" id="q1" placeholder="" check-type="required">
+                            <input name="q1" type="text" onblur="q1s()" class="form-control pro_message_name" id="q1" placeholder="" check-type="required"><br>  <span id="sp1"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="col-sm-3 control-label">您的手机：</label>
+                        <label for=""  class="col-sm-3 control-label">您的手机：</label>
                         <div class="col-sm-8">
-                            <input name="q2" type="text" class="form-control pro_message_tel" id="q2" placeholder="" check-type="phone">
+                            <input name="q2" onblur="phones()" type="text" class="form-control pro_message_tel" id="q2" placeholder="" check-type="phone"><br><span id="sp2"></span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -373,14 +400,9 @@
                     </div>
                     
                     
-                    <!-- <div class="form-group">
-                        <label for="" class="col-sm-3 control-label">验证码：</label>
-                        <div class="col-sm-8">
-                            <input name="validate" type="text" id="vdcode" style="text-transform:uppercase;" size="8"/> 
-                    <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/>  
-                    <a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
-                        </div>
-                    </div> -->
+                    <div class="form-group">
+                        
+                    </div>
                     
                 </div>
 
@@ -401,16 +423,55 @@
     
     <script type="text/javascript" language="javascript">
 //验证码 
-function changeAuthCode() { 
-    var num =     new Date().getTime();
-    var rand = Math.round(Math.random() * 10000);
-    num = num + rand;
-    $('#ver_code').css('visibility','visible');
-    if ($("#vdimgck")[0]) {
-        $("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
+// function changeAuthCode() { 
+//     var num =     new Date().getTime();
+//     var rand = Math.round(Math.random() * 10000);
+//     num = num + rand;
+//     $('#ver_code').css('visibility','visible');
+//     if ($("#vdimgck")[0]) {
+//         $("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;
+//     }
+//     return false;    
+// }
+ function q1s(){
+        var name = $('#q1').val();
+        var r_name = /^[\u4e00-\u9fa5]{2,5}$/;
+        if(name == ""){
+            $('#sp1').attr('style' , 'color:red').html("请输入您的名字");
+            return false;
+        }
+        if(!r_name.test(name)){
+            $('#sp1').attr('style' , 'color:red').html("您的名字必须是2-5个汉字");
+            return false;
+        }else{
+             $('#sp1').attr('style' , 'color:green').html("(*＾-＾*)");
+             return true;
+        }
     }
-    return false;    
-}
+    //验证手机
+    function phones(){
+        var phone = $('#q2').val();
+        var r_phone = /^\d{11}$/;
+        if(phone == ""){
+            $('#sp2').attr('style' , 'color:red').html("请输入您的手机号");
+            return false;
+        }
+        if(!r_phone.test(phone)){
+            $('#sp2').attr('style' , 'color:red').html("您的手机号码必须位11位数字");
+            return false;
+        }else{
+            $('#sp2').attr('style' , 'color:green').html("(*＾-＾*)");
+            return true;
+        }
+    }
+    function froms(){
+        if(q1s()&phones()){
+            alert('提交成功,请耐心等待联系');
+            return true;
+        }else{
+            return false;
+        }
+    }
 </script>
 
 </div>
@@ -423,10 +484,11 @@ function changeAuthCode() {
     <div class="room-detail">
         <!-- data-target="#navbar-example2" data-offset="0"-->
         <div class="order-ico-group ">
-            <div class="sprite sprite_probox_ico porbox-ico ">详</div>
-            <div class="sprite sprite_probox_ico porbox-ico ">院</div>
+            <div class="sprite sprite_probox_ico porbox-ico ">查</div>
+            <div class="sprite sprite_probox_ico porbox-ico ">评</div>
             <div class="sprite sprite_probox_ico porbox-ico ico-s ">WHY</div>
             <div class="sprite sprite_probox_ico porbox-ico ico-s ">HOW</div>
+            <div class="sprite sprite_probox_ico porbox-ico ico-s ">图</div>
 
             <div class="sprite sprite_probox_ico porbox-ico ">荐</div>
         </div>
@@ -438,264 +500,39 @@ function changeAuthCode() {
             </div>
         </div>
 
-        <div id="pro_nav_0" class="probox">
-            <div class="probox-heading">
-                <div class="sprite sprite_probox_ico porbox-ico ">详</div>
-                <div class="probox-title">房间基本情况</div>
+
+
+
+
+             <div class="probox" id="pro_nav_0" >                    
+                <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ico-s">图</div>
+                <div class="probox-title">查看地图</div>
             </div>
-            <div class="probox-body-l" style="font-size:14px; line-height:26px; "><div class="panel-heading" style="box-sizing: border-box; border-bottom-style: none; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; color: rgb(255, 255, 255); padding: 0px 15px; font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px; background: rgb(63, 203, 192);">
-	<h3 class="panel-title" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 37px; color: inherit; margin-top: 0px; margin-bottom: 0px; font-size: 16px;">
-		<strong style="box-sizing: border-box;">这套房子都有些啥？</strong></h3>
-</div>
-<div class="table-responsive relative" style="box-sizing: border-box; border-top-style: none; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<table class="table table_config" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; width: 807px; max-width: 100%; margin-bottom: 20px; background-color: transparent;">
-		<thead style="box-sizing: border-box;">
-			<tr class="config_title" style="box-sizing: border-box; border: none; background: rgb(232, 249, 247);">
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					&nbsp;</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					室友</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					面积</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					飘窗</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					阳台</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					独卫</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					2人</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					空调</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					价格</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					最早入住日</th>
-				<th style="box-sizing: border-box; padding: 8px; line-height: 1.42857143; vertical-align: bottom; border-top-width: 0px; border-bottom-style: none; border-right-style: none; border-left-style: none;">
-					更多</th>
-			</tr>
-		</thead>
-		<tbody class="config_content" style="box-sizing: border-box; border: none;">
-			<tr style="box-sizing: border-box; border-style: none none dashed; border-bottom-width: 1px; border-bottom-color: rgb(221, 221, 221);">
-				<td class="p_index" style="box-sizing: border-box; padding: 8px 8px 8px 12px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<strong style="box-sizing: border-box;">A房间</strong></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<img alt="我是男生！" class="tips" data-original-title="我是男生！" data-toggle="tooltip" height="30" src="http://www.uoko.com/statics/images/member/headpic/small/pic-boy-01.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="30" /></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					9.00<span class="arial" style="box-sizing: border-box;">㎡</span></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					已租出</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-			</tr>
-			<tr style="box-sizing: border-box; border-style: none none dashed; border-bottom-width: 1px; border-bottom-color: rgb(221, 221, 221);">
-				<td class="p_index" style="box-sizing: border-box; padding: 8px 8px 8px 12px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<strong style="box-sizing: border-box;">B房间</strong></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<img alt="我是女生！" class="tips" data-original-title="我是女生！" data-toggle="tooltip" height="30" src="http://www.uoko.com/statics/images/member/headpic/small/pic-girl-02.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="30" /></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					12.00<span class="arial" style="box-sizing: border-box;">㎡</span></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					已租出</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-			</tr>
-			<tr style="box-sizing: border-box; border-style: none none dashed; border-bottom-width: 1px; border-bottom-color: rgb(221, 221, 221);">
-				<td class="p_index" style="box-sizing: border-box; padding: 8px 8px 8px 12px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<strong style="box-sizing: border-box;">C房间</strong></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<img alt="就他了！" class="tips" data-original-title="就他了！" data-toggle="tooltip" height="30" src="http://www.uoko.com/statics/images/member/headpic/small/100x100.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="30" /></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					10.00<span class="arial" style="box-sizing: border-box;">㎡</span></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<small style="box-sizing: border-box; font-size: 12px; margin-right: 2px;">&yen;</small>750</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					立即入住</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-			</tr>
-			<tr style="box-sizing: border-box; border-style: none none dashed; border-bottom-width: 1px; border-bottom-color: rgb(221, 221, 221);">
-				<td class="p_index" style="box-sizing: border-box; padding: 8px 8px 8px 12px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<strong style="box-sizing: border-box;">D房间</strong></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					<img alt="我是女生！" class="tips" data-original-title="我是女生！" data-toggle="tooltip" height="30" src="http://www.uoko.com/statics/images/member/headpic/small/pic-girl-02.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="30" /></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					15.00<span class="arial" style="box-sizing: border-box;">㎡</span></td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					已租出</td>
-				<td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
-					&nbsp;</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-<div class="config_room" style="box-sizing: border-box; margin: 15px 0px; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<span class="mr20 title" style="box-sizing: border-box; margin-right: 20px; padding-left: 15px;"><strong style="box-sizing: border-box;">每个房间都有这些</strong></span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;床</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;书桌</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;衣柜</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;鞋架</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;折叠椅</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;台灯</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;穿衣镜</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">&nbsp;挂钩</span></div>
-<div class="config_public" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<div class="title" style="box-sizing: border-box; padding: 8px 15px; font-weight: 700; background: rgb(232, 249, 247);">
-		公共区域都有这些</div>
-	<div class="content" style="box-sizing: border-box; padding: 15px;">
-		<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">无线WIFI</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">公共储物区</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">餐桌</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">餐椅</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">冰箱</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">洗衣机</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">热水器</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">微波炉</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">浴霸</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">公用厨房</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">扫帚</span>&nbsp;<span class="mr20" style="box-sizing: border-box; margin-right: 20px;">拖把</span></div>
-</div>
-<br />
-</div>
-        </div>
+            <div class="probox-body-l">
+                <!--百度地图容器-->
+        <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+        <script type="text/javascript">
+            // 百度地图API功能
+
+            var map = new BMap.Map("map");    // 创建Map实例
+            var point = new BMap.Point("{{ $position->h_lng }} ","{{  $position->h_lat }} ");
+            map.centerAndZoom(point, 18);// 初始化地图,设置中心点坐标和地图级别
+            map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+            map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+            var marker = new BMap.Marker(point);  // 创建标注
+            map.addOverlay(marker);               // 将标注添加到地图中
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+            //marker.disableDragging();           // 不可拖拽
+
+        </script>
 
 
-        <!--无数据时不显示-->
-                <div class="probox"  id="pro_nav_1">
-                    
-                                <div class="probox-heading">
-                <div class="sprite sprite_probox_ico porbox-ico ">院</div>
-                <div class="probox-title">周边配套</div>
             </div>
-            <div class="probox-body-l" >
-
-       
-                <div class="panel panel-default d_support">
-               
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><strong>周边配套</strong></h3>
-                    </div>
-        
-                    
                 </div>
-                
-              
-                
-                    
-                    
-               <div style="font-size:14px; line-height:26px; margin:10px 0px 0px 0px;"><ul class="list-group" style="color:#333333;font-family:微软雅黑, Arial, sans-serif;font-size:14px;background-color:#FFFFFF;">
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				附近商圈</div>
-			<div class="col-md-10">
-				红牌楼、春熙路、天府广场</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				此房特别适合</div>
-			<div class="col-md-10">
-				附近上班族</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				附近地铁</div>
-			<div class="col-md-10">
-				2号线羊犀立交站2.3公里</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				公交线路</div>
-			<div class="col-md-10">
-				13路; 163路; 164路; 312路距离清坡社区1103米，13路; 33路; 41路; 64路; 163路; 164路; 215路; 312路; 809路距离中大君悅金沙1131米</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				超市</div>
-			<div class="col-md-10">
-				西单商场 欧尚 金沙国际商城</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				菜市</div>
-			<div class="col-md-10">
-				距离青云菜市500米</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				银行</div>
-			<div class="col-md-10">
-				农业银行、工商银行、农业银行、中国银行、建设银行、交通银行</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				餐饮</div>
-			<div class="col-md-10">
-				距离迷尚&middot;澳门豆捞金沙店1721米，距离香天下清油火锅(金沙店)1203米，距离卡布罗尔巴西烤肉(金沙店) 2509</div>
-		</div>
-	</li>
-	<li class="list-group-item">
-		<div class="row" style="margin-left:-15px;">
-			<div class="col-md-2 text-center " style="text-align:center;">
-				医院</div>
-			<div class="col-md-10">
-				西区医院、 金沙医院 、妇幼保健院、满地可医院、第六人民医院、中医附院</div>
-		</div>
-	</li>
-</ul>
-<br />
-</div>                
-            </div>
-            
-                </div>
-
-
-
-
         <!--无数据时不显示-->
-                <div class="probox">                    
+                <div class="probox" id="pro_nav_1">                    
                 <div class="probox-heading">
                 <div class="sprite sprite_probox_ico porbox-ico ico-s">WHY</div>
                 <div class="probox-title">为什么选择邻京？</div>
@@ -721,7 +558,186 @@ function changeAuthCode() {
             
             
         </div>
+                <div id="pro_nav_2" class="probox">
+            <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ">看</div>
+                <div class="probox-title">评论记录</div>
+            </div>
+            <div class="probox-body-l" style="font-size:14px; line-height:26px; ">
+            <div class="panel-heading" style="box-sizing: border-box; border-bottom-style: none; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; color: rgb(255, 255, 255); padding: 0px 15px; font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px; background: rgb(63, 203, 192);">
+    <h3 class="panel-title" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 37px; color: inherit; margin-top: 0px; margin-bottom: 0px; font-size: 16px;">
+        <strong style="box-sizing: border-box;">用户评论</strong></h3>
+</div>
+<div class="table-responsive relative" style="box-sizing: border-box; border-top-style: none; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+    <table class="table table_config" id="ping" style="box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; width: 807px; max-width: 100%; margin-bottom: 20px; background-color: transparent;">
+        <!-- <tbody class="config_content" style="box-sizing: border-box; border: none;"> -->
+                @foreach($comment as $v)    
+            <tr style="box-sizing: border-box; border-style: none none dashed; border-bottom-width: 1px; border-bottom-color: rgb(221, 221, 221);">
+               <td class='p_index' style='box-sizing: border-box; padding: 2px 8px 2px 12px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);'>
+                    <div style='width:45%;margin-top:20px'>{{$v->c_desc}} <br>
+                    <?php 
+                       echo  Date('Y-m-d',$v->c_time);
+                     ?>
+                     </div></td>
+               
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    <div style='width:60%;margin-top:20px'>
+                   小区:{{$arr->h_plot_name}} <br>
+            
+                   </div></td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    <div style='width:80%;margin-top:30px'>                            
+                                {{$v->u_name}}                            
+                     </div></td>
+                <td style="box-sizing: border-box; padding: 8px; line-height: 30px; vertical-align: top; border-style: none none dashed; border-bottom-color: rgb(221, 221, 221);">
+                    &nbsp;</td>
+            </tr>
+                @endforeach
+        <!-- </tbody> -->
+    </table>
+     
+</div>
+<div class="containers" style="margin-left:45%" >
+ 
+                    {!!$comment->appends(['id'=>$id])->render()!!}
+
+
+</div>
+<br />
+</div>
+        </div>
+
+
+        <!--无数据时不显示-->
+                <div class="probox"  >
+                    
+                                <div class="probox-heading">
+                <div class="sprite sprite_probox_ico porbox-ico ">评</div>
+                <div class="probox-title">房屋评论</div>
+            </div>
+            <div class="probox-body-l" >
+
+       
+                <div class="panel panel-default d_support">
+               
+                    <div class="panel-heading">
+                    <center>
+                        <h3 class="panel-title"><strong>我要评论</strong></h3>
+                     </center>    
+                    </div>
         
+                    
+                </div>
+             <div class="quiz">
+                <div class="quiz_content">
+                    <!-- <form action="" id="" method="post"> -->
+                        <div class="goods-comm">
+                            <div class="goods-comm-stars">
+                                <span class="star_l">满意度：</span>
+                                <div id="rate-comm-1" class="rate-comm"></div>
+                                <!-- 满意度 -->
+                                <div id="div1" style="display:none"></div>
+                                     <!-- 房源id -->
+                                <div id="div7" style="display:none">{{$arr->h_id}}</div>
+                                <!-- session id -->
+                                <div id="div5" style="display:none">
+                           
+                                
+                                   <?php 
+                                        $Uid = Session::get('id');
+                                        echo $Uid;
+                                    ?>
+
+                                </div>
+                                <!-- 判断用户名是否存在 用于重新登录-->
+                                <div id="div2" style="display:none">
+                                    <?php
+                                        $name = Session::get('name');
+                                        if(isset($name)){
+                                            echo '1';
+                                        }else{
+                                            echo "0";
+                                        }
+                                    ?>
+                                </div>
+                                <div id="div3" style="display:none">
+                                    <?php 
+                                        // $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                                        $url = $_SERVER['REQUEST_URI'];
+                                        echo $url;
+                                     ?>
+                                </div>
+                                <div id="div4" style="display:none">{{$arr->h_id}}</div>
+
+                                <div id="aa"></div>
+                            </div>
+                        </div>
+
+                        <div class="l_text">
+                            <label class="m_flo">内  容：</label>
+                            <textarea name="textd" id="test" class="text"></textarea>
+                            <span class="tr">字数限制为5-200个</span>
+                        </div>
+                        <button class="btm" id="commits" type="button"></button>
+                    <!-- </form> -->
+             </div><!--quiz_content end-->  
+             <!-- 用户评论 -->
+             <script>
+                $('#commits').click(function(){
+                    SessionName = $('#div2').html();
+                    UrlVal = $('#div3').html();
+                    UrlVals = UrlVal.trim(UrlVal);
+                    // UrlValss = UrlVals.substring(1);
+                    if(SessionName == 0){
+                        alert("您还没有登录，请先登录！！");
+                        // alert(UrlVals);
+                        location.href="{{URL('login')}}";
+                        var data = {'UrlVals':UrlVals};
+                        var url = "{{URL('login')}}";
+                        $.get(url,data,function(msg){
+                            // alert(msg)
+                        })
+                    }else{
+                        XingVal = $('#div1').html();
+                        TextVal = $('#test').val();
+                        Id = $('#div4').html();
+                        Hid = $('#div7').html();
+                        SessionId = $('#div5').html();
+                        var data = {'XingVal':XingVal,'TextVal':TextVal,'Id':Id,'SessionId':SessionId,'Hid':Hid};
+                        var url ="{{URL('index/comments')}}";
+                        $.get(url,data,function(msg){
+                            if(msg == 2){
+                                alert('亲！！！只能评论一次哦');
+                            }else if(msg == 0){
+                                alert('亲！！！您的评论已生效');
+                            }else{
+                                $('#ping').html(msg);
+                            }
+                            
+                        })
+
+                    }
+                })
+             </script> 
+        </div> 
+                    
+                    
+
+            </div>
+            
+                </div>
         <!--没有数据时不显示-->
             <div class="probox">
                 <div class="probox-heading">
@@ -729,59 +745,22 @@ function changeAuthCode() {
                     <div class="probox-title">猜你喜欢</div>
                 </div>
                 <div class="probox-body-d p_recommend">
-                    <div class=" rec-list row-5">                  
+                    <div class=" rec-list row-5">  
+                    @foreach($Recommend as $value)                
                         <div class="col-sm-3 thumbnail thumbnail-c">
-                            <a class="rec-p" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">
-                            <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
+                            <a class="rec-p"  href="{{URL('index/details')}}?id={{$value->h_id}}">
+                            <img alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" data-original="http://www.linjing.com/public/images/@if(strstr($value->h_photo, '|', TRUE)){{strstr($value->h_photo, '|', TRUE)}}@else{{$value->h_photo}}@endif" alt="{{$value->h_title}}" width="158" height="105" />
                             </a>
-                            <p class="rec-info"> <a title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单" href="/rent/area/cdqyq/2015/0802/5.html">金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单</a></p>
+                            <p class="rec-info"> <a href="{{URL('index/details')}}?id={{$value->h_id}}">{{$value->h_title}}</a></p>
                             <div class="rec-price">
                                 ¥ <span class="text-orange">
                                     <strong>
-                                            550-800
+                                            {{$value->h_price}}
                                     </strong>
                                 </span>
                             </div>
-                        </div>
-                        <div class="col-sm-3 thumbnail thumbnail-c">
-                            <a class="rec-p" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">
-                            <img alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" data-original="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                            </a>
-                            <p class="rec-info"> <a title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品" href="/rent/area/cdqyq/2015/0802/9.html">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品</a></p>
-                            <div class="rec-price">
-                                ¥ <span class="text-orange">
-                                    <strong>
-                                            650-850
-                                    </strong>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 thumbnail thumbnail-c">
-                            <a class="rec-p" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">
-                            <img alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" data-original="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                            </a>
-                            <p class="rec-info"> <a title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" href="/rent/area/cdqyq/2015/0802/8.html">蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</a></p>
-                            <div class="rec-price">
-                                ¥ <span class="text-orange">
-                                    <strong>
-                                            750-950
-                                    </strong>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 thumbnail thumbnail-c">
-                            <a class="rec-p" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">
-                            <img alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" data-original="http://www.uoko.com/Image?imgid=121503&width=450&height=300" src="{{URL::asset('../public')}}/templets/htm/style/images/loading.gif" width="158" height="105" />
-                            </a>
-                            <p class="rec-info"> <a title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路" href="/rent/area/cdqyq/2015/0802/3.html">蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路</a></p>
-                            <div class="rec-price">
-                                ¥ <span class="text-orange">
-                                    <strong>
-                                            1950
-                                    </strong>
-                                </span>
-                            </div>
-                        </div>                                                 
+                        </div>  
+                        @endforeach                                        
                     </div>
                 </div>
             </div>
@@ -794,81 +773,24 @@ function changeAuthCode() {
     <div class=" room_slide" style="width:270px;float:left">
         
         <div class="room_nearby">
-            <h5><strong>热租房源</strong></h5>
+            <h5><strong>最新房源</strong></h5>
               
               
-             
+                    @foreach($new as $val)
                  <div class="nearby_box">
-                    <a class="rec-p" href="/rent/area/cdqyq/2015/0802/5.html" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间">
-                            <img src="http://www.uoko.com/Image?imgid=7991&width=800&height=447&w=1" alt="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间" />
+                    <a class="rec-p" href="{{URL('index/details')}}?id={{$val->h_id}}" >
+                            <img src="http://www.linjing.com/public/images/@if(strstr($val->h_photo, '|', TRUE)){{strstr($val->h_photo, '|', TRUE)}}@else{{$val->h_photo}}@endif" alt="{{$val->h_title}}"  />
                     </a>
                     <p class="rec-info">
-                        <a class="text-song" href="/rent/area/cdqyq/2015/0802/5.html" title="金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间">金沙海棠 地铁2号线羊犀立交站 西单附近 非中介精装单间</a>
+                        <a class="text-song" href="{{URL('index/details')}}?id={{$val->h_id}}" >{{$val->h_title}}</a>
                     </p>
                     <div class="rec-price">
                         <span class="text-orange">
-                            ￥
-                                550-800
+                            ￥{{$val->h_price}}
                         </span>
                     </div>
                 </div>
-<div class="nearby_box">
-                    <a class="rec-p" href="/rent/area/cdqyq/2015/0802/3.html" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心">
-                            <img src="http://www.uoko.com/Image?imgid=121503&width=450&height=300" alt="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心" />
-                    </a>
-                    <p class="rec-info">
-                        <a class="text-song" href="/rent/area/cdqyq/2015/0802/3.html" title="蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心">蓝光coco蜜城 青羊贝森 优品道附近 精装套一 三出门58路等公交直达市中心</a>
-                    </p>
-                    <div class="rec-price">
-                        <span class="text-orange">
-                            ￥
-                                1950
-                        </span>
-                    </div>
-                </div>
-<div class="nearby_box">
-                    <a class="rec-p" href="/rent/area/cdqyq/2015/0802/4.html" title="金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四">
-                            <img src="http://www.uoko.com/Image?imgid=6143&width=800&height=447&w=1" alt="金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四" />
-                    </a>
-                    <p class="rec-info">
-                        <a class="text-song" href="/rent/area/cdqyq/2015/0802/4.html" title="金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四">金沙柏林郡 地铁2号线羊犀立交站 一品天下附近 非中介精装套四</a>
-                    </p>
-                    <div class="rec-price">
-                        <span class="text-orange">
-                            ￥
-                                580-700
-                        </span>
-                    </div>
-                </div>
-                <div class="nearby_box">
-                    <a class="rec-p" href="/rent/area/cdqyq/2015/0802/9.html" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出">
-                            <img src="http://www.uoko.com/Image?imgid=98345&width=800&height=447&w=1" alt="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出" />
-                    </a>
-                    <p class="rec-info">
-                        <a class="text-song" href="/rent/area/cdqyq/2015/0802/9.html" title="蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出">蓝光coco蜜城 【青羊区-光华】蓝光coco蜜城 青羊贝森 优品道旁 精装套三合租 出</a>
-                    </p>
-                    <div class="rec-price">
-                        <span class="text-orange">
-                            ￥
-                                650-850
-                        </span>
-                    </div>
-                </div>
-                <div class="nearby_box">
-                    <a class="rec-p" href="/rent/area/cdqyq/2015/0802/8.html" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心">
-                            <img src="http://www.uoko.com/Image?imgid=116419&width=800&height=447&w=1" alt="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心" />
-                    </a>
-                    <p class="rec-info">
-                        <a class="text-song" href="/rent/area/cdqyq/2015/0802/8.html" title="蓝光coco蜜城 【无中介费】出门58路等公交直达市中心">蓝光coco蜜城 【无中介费】出门58路等公交直达市中心</a>
-                    </p>
-                    <div class="rec-price">
-                        <span class="text-orange">
-                            ￥
-                                750-950
-                        </span>
-                    </div>
-                </div>
-
+                @endforeach
         </div>
     </div>
     <div class="clearfix"></div>
@@ -976,3 +898,226 @@ function changeAuthCode() {
 </body>
 
 </html>
+<script>
+    // star choose
+jQuery.fn.rater = function(options) {
+        
+    // 默认参数
+    var settings = {
+        enabled : true,
+        url     : '',
+        method  : 'post',
+        min     : 1,
+        max     : 5,
+        step    : 1,
+        value   : null,
+        after_click : null,
+        before_ajax : null,
+        after_ajax  : null,
+        title_format    : null,
+        info_format : null,
+        image   : 'http://www.linjing.com/public/templets/discuss/images/comment/stars.jpg',
+        imageAll :'http://www.linjing.com/public/templets/discuss/images/comment/stars-all.gif',
+        defaultTips :true,
+        clickTips :true,
+        width   : 24,
+        height  : 24
+    }; 
+    
+    // 自定义参数
+    if(options) {  
+        jQuery.extend(settings, options); 
+    }
+    
+    //外容器
+    var container   = jQuery(this);
+    
+    // 主容器
+    var content = jQuery('<ul class="rater-star"></ul>');
+    content.css('background-image' , 'url(' + settings.image + ')');
+    content.css('height' , settings.height);
+    content.css('width' , (settings.width*settings.step) * (settings.max-settings.min+settings.step)/settings.step);
+    //显示结果区域
+    var result= jQuery('<div class="rater-star-result"></div>');
+    container.after(result); 
+    //显示点击提示
+    var clickTips= jQuery('<div class="rater-click-tips"><span>点击星星就可以评分了</span></div>');
+        if(!settings.clickTips){
+            clickTips.hide();   
+        }
+    container.after(clickTips); 
+    //默认手形提示
+    var tipsItem= jQuery('<li class="rater-star-item-tips"></li>');
+    tipsItem.css('width' , (settings.width*settings.step) * (settings.max-settings.min+settings.step)/settings.step);
+    tipsItem.css('z-index' , settings.max / settings.step + 2);
+        if(!settings.defaultTips){  //隐藏默认的提示
+            tipsItem.hide();
+        }
+    content.append(tipsItem);
+    // 当前选中的
+    var item    = jQuery('<li class="rater-star-item-current"></li>');
+    item.css('background-image' , 'url(' + settings.image + ')');
+    item.css('height' , settings.height);
+    item.css('width' , 0);
+    item.css('z-index' , settings.max / settings.step + 1);
+    if (settings.value) {
+        item.css('width' , ((settings.value-settings.min)/settings.step+1)*settings.step*settings.width);
+    };
+    content.append(item);
+
+    
+    // 星星
+    for (var value=settings.min ; value<=settings.max ; value+=settings.step) {
+        item    = jQuery('<li class="rater-star-item"><div class="popinfo"></div></li>');
+        if (typeof settings.info_format == 'function') {
+            //item.attr('title' , settings.title_format(value));
+            item.find(".popinfo").html(settings.info_format(value));
+            item.find(".popinfo").css("left",(value-1)*settings.width)
+        }
+        else {
+            item.attr('title' , value);
+        }
+        item.css('height' , settings.height);
+        item.css('width' , (value-settings.min+settings.step)*settings.width);
+        item.css('z-index' , (settings.max - value) / settings.step + 1);
+        item.css('background-image' , 'url(' + settings.image + ')');
+        
+        if (!settings.enabled) {    // 若是不能更改，则隐藏
+            item.hide();
+        }
+        
+        content.append(item);
+    }
+    
+    content.mouseover(function(){
+        if (settings.enabled) {
+            jQuery(this).find('.rater-star-item-current').hide();
+        }
+    }).mouseout(function(){
+            jQuery(this).find('.rater-star-item-current').show();
+    })
+    // 添加鼠标悬停/点击事件
+    var shappyWidth=(settings.max-2)*settings.width;
+    var happyWidth=(settings.max-1)*settings.width;
+    var fullWidth=settings.max*settings.width;
+    content.find('.rater-star-item').mouseover(function() {
+        jQuery(this).prevAll('.rater-star-item-tips').hide();
+        jQuery(this).attr('class' , 'rater-star-item-hover');
+        jQuery(this).find(".popinfo").show();
+        
+        //当3分时用笑脸表示
+        if(parseInt(jQuery(this).css("width"))==shappyWidth){
+            jQuery(this).addClass('rater-star-happy');
+        }
+        //当4分时用笑脸表示
+        if(parseInt(jQuery(this).css("width"))==happyWidth){
+            jQuery(this).addClass('rater-star-happy');
+        }
+        //当5分时用笑脸表示
+        if(parseInt(jQuery(this).css("width"))==fullWidth){
+            jQuery(this).removeClass('rater-star-item-hover');
+            jQuery(this).css('background-image' , 'url(' + settings.imageAll + ')');
+            jQuery(this).css({cursor:'pointer',position:'absolute',left:'0',top:'0'});
+        }
+    }).mouseout(function() {
+        var outObj=jQuery(this);
+        outObj.css('background-image' , 'url(' + settings.image + ')');
+        outObj.attr('class' , 'rater-star-item');
+        outObj.find(".popinfo").hide();
+        outObj.removeClass('rater-star-happy');
+        jQuery(this).prevAll('.rater-star-item-tips').show();
+        //var startTip=function () {
+        //outObj.prevAll('.rater-star-item-tips').show();
+        //};
+        //startTip();
+    }).click(function() {
+        //jQuery(this).prevAll('.rater-star-item-tips').css('display','none');
+        jQuery(this).parents(".rater-star").find(".rater-star-item-tips").remove();
+        jQuery(this).parents(".goods-comm-stars").find(".rater-click-tips").remove();
+        jQuery(this).prevAll('.rater-star-item-current').css('width' , jQuery(this).width());
+           if(parseInt(jQuery(this).prevAll('.rater-star-item-current').css("width"))==happyWidth||parseInt(jQuery(this).prevAll('.rater-star-item-current').css("width"))==shappyWidth){   
+            jQuery(this).prevAll('.rater-star-item-current').addClass('rater-star-happy');
+            }
+        else{
+            jQuery(this).prevAll('.rater-star-item-current').removeClass('rater-star-happy');
+            }
+            if(parseInt(jQuery(this).prevAll('.rater-star-item-current').css("width"))==fullWidth){ 
+            jQuery(this).prevAll('.rater-star-item-current').addClass('rater-star-full');
+            }
+        else{
+            jQuery(this).prevAll('.rater-star-item-current').removeClass('rater-star-full');
+            }
+        var star_count      = (settings.max - settings.min) + settings.step;
+        var current_number  = jQuery(this).prevAll('.rater-star-item').size()+1;
+        var current_value   = settings.min + (current_number - 1) * settings.step;
+        
+        //显示当前分值
+        if (typeof settings.title_format == 'function') {
+            jQuery(this).parents().nextAll('.rater-star-result').html(current_value+'分&nbsp;'+settings.title_format(current_value));
+            jQuery(this).parents().nextAll('#div1').html(current_value);
+        }
+        //jQuery(this).parents().next('.rater-star-result').html(current_value);
+        //jQuery(this).unbind('mouseout',startTip)
+    })
+    
+    jQuery(this).html(content);
+    
+}
+
+// 星星打分
+$(function(){
+    var options = {
+    max : 5,
+    title_format    : function(value) {
+        var title = '';
+        switch (value) {
+            case 1 : 
+                title   = '很不满意';
+                break;
+            case 2 : 
+                title   = '不满意';
+                break;
+            case 3 : 
+                title   = '一般';
+                break;
+            case 4 : 
+                title   = '满意';
+                break;
+            case 5 : 
+                title   = '非常满意';
+                break;
+            default :
+                title = value;
+                break;
+        }
+        return title;
+    },
+    info_format : function(value) {
+        var info = '';
+        switch (value) {
+            case 1 : 
+                info    = '<div class="info-box">1分&nbsp;很不满意<div>商品样式和质量都非常差，太令人失望了！</div></div>';
+                break;
+            case 2 : 
+                info    = '<div class="info-box">2分&nbsp;不满意<div>商品样式和质量不好，不能满足要求。</div></div>';
+                break;
+            case 3 : 
+                info    = '<div class="info-box">3分&nbsp;一般<div>商品样式和质量感觉一般。</div></div>';
+                break;
+            case 4 : 
+                info    = '<div class="info-box">4分&nbsp;满意<div>商品样式和质量都比较满意，符合我的期望。</div></div>';
+                break;
+            case 5 : 
+                info    = '<div class="info-box">5分&nbsp;非常满意<div>我很喜欢！商品样式和质量都很满意，太棒了！</div></div>';
+                break;
+            default :
+                info = value;
+                break;
+        }
+            return info;
+        }
+    }
+    $('#rate-comm-1').rater(options);
+
+});
+</script>

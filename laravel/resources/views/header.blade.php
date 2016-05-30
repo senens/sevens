@@ -9,19 +9,20 @@
                 <div id="uoko-nav">
                     <ul class="navbar navbar-left">            
                         <li data-menu-active="controller_Home&&action_Index">
-                        <a href="http://www.linjing.com/">首页</a>
+                        <a href="http://www.linjing.com/server.php">首页</a>
                         </li>                       
-                        <li data-menu-active="controller_guanyuwomen&&action_Index">
+                        <!-- <li data-menu-active="controller_guanyuwomen&&action_Index">
                         <a href="http://www.linjing.com/server.php/index/abouts">关于我们</a>
-                        </li>
-                        <!-- <li data-menu-active="controller_Rent&&action_Index">
-                        <a href="http://www.linjing.com/server.php/index/wants">我要租房</a>                     </li> -->
+                        </li> -->
+                        <li data-menu-active="controller_Rent&&action_Index">
+                        <a href="http://www.linjing.com/server.php/search">我要租房</a>                     
+                        </li> 
                         
                         <li data-menu-active="controller_&&action_Questions">                        
                            <a href="http://www.linjing.com/server.php/index/notices">租前须知</a>
                         </li>
                             
-                        <li data-menu-active="controller_affiliate&&action_Index" class="aboutList">
+                        <!-- <li data-menu-active="controller_affiliate&&action_Index" class="aboutList">
                         <a href="http://www.linjing.com/server.php/index/fang_join">房东加盟 <span class="caret"></span> 
                         </a>
                             
@@ -33,11 +34,11 @@
                             <li><a href="http://www.linjing.com/server.php/index/message">业务详情</a></li>
                             
                         </ul>                            
-                        </li>
+                        </li> -->
                        
                         <li data-menu-active="controller_lianxiwomen&&action_Index">
                            
-                        <a href="http://www.linjing.com/server.php/index/talk">联系我们</a>                            
+                        <a href="http://www.linjing.com/server.php/index/talk">关于我们</a>                            
                         </li>                           
                     </ul>
                 </div>
@@ -66,7 +67,8 @@
                     <li class="loginbar">
                     @if(Session::get('name'))
                         <a href="http://www.linjing.com/server.php/login/user" rel="nofollow"><font color="#ffe4c4">{{Session::get('name')}}</font></a>
-                        <span class="">|</span>
+                         <!-- <a href="http://www.linjing.com/server.php/login/user" rel="nofollow">用户中心</a> -->
+                         <span class="">|</span>
                         <a href="http://www.linjing.com/server.php/login/unset">退出</a>
                     @else
                         <a href="http://www.linjing.com/server.php/login" rel="nofollow">登录</a>

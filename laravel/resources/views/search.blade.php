@@ -135,7 +135,7 @@
                             
                     </div>
                 </div>
-                <div class="s-box">
+                <!-- <div class="s-box">
                     <div class="s-title">室友：</div>
                     <div class="s-l">
                     
@@ -147,7 +147,7 @@
                             
                             <a class="s-area " href="/plus/list.php?tid=33">爱情公寓</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="s-box">
                     <div class="s-title">配置：</div>
                     <div class="s-l s-checkbox">

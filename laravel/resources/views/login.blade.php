@@ -34,9 +34,8 @@ function changeAuthCode() {
   <div class="auto960">
     <ul class="userMenu fRight">
       <li> <a title="网站主页" href="../">网站主页</a> </li>
-      <li> <a title="注册" href="../member/index_do.php?fmdo=user&dopost=regnew">注册</a> </li>
-      <li> <a title="登录" href="../member/login.php">登录</a> </li>
-      <li class="help"> <a href="http://help.dedecms.com" title="DEDECMS 帮助中心" target="_blank">帮助</a> </li>
+      <li> <a title="注册" href="{{URL('register')}}">注册</a> </li>
+
     </ul>
     <span>
     <script type="text/javascript">
@@ -87,21 +86,16 @@ document.write("午夜好，");
                   <input id="txtPassword" class="text login_from2" type="password"   name="pwd"/>
               </li>
          @endif
-        <!-- <li> <span>验证码：</span>
-          <input id="vdcode" class="text login_from3" type="text" style="width: 50px; text-transform: uppercase;" name="vdcode"/>
-          <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
-           看不清？ <a href="#" onclick="changeAuthCode();">点击更换</a> </li>
+
         <li> <span>有效期：</span>
-        
+
             <input type="radio" name="keeptime" value="month"/>一个月
             <input type="radio" name="keeptime" checked="checked" value="week"/>一周
             <input type="radio" name="keeptime" value="day"/>一天
             <input type="radio" name="keeptime" value="0"/>即使
-        
-        
-        <li> -->
+         <li>
           <button id="btnSignCheck" class="button2" type="submit">登&nbsp;录</button>
-          <a href="resetpassword.php">忘记密码？</a> </li>
+          </li>
       </ul>
     </form>
   </div>
@@ -118,7 +112,7 @@ document.write("午夜好，");
 	}
 </script>
 <div class="footer bor">
-  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 用友科技 版权所有</div>
+  <div class="fLeft mL10">Copyright &copy; 2004-2011 DEDECMS. 邻京有屋 版权所有</div>
   <div class="fRight mR10" id="time">  </div>
 </div>
 </body>

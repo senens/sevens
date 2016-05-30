@@ -1,3 +1,9 @@
+<?php
+use yii\widgets\ActiveForm;
+ $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']])
+?>
+
+
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
@@ -16,14 +22,14 @@
 			<li class="active">添加管理</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
@@ -76,8 +82,9 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 性别： </label>
 
 						<div class="col-sm-9">
-							<input type="radio" id="form-field-1" name="h_gender_demand" value="0" />男
-							<input type="radio" id="form-field-1" name="h_gender_demand" value="1" />女
+							<input type="radio" id="form-field-1" name="h_gender_demand" value="0" />男女不限
+							<input type="radio" id="form-field-1" name="h_gender_demand" value="1" />只限男
+							<input type="radio" id="form-field-1" name="h_gender_demand" value="2" />只限女
 						</div>
 					</div>
 					
@@ -119,22 +126,28 @@
 
 						<div class="col-sm-9">
 							<select name="h_orientation" id="">
-								<option value="0">选择朝向</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
+								<option value="0">向东</option>
+								<option value="1">向西</option>
+								<option value="2">向南</option>
+								<option value="3">向北</option>
+								<option value="4">南北</option>
+								<option value="5">东西</option>
+								
 							</select>　
 							<select name="h_decorate" id="">
-								<option value="0">装修情况</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
+								<option value="0">毛坯</option>
+								<option value="1">一般装修</option>
+								<option value="2">中等装修</option>
+								<option value="3">精装修</option>
+								<option value="4">豪华装修</option>
 							</select>　
 							<select name="h_type" id="">
-								<option value="0">普通住户</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
-								<option value="0">向北</option>
+								<option value="0">普通住宅</option>
+								<option value="1">商住两用</option>
+								<option value="2">公寓</option>
+								<option value="3">平房</option>
+								<option value="4">别墅</option>
+								<option value="5">其他</option>
 							</select>
 						</div>
 					</div>
@@ -144,16 +157,16 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1" > 房屋配置： </label>
 
 						<div class="col-sm-9">
-							<input type="checkbox" id="form-field-1" name="h_facility">床
-							<input type="checkbox" id="form-field-1" name="h_facility">衣柜
-							<input type="checkbox" id="form-field-1" name="h_facility">沙发
-							<input type="checkbox" id="form-field-1" name="h_facility">电视
-							<input type="checkbox" id="form-field-1" name="h_facility">冰箱
-							<input type="checkbox" id="form-field-1" name="h_facility">洗衣机
-							<input type="checkbox" id="form-field-1" name="h_facility">空调
-							<input type="checkbox" id="form-field-1" name="h_facility">热水器
-							<input type="checkbox" id="form-field-1" name="h_facility">宽带
-							<input type="checkbox" id="form-field-1" name="h_facility">暖气
+							<input type="checkbox" id="form-field-1" name="h_facility" value="0">床
+							<input type="checkbox" id="form-field-1" name="h_facility" value="1">衣柜
+							<input type="checkbox" id="form-field-1" name="h_facility" value="2">沙发
+							<input type="checkbox" id="form-field-1" name="h_facility" value="3">电视
+							<input type="checkbox" id="form-field-1" name="h_facility" value="4">冰箱
+							<input type="checkbox" id="form-field-1" name="h_facility" value="5">洗衣机
+							<input type="checkbox" id="form-field-1" name="h_facility" value="6">空调
+							<input type="checkbox" id="form-field-1" name="h_facility" value="7">热水器
+							<input type="checkbox" id="form-field-1" name="h_facility" value="8">宽带
+							<input type="checkbox" id="form-field-1" name="h_facility" value="9">暖气
 						</div>
 					</div>
 
@@ -162,7 +175,15 @@
 
 						<div class="col-sm-9">
 							<input type="text" id="form-field-1" name="h_price" placeholder="面议"  class="col-xs-10 col-sm-5" />
-							资金类型：<input type="text" id="form-field-1" name="h_price_type" placeholder="押一付三" />
+							资金类型：<select name="h_price_type" id="">
+								<option value="0">押一付一</option>
+								<option value="1">押一付二</option>
+								<option value="2">押二付二</option>
+								<option value="3">季付</option>
+								<option value="4">年付</option>
+								<option value="5">免押金</option>
+								<option value="6">面议</option>
+							</select>
 						</div>
 					</div>
 
@@ -189,7 +210,8 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 上传图片： </label>
 
 						<div class="col-sm-9">
-							<input type="file" id="form-field-1" name="h_photo" class="col-xs-10 col-sm-5" />
+							 <?= $form->field($model, 'h_photo')->fileInput() ?>
+
 						</div>
 					</div>
 
@@ -236,8 +258,8 @@
 
                        
                         <div class="col-sm-9">
-							<input type="radio" id="form-field-1" name="h_issell" value="0" />在租
-							<input type="radio" id="form-field-1" name="h_issell" value="1" />租完
+							<input type="radio" id="form-field-1" name="h_issell" value="0" />未售完
+							<input type="radio" id="form-field-1" name="h_issell" value="1" />已售完
 						</div>
                     </div>
 
@@ -246,7 +268,10 @@
 						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 最短租期： </label>
 
 						<div class="col-sm-9">
-							<input type="text" id="form-field-1" name="h_timelimit" placeholder="status"  class="col-xs-10 col-sm-5" />
+							<input type="radio" id="form-field-1" name="h_timelimit" value="0" />1个月起
+							<input type="radio" id="form-field-1" name="h_timelimit" value="1" />3个月起
+							<input type="radio" id="form-field-1" name="h_timelimit" value="2" />半年起
+							<input type="radio" id="form-field-1" name="h_timelimit" value="3" />1年以上
 						</div>
 					</div>
 

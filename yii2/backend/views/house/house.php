@@ -1,6 +1,6 @@
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
-		
+		<?php use \yii\widgets\LinkPager; ?>
 
         <ul class="breadcrumb">             <li>                 <i
 class ="icon-home home-icon"></i>                 <a href="#">首页</a>
@@ -11,14 +11,14 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 			<li class="active">房源列表</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
@@ -73,7 +73,7 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 										<th>租金类型</th>
 										<th>标题</th>
 										<th>房源描述</th>
-										<th>图片</th>
+										
 										<th>联系人</th>
 										<th>联系电话</th>
 										<th>发布时间</th>
@@ -83,55 +83,222 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 										<th>操作</th>
 									</tr>
 								</thead>
-								<?php foreach($posts as $key=>$arr){ ?>
+								<?php foreach($data as $key=>$arr){ ?>
 								<tbody>
-									<tr>
+									<tr id="d<?=$arr['h_id'] ?>">
 										<td class="center">
-
 											<label>
 												<input type="checkbox" class="ace" />
 												<span class="lbl"></span>
 											</label>
 										</td>
-
-										<td><?php echo $arr['h_rent_type'] ?></td>
+											<?php
+												if($arr['h_rent_type']=='0'){
+											?>	
+										<td>整套出租</td>
+											<?php
+												}elseif($arr['h_rent_type']=='1'){
+											?>	
+										<td>单间出租</td>
+										<?php
+												}else{
+											?>	
+										<td>床位出租</td>
+											<?php } ?>
 										<td><?php echo $arr['h_plot_name'] ?></td>
 										<td><?php echo $arr['h_loc_detail'] ?></td>
-										<td><?php echo $arr['h_gender_demand'] ?></td>
+										
+											<?php
+												if($arr['h_gender_demand']=='0'){
+
+											?>	
+										<td>男女不限</td>
+											<?php
+												}elseif($arr['h_gender_demand']=='1'){
+
+											?>	
+										<td>只限男</td>
+										<?php
+												}else{
+
+											?>	
+										<td>只限女</td>
+											<?php } ?>
+
+										
 										<td><?php echo $arr['h_room_num'] ?>室<?php echo $arr['h_hall_num'] ?>厅<?php echo $arr['h_toilet_num'] ?>卫</td>
 										<td><?php echo $arr['h_floor_st'] ?></td>
 										<td><?php echo $arr['h_floor_all'] ?></td>
 										<td><?php echo $arr['h_area'] ?></td>
-										<td><?php echo $arr['h_orientation'] ?></td>
-										<td><?php echo $arr['h_decorate'] ?></td>
-										<td><?php echo $arr['h_type'] ?></td>
+										
+											<?php
+												if($arr['h_orientation']=='0'){
+											?>	
+										<td>向东</td>
+											<?php
+												}elseif($arr['h_orientation']=='1'){
+											?>	
+										<td>向西</td>
+										<?php
+												}elseif($arr['h_orientation']=='2'){
+											?>	
+										<td>向南</td>
+											<?php 
+												}elseif($arr['h_orientation']=='3'){
+											?>	
+										<td>向北</td>
+											<?php 
+												}elseif($arr['h_orientation']=='4'){
+											?>	
+										<td>向南北</td>
+											<?php 
+												}else{
+											?>	
+										<td>向东西</td>
+											 <?php } ?> 
+
+										
+										
+											<?php
+												if($arr['h_decorate']=='0'){
+											?>	
+										<td>毛坯</td>
+											<?php
+												}elseif($arr['h_decorate']=='1'){
+											?>	
+										<td>一般装修</td>
+										<?php
+												}elseif($arr['h_decorate']=='2'){
+											?>	
+										<td>中等装修</td>
+											<?php 
+												}elseif($arr['h_decorate']=='3'){
+											?>	
+										<td>精装修</td>
+											<?php 
+												}else{
+											?>	
+										<td>豪华装修</td>
+											 <?php } ?> 
+									
+									
+											<?php
+												if($arr['h_price_type']=='0'){
+											?>	
+										<td>普通住宅</td>
+											<?php
+												}elseif($arr['h_price_type']=='1'){
+											?>	
+										<td>商住两用</td>
+										<?php
+												}elseif($arr['h_price_type']=='2'){
+											?>	
+										<td>公寓</td>
+											<?php 
+												}elseif($arr['h_price_type']=='3'){
+											?>	
+										<td>平房</td>
+											<?php 
+												}elseif($arr['h_price_type']=='4'){
+											?>	
+										<td>别墅</td>
+											<?php 
+												}else{
+											?>	
+										<td>其他</td>
+											 <?php } ?>
+										
 										<td><?php echo $arr['h_facility'] ?></td>
 										<td><?php echo $arr['h_price'] ?></td>
-										<td><?php echo $arr['h_price_type'] ?></td>
+										
+										
+											<?php
+												if($arr['h_price_type']=='0'){
+											?>	
+										<td>押一付一 </td>
+											<?php
+												}elseif($arr['h_price_type']=='1'){
+											?>	
+										<td>押一付二</td>
+										<?php
+												}elseif($arr['h_price_type']=='2'){
+											?>	
+										<td>押二付二</td>
+											<?php 
+												}elseif($arr['h_price_type']=='3'){
+											?>	
+										<td>季付</td>
+											<?php 
+												}elseif($arr['h_price_type']=='4'){
+											?>	
+										<td>年付</td>
+											<?php 
+												}elseif($arr['h_price_type']=='5'){
+											?>	
+										<td>免押金</td>
+											<?php 
+												}else{
+											?>	
+										<td>面议</td>
+											 <?php } ?>
+									
 										<td><?php echo $arr['h_title'] ?></td>
 										<td><?php echo $arr['h_description'] ?></td>
-										<td><?php echo $arr['h_photo'] ?></td>
+										
 										<td><?php echo $arr['h_contact_name'] ?></td>
 										<td><?php echo $arr['h_contact_phonenumber'] ?></td>
 										<td><?php echo $arr['h_pub_date'] ?></td>
-										<td><?php echo $arr['h_ischeck'] ?></td>
-										<td><?php echo $arr['h_issell'] ?></td>
-										<td><?php echo $arr['h_timelimit'] ?></td>
+										<td id="u<?=$arr['h_id']?>">
+											<?php
+												if($arr['h_ischeck']=='1'){
+											?>	
+										通过
+											<?php
+												}elseif($arr['h_ischeck']=='0'){
+											?>	
+										不通过
+										
+											<?php } ?>
+										</td>
+										
+											<?php
+												if($arr['h_issell']=='0'){
+											?>	
+										<td>在租</td>
+											<?php
+												}else{
+											?>	
+										<td>已租完</td>
+										
+											<?php } ?>
+										
+										
+											<?php
+												if($arr['h_timelimit']=='0'){
+											?>	
+										<td>一个月起</td>
+											<?php
+												}elseif($arr['h_timelimit']=='1'){
+											?>	
+										<td>三个月起 </td>
+										<?php
+												}elseif($arr['h_timelimit']=='2'){
+											?>	
+										<td>半年起</td>
+											<?php 
+												}else{
+											?>	
+										<td>一年以上</td>
+											<?php } ?>
+												
+										
 										<td>
 											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-												<a class="blue" href="index.php?r=house/houseadd">
-													<i class="icon-zoom-in bigger-130"></i>
-												</a>
 
-												<a class="green" href="index.php?r=house/houseupdate">
-													<i class="icon-pencil bigger-130"></i>
-												</a>
-
-												<a class="red" href="index.php?r=house/housedel">
+												<a class="red" id="<?php echo $arr['h_id'] ?>" onclick="housedel(<?=$arr['h_id'] ?>)">
 													<i class="icon-trash bigger-130"></i>
 												</a>
 											</div>
-
 											
 											</div>
 										</td>
@@ -139,40 +306,12 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 									<?php } ?>
 									</tbody>
 								</table>
+								<div style="text-align:center">
+								<?= LinkPager::widget(['pagination' => $pagination]) ?>
+								</div>
 
 							</div>
-							<div class="modal-footer no-margin-top">
-								<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
-									<i class="icon-remove"></i>
-									Close
-								</button>
-
-								<ul class="pagination pull-right no-margin">
-									<li class="prev disabled">
-										<a href="#">
-											<i class="icon-double-angle-left"></i>
-										</a>
-									</li>
-
-									<li class="active">
-										<a href="#">1</a>
-									</li>
-
-									<li>
-										<a href="#">2</a>
-									</li>
-
-									<li>
-										<a href="#">3</a>
-									</li>
-
-									<li class="next">
-										<a href="#">
-											<i class="icon-double-angle-right"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
+							
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
 				</div><!-- PAGE CONTENT ENDS -->
@@ -265,5 +404,41 @@ class ="icon-home home-icon"></i>                 <a href="#">首页</a>
 
 
 <script>
-	//
+	//删除
+	function housedel(id){
+		//alert(id);die;
+		var data={'id':id};
+		var url= "index.php?r=house/housedel";
+		$.get(url,data,function(msg){
+			if(msg==1){
+				$('#d'+id).remove();
+		  	}
+		  	else{
+				alert("没删掉，调整一下再来试试吧");
+		  	}
+		})
+	}
+
+
+	//修改
+	// function houseupdate(obj){
+	// 	var id=obj.id;
+	// 	//alert(id);
+	// 	$.ajax({
+	// 	   type: "GET",
+	// 	   url: "index.php?r=house/houseupdate",
+	// 	   data: "id="+id,
+	// 	   success: function(msg){
+	// 		  if(msg==1){
+	// 		  	//alert(msg);die;
+	// 			$('#updates').html("<td>"+"通过"+"</td>");
+	// 		 }else{
+	// 			$('#updates').html("<td>"+"不通过"+"</td>");
+	// 		  }
+	// 	   }
+	// 	}); 
+	// }
+	
+
+
 </script>

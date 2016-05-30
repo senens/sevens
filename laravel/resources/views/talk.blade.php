@@ -9,28 +9,22 @@
     <meta name="description" content="" />
     
     <script language="javascript">
-msg = "联系我们_邻京有屋轻时尚单身公寓";
-
-msg = "" + msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
+    msg = "联系我们_邻京有屋轻时尚单身公寓";
+    msg = "" + msg;pos = 0;
+    function scrollMSG() {
+    document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+    pos++;
+    if (pos >  msg.length) pos = 0
+    window.setTimeout("scrollMSG()",200);
+    }
+    scrollMSG();
     </script> 
     
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery-1.9.1.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
-
-    <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>
-
-
-
-    
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
+    <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>   
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/emailSubscribe.css" rel="stylesheet" />
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/datepicker.min.css" rel="stylesheet" />
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/rangeSlider.css" rel="stylesheet" />
@@ -56,8 +50,6 @@ scrollMSG();
     <![endif]-->
 
     <script type="text/javascript">
-
-
         var zd = '0';
         if (zd == 0 && getCookie("zd") == null) {
             document.write('<script src="{{URL::asset("../public")}}/templets/htm/style/js/p.mini.js"><\/script>');
@@ -93,236 +85,168 @@ scrollMSG();
 
 </head>
 <body data-spy="scroll">
-
-    <input id="controller" type="hidden" value="lianxiwomen" />
-    <input id="action" type="hidden" value="Index" />
          <!-- 引入公共头 -->
          @include('header')
-
     <div class="clearfix"></div>
-
-
-    
+   
 <div class="MainBg">
     <div class="container ">
-        <ol class="breadcrumb">
-        
-        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
-        
-            <li><a href="/plus/list.php?tid=4">关于我们</a></li>
-
-        <li class="active">
-            <a href="/plus/list.php?tid=40">联系我们</a>
-        </li>
-        
+        <ol class="breadcrumb">       
+            <li><a href="/"><i class="fa fa-home"></i>首页</a></li>  
+            <li><a href="http://www.linjing.com/server.php/index/talk">关于我们</a></li>  
         </ol>
         <ul id="nav-contact" class="nav-0 nav-tabs ">
-            <li class="active"><a href="#contact_info" data-toggle="tab">联系我们</a></li>
-            <li><a href="#contact_mess" data-toggle="tab">我有话要说</a></li>
+            <li class="active"><a href="#contact_about" data-toggle="tab">关于我们</a></li>
+            <li><a href="#contact_info" data-toggle="tab">联系我们</a></li>
+            <!-- <li><a href="#contact_mess" data-toggle="tab">我有话要说</a></li> -->
+            
         </ul>
         <div class="clearfix"></div>
-        <div class="tab-content WhiteBg cantact">
-            <div class="tab-pane connect in active" id="contact_info">
+
+        <div class="tab-content WhiteBg cantact" style="background:#F4F4F4">
+            <div class="tab-pane connect in active" id="contact_about" >
+                <div class="can-title">
+                    <h3>关于我们</h3>
+                    <h6>ABOUT US</h6>
+                </div>
+            
+                    <h4>初心：</h4>
+                    不论在哪座城市生活<br />
+                    都需要一个安心舒适的小窝<br />
+                    否则就失去了打拼的意义<br />
+                    但目前而言，租房是一件痛苦的事<br />
+                    所以我们创办了邻京有屋，我们希望它的存在<br />
+                    能让漂泊在城市里追逐梦想的年轻人住得安心、舒适、有尊严<br />
+                    能让住在这里的人认识更多志趣相投的朋友，感受家的温暖。<br />
+                    让每个人的租房时代留下美好的回忆
+                    <div class="content-1">
+                        <h4 style="margin-top: 30px;">
+                            品牌介绍：</h4>
+                        <p>
+                            邻京有屋，隶属于北京用友信息技术有限公司。是为城市租房人群提供高品质长租公寓和服务的O2O互联网运营商。</p>
+                        <p>
+                            <b>邻京有屋，为两类客户提供服务：对闲置房产小业主</b>，是提供一站式房屋租赁增值管理解决方案。<b>对城市租房客</b>，是提供高品质的长租公寓产品，租后服务，以及围绕房屋、居住社交而延生的增值服务。企业愿景是成为<b>&ldquo;美好生活运营商&rdquo;</b>。</p>
+                        <p>邻京有屋，目前在北京运营，未来将扩展到更多全国一线和二线城市。</p>
+                    </div>   
+            </div>
+            
+            <div class="tab-pane connect in" id="contact_info">
                 <div class="can-title">
                     <div class="sprite sprite_contact_title"></div>
                     <div class="name">
-                        <h3>联系我们</h3>
+                        <h3>联系我们</h3>       
                         <h6>CONTACT US</h6>
                     </div>
                 </div>
                 <div class="bk30"></div>
                 
-             <div  style="font-size:14px; line-height:26px; "><div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<div class="col-sm-10" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px;">
-		<div class="addr addr_chengdu" style="box-sizing: border-box; margin-bottom: 30px;">
+            <div  style="font-size:14px; line-height:26px; "><div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
+	        <div class="col-sm-10" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px;">
+		    <div class="addr addr_chengdu" style="box-sizing: border-box; margin-bottom: 30px;">
 			<div class="title" style="box-sizing: border-box;">
 				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">成都总部</small></h4>
+				<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">北京公司</small>
+                </h4>
 			</div>
 			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
 				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">客服热线</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">客服热线</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-XXXX</span></div>
 				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">集团总部</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">028-68730941</span></div>
-				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">成都分部</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">028-68730946</span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">集团总部</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">028-1234567</span></div>
+				
 				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋</a></span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/2789347361/profile?topnav=1&wvr=6&is_all=1" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋</a></span></div>
 				<div class="info-box  col-sm-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">四川省成都市高新区益州大道北段锦晖西一街99号布鲁明顿广场1栋2单元10楼</span></div>
+					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">北京市海淀区中关村软件园八维学院</span></div>
 			</div>
 		</div>
 	</div>
 	<div class="col-sm-2" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 175px;">
-		<img alt="微信租房,微信看房,微信合租" height="131" src="http://www.uoko.com/statics/images/common/footer-weixin-cd.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="131" /></div>
+		<img alt="微信租房,微信看房,微信合租" height="131" src="{{URL::asset('../public')}}/templets/htm/style/images/weixin.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="131" /></div>
 </div>
-<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<div class="col-sm-10 " style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px;">
-		<div class="addr  addr_wuhan" style="box-sizing: border-box; margin-bottom: 30px;">
-			<div class="title" style="box-sizing: border-box;">
-				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">武汉</small></h4>
-			</div>
-			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">租房热线</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">租后服务</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">房源加盟</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
-				<div class="clearfix" style="box-sizing: border-box;">
-					&nbsp;</div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/wuhanyoukeyijia" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋武汉</a></span></div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">投诉电话</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">商务合作</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">400-000-4170</span></div>
-				<div class="info-box  col-sm-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">武汉市武昌区中南一路天紫广场4楼</span></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-2" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 175px;">
-		<img alt="微信租房,武汉租房,微信武汉合租" height="131" src="http://www.uoko.com/statics/images/common/footer-weixin-wh.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="131" /></div>
-</div>
-<div class="row" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; color: rgb(51, 51, 51); font-family: 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 20px;">
-	<div class="col-sm-10" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px;">
-		<div class="addr addr_chengdu" style="box-sizing: border-box; margin-bottom: 30px;">
-			<div class="title" style="box-sizing: border-box;">
-				<h4 class="name text-orange" style="box-sizing: border-box; font-family: inherit; font-weight: 500; line-height: 1.1; color: rgb(255, 83, 0); margin-top: 10px; margin-bottom: 10px; font-size: 18px;">
-					<strong style="box-sizing: border-box;">◆ 邻京有屋</strong>&nbsp;<small style="box-sizing: border-box; font-size: 14px; line-height: 1;">北京</small></h4>
-			</div>
-			<div class="row info" style="box-sizing: border-box; margin-left: -15px; margin-right: -15px; margin-top: 20px;">
-				<div class="info-box  col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">客服热线</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">010-84610808</span></div>
-				<div class="info-box col-sm-4 col-md-3" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 218.75px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">官方微博</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;"><a href="http://weibo.com/iuoko" rel="nofollow" style="box-sizing: border-box; color: rgb(51, 51, 51); text-decoration: none; background: transparent;" target="_blank">@邻京有屋</a></span></div>
-				<div class="info-box  col-sm-12" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 875px; margin-bottom: 20px;">
-					<span class="info-n" style="box-sizing: border-box; margin-right: 10px;">公司地址</span>&nbsp;<span class="info-i" style="box-sizing: border-box; font-weight: 700;">北京东城区夕照寺大街东玖大厦B座401C</span></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-2" style="box-sizing: border-box; position: relative; min-height: 1px; padding-left: 15px; padding-right: 15px; float: left; width: 175px;">
-		<img alt="微信租房,微信看房,微信合租" height="131" src="http://www.uoko.com/statics/images/common/footer-weixin-bj.png" style="box-sizing: border-box; border: 0px; vertical-align: middle;" width="131" /></div>
-</div>
+
 <br />
 </div> <div class="bk10"></div>
-                
-
-            </div>
+</div>
            
-
-
- <div class="tab-pane connect in" id="contact_mess">
-                <div class="can-title">
-                    <h3>我有话要说</h3>
-                    <h6>MESSAGES</h6>
-                </div>
-<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
-<input type="hidden" name="action" value="post" />
-<input type="hidden" name="diyid" value="2" />
-<input type="hidden" name="do" value="2" />
-
-
-           <div class="contact_message">
-                    <h6 class="mini text-brown"></h6>
-                    <h4 class="title text-brown"></h4>
-                    <div class="bk10"></div>
-                    <input type="hidden" id="op" />
-                    <div class="btn-group" data-toggle="buttons">
-                        <label class="btn   btn-message">
-                            <input type="radio" name="options" id="option1" value="我要加盟" />
-                            我要加盟
-                            <span class="caret"></span>
-                        </label>
-                        <label class="btn   btn-message">
-                            <input type="radio" name="options" id="option2" value="我有建议" />
-                            我有建议
-                            <span class="caret"></span>
-                        </label>
-                        <label class="btn   btn-message">
-                            <input type="radio" name="options" id="option3" value="我要投诉" />
-                            我要投诉
-                            <span class="caret"></span>
-                        </label>
-                    </div>
-                    <div class="bk30"></div>
-                    <div class="form" role="form">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label for="UOKOTALK" class="AreaText">我想说的是：</label>
-                                    <textarea id="UOKOTALK" name="content" class="form-control message_content" rows="8" placeholder="您想对我说？"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-4 hidden-xs hidden-sm">
-                                <div class="form-group AreaInfo">
-                                    <p class="form-control-static AreaText">
-                                        有关业务联络合作事项，<br />
-                                        可以给我们发邮件或者打电话<br />
-                                        或者您在这里提交您的信息<br />
-                                        无需重复提交，我们会在三天内答复您。
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="UOKOUSER" class="AreaText">姓名：</label>
-                                    <input id="UOKOUSER" type="text" name="username" class="form-control message_content" check-type="required" />
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="UOKOUSERPHONE" class="AreaText">联系方式：</label>
-                                    <input id="UOKOUSERPHONE" type="text" name="phone" class="form-control message_content" check-type="required tel" />
-
-
-                                </div>
-                            </div>
-                             <div class="clearfix"></div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="UOKOUSERPHONE" class="AreaText">验证码：</label>
-                                    
-                                  
-                                    
-                                    <input name="validate" type="text" id="vdcode"  style="text-transform:uppercase;" size="8"/> 
-<img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>  
-<a href="javascript:vide(-1);" onClick="changeAuthCode();">看不清？ </a> 
-
-
-                                </div>
-                            </div>
+    <!-- <div class="tab-pane connect in" id="contact_mess">
+        <div class="can-title">
+            <h3>我有话要说</h3>
+            <h6>MESSAGES</h6>
+        </div>
+        <form action="" enctype="multipart/form-data" method="post">
+        <div class="contact_message">
+            <h6 class="mini text-brown"></h6>
+            <h4 class="title text-brown"></h4>
+            <div class="bk10"></div>
+            <input type="hidden" id="op" />
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn   btn-message">
+                    <input type="radio" name="options" id="option1" value="1" />
+                    我有建议
+                    <span class="caret"></span>
+                </label>
+                <label class="btn   btn-message">
+                    <input type="radio" name="options" id="option2" value="2" />
+                    我要投诉
+                    <span class="caret"></span>
+                </label>
+               <label class="btn   btn-message">
+                   <input type="radio" name="options" id="option3" value="我要投诉" />
+                   我要投诉
+                   <span class="caret"></span>
+               </label>
+            </div>
+            <div class="bk30"></div>
+            <div class="form" role="form">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="UOKOTALK" class="AreaText">我想说的是：</label>
+                            <textarea id="UOKOTALK" name="content" class="form-control message_content" rows="8" placeholder="您想对我说？"></textarea>
                         </div>
-                        <div class="bk10"></div>
-                        
-                        <input type="hidden" name="dede_fields" value="options,text;content,multitext;username,text;phone,text" />
-<input type="hidden" name="dede_fieldshash" value="2a877f3b4e324148128709f17726dfd1" />
-
-                        <button type="submit" name="submit" class="btn btn-lg btn-yellow btn-contact btn-valid">提交留言</button>
-                        <div class="bk30"></div>
                     </div>
-
+                    <div class="col-md-4 hidden-xs hidden-sm">
+                        <div class="form-group AreaInfo">
+                            <p class="form-control-static AreaText">
+                                有关业务联络合作事项，<br />
+                                可以给我们发邮件或者打电话<br />
+                                或者您在这里提交您的信息<br />
+                                无需重复提交，我们会在三天内答复您。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="UOKOUSER" class="AreaText">姓名：</label>
+                            <input id="UOKOUSER" type="text" name="username" class="form-control message_content" check-type="required" />
+    
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="UOKOUSERPHONE" class="AreaText">联系方式：</label>
+                            <input id="UOKOUSERPHONE" type="text" name="phone" class="form-control message_content" check-type="required tel" />
+                        </div>
+                    </div>                    
                 </div>
-</form>            </div>
+                <div class="bk10"></div>
+                <button type="submit" name="submit" class="btn btn-lg btn-yellow btn-contact btn-valid">提交留言</button>
+                <div class="bk30"></div>
+            </div>
+    
+        </div>
+        </form>            
+    </div> -->
+            
 
 
-<script type="text/javascript" language="javascript">
-//验证码 
-function changeAuthCode() { 
-    var num =     new Date().getTime();
-    var rand = Math.round(Math.random() * 10000);
-    num = num + rand;
-    $('#ver_code').css('visibility','visible');
-    if ($("#vdimgck")[0]) {
-        $("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
-    }
-    return false;    
-}
-</script>
+
+
+
+
+
 
 
         </div>

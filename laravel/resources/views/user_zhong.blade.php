@@ -120,34 +120,42 @@ scrollMSG();
 <div class="sidebar sidebar-about">
     <ul class="nav sidenav">
 
-        <li class="active">
-        <li class="active">
-            <a href="{{URL('user/uhouse')}}">
-                上传房源<br />
-                <small>About_us</small>
-            </a>
-        </li>
+       <li>
+                        <a href="{{URL('user/tenantmessage')}}">
+                            个人信息<br />
+                            <small>Personal Information</small>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{URL('user/intive_friend')}}">
+                            邀请好友<br />
+                            <small>Invite Friends</small>
+                        </a>
+                    </li><!-- <li>
+                        <a href="{{URL('user/intive_friend')}}">
+                            邀请好友<br />
+                            <small>Choose</small>
+                        </a>
+                    </li>--> 
+                    <li>
+                        <a href="{{URL('user/uhouse')}}">
+                            上传房源<br />
+                            <small>Upload Listings</small>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="{{URL('user/sellh')}}">
+                            已租房源<br />
+                            <small>Rental Housing</small>
+                        </a>
+                    </li>
 
-        <li>
-            <a href="{{URL('user/tenantmessage')}}">
-                房东信息<br />
-                <small>Choose</small>
-            </a>
-        </li>
-
-        <li >
-            <a href="{{URL('user/sellh')}}">
-                已售房源<br />
-                <small>Blog</small>
-            </a>
-        </li>
-
-        <li>
-            <a href="{{URL('user/sellingh')}}">
-                在售房源<br />
-                <small>Contacts</small>
-            </a>
-        </li>
+                    <li>
+                        <a href="{{URL('user/sellingh')}}">
+                            在租房源<br />
+                            <small>Renting  Housing</small>
+                        </a>
+                    </li>
 
     </ul>
 </div>

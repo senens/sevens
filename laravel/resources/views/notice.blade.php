@@ -9,28 +9,25 @@
     <meta name="description" content="" />
     
     <script language="javascript">
-msg = "租前须知_邻京有屋 轻时尚单身公寓";
+        msg = "租前须知_邻京有屋 轻时尚单身公寓";
 
-msg = "" + msg;pos = 0;
-function scrollMSG() {
-document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
-pos++;
-if (pos >  msg.length) pos = 0
-window.setTimeout("scrollMSG()",200);
-}
-scrollMSG();
+        msg = "" + msg;pos = 0;
+        function scrollMSG() {
+        document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+        pos++;
+        if (pos >  msg.length) pos = 0
+        window.setTimeout("scrollMSG()",200);
+        }
+        scrollMSG();
     </script> 
     
     <script src="{{URL::asset('../public')}}/templets/htm/style/js/jquery-1.9.1.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
-<script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/base.min.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/common.js"></script>
+    <script src="{{URL::asset('../public')}}/templets/htm/style/js/g.js"></script>
 
     <link href="{{URL::asset('../public')}}/templets/htm/style/css/common.min.css" rel="stylesheet"/>
-
-
-
-    
+  
     <style>
         body, html {
             position: relative;margin-bottom:0;
@@ -124,31 +121,31 @@ scrollMSG();
                     <h4 class="title">FAQ</h4>
                     <ul class="nav bs-sidenav list-unstyled lh28">
 
-                            <li><a href="#1">1、纳尼？邻京有屋为啥没有中介费？</a></li>
-                            <li><a href="#4">2、短租怎么算？</a></li>
-                            <li><a href="#2">3、房租付款的方式？</a></li>
-                            <li><a href="#8">4、解放钱包方便快捷，新一代“优客月付”</a></li>
-                            <li><a href="#6">5、两个人住应该挑选什么样的房间？</a></li>
-                            <li><a href="#70">6、邻京有屋入住安全吗？会不会有异性合租？</a></li>
-                            <li><a href="#71">7、交定方式</a></li>
-                            <li><a href="#72">8、交定签约</a></li>
-                            <li><a href="#5">9、为什么邻京有屋的押金是两个月？</a></li>
-                            <li><a href="#28">10、管理服务费都包括些神马？</a></li>
-                            <li><a href="#3">11、所有的租房规则我都了解了，要怎么定房？</a></li>
-                            <li><a href="#7">12、我是土豪，我要加配空调和电视？</a></li>
-                            <li><a href="#9">13、关于物业水电气费？</a></li>
-                            <li><a href="#15">14、我想讲价？</a></li>
-                            <li><a href="#18">15、关于上门保洁？</a></li>
-                            <li><a href="#19">16、关于隔间的臆想？</a></li>
-                            <li><a href="#20">17、能不能养宠物？</a></li>
-                            <li><a href="#22">18、我需要沙发 茶几 纱窗  男票 洗碗机 女朋友 总之我要求增配？</a></li>
-                            <li><a href="#23">19、收了那么多钱，就没有免费的吗?</a></li>
-                            <li><a href="#24">20、中途因为回老家、换工作、和男（女）朋友同居去了。换房、退租需要承担的费用？</a></li>
-                            <li><a href="#26">21、你搬家我买单是什么意思？</a></li>
-                            <li><a href="#27">22、售后问题找谁？</a></li>
-                            <li><a href="#69">23、缴定金、续缴租金的收款账号是啥？</a></li>
-                            <li><a href="#29">24、关于整租？</a></li>
-                            <li><a href="#33">25、你好，我是彩蛋。。哈哈哈哈哈哈哈哈</a></li>
+                        <li><a href="#1">1、纳尼？邻京有屋为啥没有中介费？</a></li>
+                        <li><a href="#4">2、短租怎么算？</a></li>
+                        <li><a href="#2">3、房租付款的方式？</a></li>
+                        <li><a href="#8">4、解放钱包方便快捷，新一代“邻京有屋月付”</a></li>
+                        <li><a href="#6">5、两个人住应该挑选什么样的房间？</a></li>
+                        <li><a href="#70">6、邻京有屋入住安全吗？会不会有异性合租？</a></li>
+                        <li><a href="#71">7、交定方式</a></li>
+                        <li><a href="#72">8、交定签约</a></li>
+                        <li><a href="#5">9、为什么邻京有屋的押金是两个月？</a></li>
+                        <li><a href="#28">10、管理服务费都包括些神马？</a></li>
+                        <li><a href="#3">11、所有的租房规则我都了解了，要怎么定房？</a></li>
+                        <li><a href="#7">12、我是土豪，我要加配空调和电视？</a></li>
+                        <li><a href="#9">13、关于物业水电气费？</a></li>
+                        <li><a href="#15">14、我想讲价？</a></li>
+                        <li><a href="#18">15、关于上门保洁？</a></li>
+                        <li><a href="#19">16、关于隔间的臆想？</a></li>
+                        <li><a href="#20">17、能不能养宠物？</a></li>
+                        <li><a href="#22">18、我需要沙发 茶几 纱窗  男票 洗碗机 女朋友 总之我要求增配？</a></li>
+                        <li><a href="#23">19、收了那么多钱，就没有免费的吗?</a></li>
+                        <li><a href="#24">20、中途因为回老家、换工作、和男（女）朋友同居去了。换房、退租需要承担的费用？</a></li>
+                        <li><a href="#26">21、你搬家我买单是什么意思？</a></li>
+                        <li><a href="#27">22、租后问题找谁？</a></li>
+                        <li><a href="#69">23、缴定金、续缴租金的收款账号是啥？</a></li>
+                        <li><a href="#29">24、关于整租？</a></li>
+                        <li><a href="#33">25、你好，我是彩蛋。。哈哈哈哈哈哈哈哈</a></li>
 
                     </ul>
                 </div>
@@ -250,7 +247,7 @@ scrollMSG();
                     </div>
                     <div class="media media-box">
                         <div class="media-body">
-                            <h4 class="title" id="8"><span class="i">Q4</span> 解放钱包方便快捷，新一代“优客月付”</h4>
+                            <h4 class="title" id="8"><span class="i">Q4</span> 解放钱包方便快捷，新一代“邻京有屋月付”</h4>
                             <div class="content">
                                 <p>
 	答：
@@ -259,17 +256,17 @@ scrollMSG();
 	<br />
 </p>
 <p class="p" style="margin-left:0.0000pt;">
-	优客月付已经上线，减少租客冗长的银行办理手续，只需与带看管家签订月付合同即可完成，当然还是有小小的条件：
+	邻京有屋月付已经上线，减少租客冗长的银行办理手续，只需与带看管家签订月付合同即可完成，当然还是有小小的条件：
 </p>
 <p class="p" style="margin-left:0.0000pt;">
-	享受优客月付需要满足一年起租的条件哦，并缴纳每月租金6%的月付费率（银行收取）
+	享受邻京有屋月付需要满足一年起租的条件哦，并缴纳每月租金6%的月付费率（银行收取）
 </p>
 <p class="p" style="margin-left:0.0000pt;">
-	即：享受月付时，优客月付租金=1.06*租金
+	即：享受月付时，邻京有屋月付租金=1.06*租金
 </p>
 <p class="p" style="margin-left:0.0000pt;">
 	首次支付：押二付一&nbsp;（毫无鸭梨耶~）<br />
-=优客月付租金的押金*2&nbsp;+优客月付租金*1+&nbsp;优客月付租金的管理服务费*1<br />
+=邻京有屋月付租金的押金*2&nbsp;+邻京有屋月付租金*1+&nbsp;邻京有屋月付租金的管理服务费*1<br />
 管理服务费随房租征收，中途退租，退还剩余月份费用。<br />
 附加增配项目：如加装空调等，都单独收取，不随租金上浮6%，但是会随服务管理费上浮10%。
 </p>
@@ -280,11 +277,11 @@ scrollMSG();
 	以600元房子为例：
 </p>
 <p class="p" style="margin-left:0.0000pt;">
-	该房子的优客月付租金=1.06*租金=1.06*600=636<br />
+	该房子的邻京有屋月付租金=1.06*租金=1.06*600=636<br />
 因此需首次支付：<br />
-优客月付押金：636元*2个月=1272元<br />
-优客月付租金：636元*1个月=636元<br />
-优客月付租金的管理服务费（636元*10%）=63.6元*1个月=63.6元<br />
+邻京有屋月付押金：636元*2个月=1272元<br />
+邻京有屋月付租金：636元*1个月=636元<br />
+邻京有屋月付租金的管理服务费（636元*10%）=63.6元*1个月=63.6元<br />
 共计：1971.6元
 </p>
 <p class="MsoNormal">
@@ -301,7 +298,7 @@ scrollMSG();
 	后续支付：剩余11个月房租，按月按时存入自己绑定的银行卡即可！
 </p>
 <p class="p" style="margin-left:0.0000pt;">
-	注意昂：2015年3月4日10:00前优客月付租金还未上浮6%。成都建设路片区无法享受优客月付，只能选择农商月付，详询400-000-4170<br />
+	注意昂：2015年3月4日10:00前邻京有屋月付租金还未上浮6%。成都建设路片区无法享受邻京有屋月付，只能选择农商月付，详询400-000-4170<br />
 满足一年起租条件的，才能选择月付！！！中途解约都将有高昂的违约金，农商银行的违约成本更高，冤有头债有主：违约金是银行收取的···
 </p>
 <p>
@@ -378,7 +375,7 @@ scrollMSG();
 <p class="MsoNormal" style="margin-left:10.5pt;text-indent:0pt;">
 	中国银行航空路支行<br />
 卡号：1225&nbsp;6805&nbsp;3158<br />
-开户行：四川优客投资管理有限公司
+开户行：四川邻京有屋投资管理有限公司
 </p>
 <p class="MsoNormal">
 	<!--[if !supportLists]-->3.<!--[endif]-->现场交定：
@@ -495,8 +492,8 @@ scrollMSG();
 <p>
 	      中途加装租金和服务管理费不上涨，但是单独缴纳空调费120元/台/月（按记租月算）。
 </p>
-5、 加装后，优客为空调免费增配一个电表，以单独计算用电量。<br />
-6、 若自行加装的空调、电视：墙面凿孔留下的孔洞在退房时需恢复原样。优客会为其增配一个电表，收费150元/个。<br />
+5、 加装后，邻京有屋为空调免费增配一个电表，以单独计算用电量。<br />
+6、 若自行加装的空调、电视：墙面凿孔留下的孔洞在退房时需恢复原样。邻京有屋会为其增配一个电表，收费150元/个。<br />
 7、  我都给绕晕了，你们看懂没？    继续骚扰家妹儿  QQ：800072764 <img src="{{URL::asset('../public')}}/templets/htm/style/images/j_0039.gif" /><br />
                             </div>
                         </div>
@@ -508,16 +505,16 @@ scrollMSG();
                                 答：<br />
 1、 小区物业、垃圾清运费按户均摊。
 <p class="MsoNormal">
-	2、电费以合同约定入住人数平均分，优客只结算人均费用；
+	2、电费以合同约定入住人数平均分，邻京有屋只结算人均费用；
 </p>
 <p class="MsoNormal">
 	&nbsp; &nbsp; 水气费按定额1.5元/人/天收取。
 </p>
 <p class="MsoNormal">
-	&nbsp; &nbsp; 除水气费外，如果有特殊需求或者其他分配方式请各位租客在按照优客的计算方式缴费后自行协商，优客不参与
+	&nbsp; &nbsp; 除水气费外，如果有特殊需求或者其他分配方式请各位租客在按照邻京有屋的计算方式缴费后自行协商，邻京有屋不参与
 </p>
 <p class="MsoNormal">
-	<span style="line-height:1.5;">3、 费用统一由优客管家跑腿代缴，再随下一季度房租一并征收。</span><img src="{{URL::asset('../public')}}/templets/htm/style/images/j_0033.gif" />
+	<span style="line-height:1.5;">3、 费用统一由邻京有屋管家跑腿代缴，再随下一季度房租一并征收。</span><img src="{{URL::asset('../public')}}/templets/htm/style/images/j_0033.gif" />
 </p>
                             </div>
                         </div>
@@ -650,11 +647,11 @@ scrollMSG();
                     </div>
                     <div class="media media-box">
                         <div class="media-body">
-                            <h4 class="title" id="27"><span class="i">Q22</span> 售后问题找谁？</h4>
+                            <h4 class="title" id="27"><span class="i">Q22</span> 租后问题找谁？</h4>
                             <div class="content">
                                 答：<br />
 <p>
-	请找优客小蜜   QQ：800072764  //  热线：400-000-4170
+	请找邻京有屋小蜜   QQ：578258572  //  热线：400-000-XXXX
 </p>
 <p>
 	我们还开通了投诉邮箱哦：tucao@uoko.com <img src="templets/htm/style/images/j_0042.gif" />
@@ -667,7 +664,7 @@ scrollMSG();
                             <h4 class="title" id="69"><span class="i">Q23</span> 缴定金、续缴租金的收款账号是啥？</h4>
                             <div class="content">
                                 <p>
-	缴定金之前请跟我们销售确认房子可租哦。
+	缴定金之前请跟我们销租确认房子可租哦。
 </p>
 <p>
 	<br />
@@ -681,7 +678,7 @@ scrollMSG();
 <p>
 	中国银行航空路支行<br />
 卡号：1225 6805 3158<br />
-开户行：四川优客投资管理有限公司<br />
+开户行：四川邻京有屋投资管理有限公司<br />
 <br />
 支付宝账号：<br />
 sccaiwu@uoko.com

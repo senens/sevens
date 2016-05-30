@@ -10,7 +10,7 @@ use backend\models\User;
 use backend\models\Handel;
 use yii\web\Request; 
 
-class AccountController extends Controller{
+class AccountController extends CommonController{
 	public $enableCsrfValidation = false;
 
 	public $layout = 'main.php';

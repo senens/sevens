@@ -14,7 +14,17 @@
     <meta property="qc:admins" content="27330065376452116375" />
     <meta property="wb:webmaster" content="791d1c6849c2b026" />
     
-     
+    <style>
+        .containers{
+         width:90%;
+        }
+        .containers ul li{
+
+            float: left;
+            width: 20px;
+            background: #3B83CB;
+        }
+    </style>
     <link href="http://www.linjing.com/public/css/common.min.css" rel="stylesheet"/> 
     <link rel="stylesheet" type="text/css" href="http://www.linjing.com/public/css/body.css" />
     <link rel="stylesheet" type="text/css" href="http://www.linjing.com/public/css/com.min.css" />
@@ -68,7 +78,9 @@
         <input type="hidden" id="hdStartDate" value="{{date('Y-m-d H:i:s',$time)}}" />
         <input type="hidden" id="htype" value="{{$h_type or null}}">
         <input type="hidden" id="types" value="{{$types or null}}">
-
+        <input type="hidden" id="h_facility" value="{{$h_facility or null}}">
+        <input type="hidden" id="zone" value="{{$zone or null}}">
+        <input type="hidden" id="area" value="{{$area or null}}">
     <!--- 面包屑 开始  -->
     
     <div class="wrap-large">
@@ -79,56 +91,6 @@
 
         </div>
     </div>
-    <!--- 面包屑  结束  -->
-
-    <!-- <div class="wrap-large">
-        <div class="unit-list-search " id="search">
-            <div class="m-search-box form-horizontal">
-                <div class="tab-content">
-    
-                <form id="mainSearchForm" action="" class="mainSearchForm mainSearchForm_unitlist" method="post">
-                    <span class="controls-span" style="font-size:16px">城市：北京</span>
-                    <div class="control-group date-group">
-                        <span class="controls-span">入住时间</span>
-                        <div class="controls">
-                            <label for="startDate">
-                                <input class="ipt-text startDate" id="startDate" name="startDate" type="text" value="{{date('Y-m-d',$time)}}" />
-                                <i class="icon-calendar"></i>
-                            </label>
-                        </div>
-                    </div>
-    
-                    <div class="control-group date-group">
-                        <span class="controls-span">退房时间</span>
-                        <div class="controls">
-                            <label for="endDate">
-                                <input class="ipt-text endDate" id="endDate" name="endDate" type="text" value="{{date('Y-m-d',$time)}}" />
-                                <i class="icon-calendar"></i>
-                            </label>
-                        </div>
-                    </div>
-                        <div class="control-group key-group">
-                            <span class="controls-span">关键词</span>
-                            <div class="controls">
-                                <label for="adress">
-                                    <input type="text" id="adress" class="ipt-text" onfocus="_gaq.push(['_trackEvent', 'pcList', '关键词输入框']);" />
-                                    <span class="address-mark" style="">小区名</span>
-                                    <i class="icon-key"></i>
-                                </label>
-                            </div>
-                        </div>
-                    <div class="control-group search-btn-group" id="submitBox">
-                        <input type="button" value="搜索" class="search-btn" id="searchHouse" onclick="_gaq.push(['_trackEvent', 'pcList', '列表搜索按钮']);">
-                    </div>
-                        <div class="control-group search-btn-group" style="margin-left:10px; width:auto">
-                            <a href="/Unitmap/" target="_blank" onclick="_gaq.push(['_trackEvent', 'pcList', '列表地图搜索']);" class="search-btn-map">地图搜索</a>
-                        </div>
-                </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!---  页面内容 开始 -->
     
 <div class="wrap-large" style="overflow: hidden;">
@@ -142,12 +104,12 @@
                 <div class="m-filter-tabs j-filter-locationTab">
                     <ul>
                         <li class="first-item ">
-                            <a href="javascript:void(0)" class="" rel="nofollow">
+                            <a href="javascript:void(0)" class="zones" rel="nofollow">
                                 行政区<i class="icon-caret"></i>
                             </a>
                         </li>
                         <li class=" ">
-                            <a href="javascript:void(0)" class="" rel="nofollow">
+                            <a href="javascript:void(0)" class="areas" rel="nofollow">
                                 商圈<i class="icon-caret"></i>
                             </a>
                         </li>
@@ -159,7 +121,7 @@
             <ul class="filter-list-ul j-filter-list-ul ">
             @foreach($zoneall as $z)
             <li>
-                <a type="kw" data-type="s" data-val="182" data-identityid="0" title="" href="/beijing_gongyu/chaoyangqu_s182/" class=" ">{{$z->z_name}}</a>
+                <a type="kw" data-type="s" data-val="182" data-identityid="0" title="" href="javascript:void(0);" class="zone">{{$z->z_name}} <span style="display:none">{{$z->z_id}}</span></a>
             </li>
             @endforeach              
             </ul>
@@ -172,7 +134,7 @@
             <ul class="filter-list-ul j-filter-list-ul filter-list-area">
             @foreach($areaall as $a)
                 <li>
-                    <a type="kw" data-type="c" data-val="674" data-identityid="0" title="" href="/beijing_gongyu/c674/" class="  ">{{$a->area_name}}</a>
+                    <a type="kw" data-type="c" data-val="674" data-identityid="0" title="" href="javascript:void(0);" class="area">{{$a->area_name}} <span style="display:none">{{$a->area_id}}</span></a>
                 </li>
             @endforeach
             </ul>
@@ -303,38 +265,38 @@
         <div class="filter-item">配套</div>
         <div class="filter-content ">
             <div class="not">
-                <a rel="nofollow" href="javascript:void(0)" class="selected unlimited">不限</a>
+                <a rel="nofollow" href="javascript:void(0)" class="selected unlimited" id="facilitys">不限</a>
             </div>
             <ul class="filter-list-ul j-filter-list-ul filter-list-ul-type">
                 <li>
                     <a type="kw" data-type="ho" data-val="256" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">无线网络</a>
+                       href="javascript:void(0);" class="h_facility">无线网络<span style="display:none">1</span></a>
                 </li>
                 <li>
                     <a type="kw" data-type="su" data-val="4" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">做饭</a>
+                       href="javascript:void(0);" class="h_facility">床<span style="display:none">2</span></a>
                 </li>
                 <li>
                     <a type="kw" data-type="su" data-val="2" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">带宠物</a>
+                       href="javascript:void(0);" class="h_facility">衣柜<span style="display:none">3</span></a>
                 </li>
                 <li>
                     <a type="kw" data-type="go" data-val="4" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">洗衣机</a>
+                       href="javascript:void(0);" class="h_facility">洗衣机<span style="display:none">4</span></a>
                 </li>
                 <li>
                     <a type="kw" data-type="go" data-val="8" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">空调</a>
+                       href="javascript:void(0);" class="h_facility">空调<span style="display:none">5</span></a>
                 </li>
                 <li>
                     <a type="kw" data-type="go" data-val="2" data-identityid="0"
                        title=""
-                       href="javascript:void(0);" class="">冰箱</a>
+                       href="javascript:void(0);" class="h_facility">冰箱<span style="display:none">6</span></a>
                 </li>               
             </ul>
         </div>
@@ -348,28 +310,28 @@
             <div class="filters-values j-filter-selectedItemsContainer" id=""></div>
         </div>
         <div class="expand-box clearfix">
-            <div id="sortWrapper" class="sort-cont">
+            <!-- <div id="sortWrapper" class="sort-cont">
                 <div id="sortArea" class="m-sort-area" data-sortval="">
                     <a href="javascript:void(0)" data-cat="1" onclick="_gaq.push(['_trackEvent', 'pcList', '推荐排序']);" data-type="o" data-val="1" name="TujiaRecommendedSort" class="" style="text-decoration:;cursor:">推荐排序</a>
-
+            
                     <a href="javascript:void(0)" data-cat="2" onclick="_gaq.push(['_trackEvent', 'pcList', '房价排序']);" data-type="o" data-val="2"
-                       class="link-btn " style="" name="PriceSort" title="点击按价格从低到高排序"><i class="icon-down"></i>房价</a>
-
-                    <!-- <a href="javascript:void(0)" data-cat="3" onclick="_gaq.push(['_trackEvent', 'pcList', '点评分排序']);" data-type="o" data-val="18"
-                       name="commentscoresort" class="" title="点击按点评分从高到低排序">点评分</a> -->
-
-
-                    <!-- <a href="javascript:void(0)" data-cat="5" onclick="_gaq.push(['_trackEvent', 'pcList', '销量排序']);" data-type="o" data-val="21"
-                       name="CommentCountSort" class="" title="点击按销量从多到少排序">销量</a> -->
-          
-
+                       class="link-btn" style="" name="PriceSort" title="点击按价格从低到高排序" id="priceOrder"><i class="icon-down"></i>房价</a>
+            
+                    <a href="javascript:void(0)" data-cat="3" onclick="_gaq.push(['_trackEvent', 'pcList', '点评分排序']);" data-type="o" data-val="18"
+                       name="commentscoresort" class="" title="点击按点评分从高到低排序">点评分</a>
+            
+            
+                    <a href="javascript:void(0)" data-cat="5" onclick="_gaq.push(['_trackEvent', 'pcList', '销量排序']);" data-type="o" data-val="21"
+                       name="CommentCountSort" class="" title="点击按销量从多到少排序">销量</a>
+                      
+            
                     <a href="javascript:void(0)" data-cat="3" onclick="_gaq.push(['_trackEvent', 'pcList', '面积排序']);" data-type="o" data-val="3"
-                       class="link-btn   " name="GrossAreaSort" title="点击按面积从大到小排序"><i class="icon-up"></i>面积</a>
-
+                       class="link-btn   " name="GrossAreaSort" title="点击按面积从大到小排序" id=""><i class="icon-up"></i>面积</a>
+            
                     <a href="javascript:void(0)" data-type="o" style="display:none;" data-val="15"
                        name="distancesort" title="按距离从近到远排序" class="">距离</a>
                 </div>
-            </div>
+            </div> -->
             <div class="total-house-amount">
             <span>          
             {{$housecount}}            
@@ -388,72 +350,37 @@
         <a href="javascript:;" class="close-btn" id="recom_close" title="关闭"></a>
         <div class="carousel">
             <div class="house-group carousel_inner clearfix" id="recom-list-carousel">
+                @foreach($villa as $v)
                     <div class="carousel_box house-group">
                         <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=49976" target="_blank" title="北京百住公寓蓝堡国际店两室套房" class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_160513/thumb/201605131805004189_120_90.jpg" alt="北京百住公寓蓝堡国际店两室套房" />
+                            <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" title="{{$v->h_title}}" class="pic-box" rel="nofollow">
+                                <img src="http://www.linjing.com/public/images/@if(strstr($v->h_photo, '|', TRUE)){{strstr($v->h_photo, '|', TRUE)}}@else{{$v->h_photo}}@endif" alt="{{$v->h_title}}" />
                             </a>
                             <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=49976" target="_blank" class="room-tit" title="北京百住公寓蓝堡国际店两室套房">北京百住公寓蓝堡国际店两室套房</a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">989</b></span>/晚起 </p><p class="hint-text"></p>
+                                <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" class="room-tit" title="{{$v->h_title}}">{{$v->h_title}}</a>
+                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">{{$v->h_price}}</b></span>/月 </p><p class="hint-text"></p>
+                                <p class="picer-info">居室：
+                                    @if($v->h_room_num==1)
+                                    一居
+                                    @elseif($v->h_room_num==2)
+                                    两居
+                                    @elseif($v->h_room_num==3)
+                                    三居
+                                    @elseif($v->h_room_num==4)
+                                    四居
+                                    @elseif($v->h_room_num==5)
+                                    五居
+                                    @else
+                                    好多房间
+                                    @endif
+                                </p>
+                                <p class="picer-info">描述：
+                                    {{$v->h_description}}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel_box house-group">
-                        <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=7155" target="_blank" title="北京广渠门家庭公寓大床房" class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_141119/thumb/201411190840106963_120_90.jpg" alt="北京广渠门家庭公寓大床房" />
-                            </a>
-                            <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=7155" target="_blank" class="room-tit" title="北京广渠门家庭公寓大床房">北京广渠门家庭公寓大床房</a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">288</b></span>/晚起 </p><p class="hint-text"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel_box house-group">
-                        <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=78183" target="_blank" title="朝阳区6号线草房地铁附近温馨公寓" class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_151210/thumb/20151210145331343_120_90.jpg" alt="朝阳区6号线草房地铁附近温馨公寓" />
-                            </a>
-                            <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=78183" target="_blank" class="room-tit" title="朝阳区6号线草房地铁附近温馨公寓">朝阳区6号线草房地铁附近温馨公寓</a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">98</b></span>/晚起 </p><p class="hint-text"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel_box house-group">
-                        <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=71610" target="_blank" title="崇文门国瑞城高级空中花园公寓 " class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_151119/thumb/201511191500209023_120_90.jpg" alt="崇文门国瑞城高级空中花园公寓 " />
-                            </a>
-                            <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=71610" target="_blank" class="room-tit" title="崇文门国瑞城高级空中花园公寓 ">崇文门国瑞城高级空中花园公寓 </a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">550</b></span>/晚起 </p><p class="hint-text"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel_box house-group">
-                        <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=62790" target="_blank" title="北京麒麟外交公寓豪华两居" class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_160411/thumb/201604111405017984_120_90.jpg" alt="北京麒麟外交公寓豪华两居" />
-                            </a>
-                            <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=62790" target="_blank" class="room-tit" title="北京麒麟外交公寓豪华两居">北京麒麟外交公寓豪华两居</a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">1288</b></span>/晚起 </p><p class="hint-text"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel_box house-group">
-                        <div class="room-cont">
-                            <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=29022" target="_blank" title="地铁直达鸟巢水立方一室一厅套间" class="pic-box" rel="nofollow">
-                                <img src="http://pic.tujia.com/upload/landlordunit/day_160429/thumb/201604291001176856_120_90.jpg" alt="地铁直达鸟巢水立方一室一厅套间" />
-                            </a>
-                            <div class="info-box">
-                                <a href="http://go.tujia.com/1007/?code=CZLB-ZSK-bj&amp;id=29022" target="_blank" class="room-tit" title="地铁直达鸟巢水立方一室一厅套间">地铁直达鸟巢水立方一室一厅套间</a>
-                                <p class="picer-info"><span class="price-box"><dfn>¥</dfn><b class="number-box">168</b></span>/晚起 </p><p class="hint-text"></p>
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -470,7 +397,7 @@
         @foreach($house as $k => $v)
         <div class="house-img">
             <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" rel="nofollow" class="link-btn-pic" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋点击']);">
-                <img data-origin="http://www.linjing.com/public/images/{{$v->h_photo}}" alt="{{$v->h_title}}" width="50px" />
+                <img data-origin="http://www.linjing.com/public/images/@if(strstr($v->h_photo, '|', TRUE)){{strstr($v->h_photo, '|', TRUE)}}@else{{$v->h_photo}}@endif" alt="{{$v->h_title}}" width="50px" />
             </a>
                 <i class="icon-proprietary" title="邻京有屋自营公寓，高品质保障"></i>
             <div class="functions-menu">
@@ -484,7 +411,7 @@
                 <div class="house-content">
                     <div id="divcvinfo_22719" class="house-name">
                         <h2>
-                            <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋点击']);" title="">{{$v->h_title}}</a>
+                            <a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋点击']);" title="">{{$v->h_plot_name}}&nbsp;&nbsp;{{$v->h_title}}</a>
                             <a href="http://bp.tujia.com/2016/SelectMerchants" target="_blank" class="icon-quality-hotel" rel="PreferredUnitTips"></a>
                         </h2>
                     </div>
@@ -500,7 +427,7 @@
                             <a href="/beijing_gongyu/d-5hxyhg/"
                                 style="margin:0" title=""></a>
                         </span>
-                        <a href="javascript:void(0)" ref="http://api.map.baidu.com/staticimage?zoom=15&amp;markers=116.419955,39.954906&amp;width=400&amp;height=400&amp;markerStyles=m, ,&amp;pic=mappic.png" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋地图']);openUrl('/beijing_gongyu/dongchengqu_22719.htm?tabto=map#index=1')" class="map-btn">地图</a>
+                       <!--  <a href="javascript:void(0)" ref="http://api.map.baidu.com/staticimage?zoom=15&amp;markers=116.419955,39.954906&amp;width=400&amp;height=400&amp;markerStyles=m, ,&amp;pic=mappic.png" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋地图']);openUrl('/beijing_gongyu/dongchengqu_22719.htm?tabto=map#index=1')" class="map-btn">地图</a> -->
                     </div>
 
                     <div class="house-datelist">
@@ -547,7 +474,7 @@
                     </div>
                 </div>
                 <div class="house-highlight">
-                    <div class="house-judgement"><a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋点评']);"><span class="comments-count">{{$comcount[$k]}}</span>条点评</a></div>
+                    <div class="house-judgement"><a href="{{URL('index/details')}}?id={{$v->h_id}}" target="_blank" rel="nofollow" onclick="_gaq.push(['_trackEvent', 'pcList', '房屋点评']);"><span class="hotel-value">{{$v->h_average}}</span>/<span class="number-box">5</span>分<span class="comments-count">{{$comcount[$k]}}</span>条点评</a></div>
                 </div>
 
                 <div class="house-sid">
@@ -563,23 +490,25 @@
                         <i class="icon-card j-icon-card" rel="PrepaidCardTooltip"></i>
                     </div>                   
                 </div>
+
             </div>
         </div>
+        <br>
         @endforeach
         @endif
     </div>
     
-    <div id="PrepaidCardTooltip" class="m-tips-wrap" style="display: none">
-        <div class="tips-content" style="width:220px">
-            <div class="tips-info">所有产品均可直接全额预付房费，支持使用“途游卡、礼品卡、惠住卡、积分和账户余额”</div>
-        </div>
-    </div>
-
-    <div id="FaceToFacePaytip" class="m-tips-wrap" style="display: none">
-        <div class="tips-content" style="width:220px">
-            <div class="tips-info">到店当面付：到达门店入住时，使用邻京有屋手机APP或手机H5网站，找到需到店支付的订单进行当面支付操作，可使用途游卡、积分、余额支付，更方便、更省钱！</div>
-        </div>
-    </div>
+   <!--  <div id="PrepaidCardTooltip" class="m-tips-wrap" style="display: none">
+       <div class="tips-content" style="width:220px">
+           <div class="tips-info">所有产品均可直接全额预付房费，支持使用“途游卡、礼品卡、惠住卡、积分和账户余额”</div>
+       </div>
+   </div>
+   
+   <div id="FaceToFacePaytip" class="m-tips-wrap" style="display: none">
+       <div class="tips-content" style="width:220px">
+           <div class="tips-info">到店当面付：到达门店入住时，使用邻京有屋手机APP或手机H5网站，找到需到店支付的订单进行当面支付操作，可使用途游卡、积分、余额支付，更方便、更省钱！</div>
+       </div>
+   </div> -->
 
 <div class="m-tips-wrap" id="freeservice-tip" style="display: none">
     <div class="tips-content text-description">
@@ -588,7 +517,7 @@
     </div>
 </div>
 
-<div class="m-tips-wrap" id="multilimit-tip" style="display: none">
+<!-- <div class="m-tips-wrap" id="multilimit-tip" style="display: none">
     <div class="tips-content text-description">
         <b>预订限制</b>
         <div class="tips-info">
@@ -600,28 +529,28 @@
     <div class="tips-content" style="width:220px">
         <div class="tips-info">邻京有屋团队实地验真，设施可靠，服务优质。邻京有屋团队贴心保障，您的出行入住首选。</div>
     </div>
-</div>
+</div> -->
 
-<div class="m-tips-wrap" id="app-download-tip" style="display: none">
+<!-- <div class="m-tips-wrap" id="app-download-tip" style="display: none">
     <div class="tips-content code-description">
         <h2>扫描下载邻京有屋APP</h2>
         <img src="http://staticfile.tujia.com/portalsite2/images/Common/mobile.png" width="80" height="80" />
         <p><a href="http://www.tujia.com/Promotion/mobile.htm" target="_blank">邻京有屋APP下载页</a></p>
     </div>
 </div>
-
+ -->
 <!--立减Tips-->
-<div id="reduce_money_description" class="m-tips-wrap" style="display: none">
+<!-- <div id="reduce_money_description" class="m-tips-wrap" style="display: none">
     <div class="tips-content reduce-text">
         <div class="tips-info">
             原价<span class="defaultPrice"></span>，<span class="defaultReduceTips">促销立减<span class="highlight-text  defaultReduceAmount"></span>元。</span><span class="additionReduceTips">您是<span class="highlight-text additionReduceReason" style="font-family:微软雅黑"></span>，享额外立减<span class="additionReduceAmount"></span>元。</span><span class="totalReduceTips">合计立减<span class="highlight-text totalReduceAmount"></span>元。</span>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!--返现Tips-->
-<div id="return_money_description" class="m-tips-wrap" style="display: none">
+<!-- <div id="return_money_description" class="m-tips-wrap" style="display: none">
     <div class="tips-content cash-back">
         <h2>返现说明</h2>
         <div class="tips-info">
@@ -633,23 +562,18 @@
         <h2>提现说明</h2>
         <div class="tips-info">在“我的邻京有屋”的“账户余额”中可以查看到返现金额并进行提现，支持支付宝和银行卡2种方式，您设置好正确的账号信息后，就可以做提现申请。邻京有屋在收到提现申请后进行审核，审核通过后3-7个工作日将现金打入到您的提现账号里。</div>
     </div>
-</div>
-    <div>
+</div> -->
+    <div class="containers" style="margin-left:45%">
         @if($house)
-        <?php echo $house->render()?>
+        <?php echo $house->appends(['price'=>$price, 'h_type'=>$h_type, 'types'=>$types, 'h_facility'=>$h_facility, 'area'=>$area, 'zone'=>$zone])->render()?>
         @endif
     </div>
  
                 </div>
-                <div style="display:none;">UnitSearchResult cost: 46.8009ms</div>
-
             </div>
         </div>
     </div>
 </div>
-
-    
-
 
     <!--长租跳转提示浮层-->
     <div id="pop_window_changzu" class="loading-content" style="display: none;">
@@ -704,7 +628,7 @@
             <div class="game-info" style="width: 480px;">
                 <span style="display: block; width: 452px;height: 172px;margin: -22px 0 0 0;background: url(http://staticfile.tujia.com/PortalSite2/Images/girl.png) no-repeat top;"></span>
             </div>
-
+s 
         <div class="dld-ct">
             <div class="dld-ct-item">
                 <h2>扫描二维码下载</h2>
@@ -726,11 +650,11 @@
     </div>
 </div> -->  
     <div class="m-footer-link-list">
-        <a href="http://content.tujia.com/tujiajianjie.htm" target="_blank" class="forst" rel="nofollow">关于我们</a>|
-        <a href="http://content.tujia.com/youkebangzhu.htm" target="_blank" rel="nofollow">我是房客</a>|
-        <a href="http://content.tujia.com/qiyewenhua.htm" target="_blank" rel="nofollow">加入邻京有屋</a>|
-        <a href="/SiteMap/UnitDestination/" target="_blank">网站地图</a>|
-        <a href="/sitemap.htm" target="_blank">城市地图</a>
+        <a href="http://www.linjing.com/server.php/index/talk" target="_blank" class="forst" rel="nofollow">关于我们</a>|
+        <a href="http://www.linjing.com/server.php/search" target="_blank" rel="nofollow">我是房客</a>|
+        <a href="http://www.linjing.com/server.php/login" target="_blank" rel="nofollow">我是房东</a>|
+        <!-- <a href="/SiteMap/UnitDestination/" target="_blank">网站地图</a>|
+        <a href="/sitemap.htm" target="_blank">城市地图</a> -->
   
         <p>&copy; Copyright 2016 linjing.com 邻京有屋版权所有<span><a href="http://www.miitbeian.gov.cn/" target="_blank" style="padding:0">京ICP证120277号</a></span> <span style="display:inline-block; margin-left:10px">京公网安备11010502027120</span></p>
         <p class="safe-cont">
@@ -756,9 +680,14 @@
         //页面加载事件
         //默认选中
         $(function(){
+            //分页样式
+            $(".containers li").attr('class','btn btn-primary');
             var price = $("#pri").val();
             var htype = $("#htype").val();
             var types = $("#types").val();
+            var h_facility = $("#h_facility").val();
+            var zone = $("#zone").val();
+            var area = $("#area").val();
             if(price){
                 $('#price').attr('class','price');
                 $(".price").each(function(){
@@ -778,10 +707,25 @@
             if(types){
                 $('#typese').attr('class','types');
                 $(".types").each(function(){
-                    if($(this).html() ==types){
+                    if($(this).html() == types){
                         $(this).attr('class', 'selected unlimited');
                     }
                 })                
+            }
+            if(h_facility){
+                $('#facilitys').attr('class','h_facility');
+                $(".h_facility").children().each(function(){
+                    var str = $(this).html();
+                    //alert(str);
+                    if(h_facility.indexOf(str) == '-1'){
+                        
+                    }else{
+                        $(this).parent().attr('class', 'selected unlimited');
+                    }
+                })                
+            }
+            if(area){
+
             }
         })
         //租金价格查询
@@ -789,10 +733,13 @@
             var price = $(this).html();
             var h_type = $("#htype").val();
             var types = $("#types").val();
+            var h_facility = $("#h_facility").val();
+            var zone = $('#zone').val();
+            var area = $('#area').val();
             //var h_type = 
             $('#price').attr('class','price');
             $(this).attr("class","selected unlimited");
-            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types;
+            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
         })
 
         //居室查询
@@ -800,9 +747,12 @@
             var h_type = $(this).html();
             var price = $("#pri").val();
             var types = $("#types").val();
+            var h_facility = $("#h_facility").val();
+            var zone = $('#zone').val();
+            var area = $('#area').val();
             $('#h_type').attr('class','h_type');
             $(this).attr("class","selected unlimited");
-            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types;
+            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
         })
 
         //房屋类型查询
@@ -810,9 +760,80 @@
             var types = $(this).html();
             var price = $("#pri").val();
             var h_type = $("#htype").val();
+            var h_facility = $("#h_facility").val();
+            var zone = $('#zone').val();
+            var area = $('#area').val();
             $('#types').attr('class','types');
             $(this).attr("class","selected unlimited");
-            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types;
+            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
+        })
+
+        //配套设施查询
+        $(".h_facility").click(function(){
+            var h_fac = $(this).children().html();
+            var h_facility = $("#h_facility").val();
+            var price = $("#pri").val();
+            var h_type = $("#htype").val();
+            var types = $("#types").val();
+            var zone = $('#zone').val();
+            var area = $('#area').val();
+            /*if(h_fac == '无线网络'){
+                h_fac = 1;
+            }else if(h_fac == '床'){
+                h_fac = 2;
+            }else if(h_fac == '衣柜'){
+                h_fac = 3;
+            }else if(h_fac == '洗衣机'){
+                h_fac = 4;
+            }else if(h_fac == '空调'){
+                h_fac = 5;
+            }else if(h_fac == '冰箱'){
+                h_fac = 6;
+            }*/
+            //判断是否已经选择
+            if(h_facility.indexOf(h_fac) == '-1'){
+                h_facility += h_fac+',';
+                $('#facilitys').attr('class','h_facility');
+                $(this).attr("class","selected unlimited");
+                location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
+            }else{
+                alert('您已经选择，请重新选择！');
+            }
+            
+
+        })
+
+
+        //查询区域
+        $(".zone").click(function(){
+            var h_facility = $("#h_facility").val();
+            var price = $("#pri").val();
+            var h_type = $("#htype").val();
+            var types = $("#types").val();
+            var zone = $(this).children().html();
+            var area = '';
+            var test = $(this).text();
+            var reg = /[\u4e00-\u9fa5]+/;
+            test = test.match(reg);
+            $(".zones").html(''+test+'');
+            $(".areas").html('商圈');
+            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
+        })
+
+        //查询商圈
+        $(".area").click(function(){
+            var h_facility = $("#h_facility").val();
+            var price = $("#pri").val();
+            var h_type = $("#htype").val();
+            var types = $("#types").val();
+            var area = $(this).children().html();
+            var zone = '';
+            var test = $(this).text();
+            var reg = /[\u4e00-\u9fa5]+/;
+            test = test.match(reg);
+            $(".areas").html(''+test+'');
+            $(".zones").html('行政区');
+            location.href="{{URL('search/all')}}?price="+price+"&h_type="+h_type+"&types="+types+"&h_facility="+h_facility+"&zone="+zone+"&area="+area;
         })
     </script>
     <div style="height: 1px;" id="loginBtn"></div>

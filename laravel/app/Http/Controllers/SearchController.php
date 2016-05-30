@@ -37,16 +37,26 @@ class SearchController extends Controller
                     $housedata['house'] = $a_data;
                 }else{
                     $z_data = $db->zoneHouse($data['searchs']);
-                    if($z_data->items()){
-                        $housedata['house'] = $z_data;
+                    if($z_data){
+                        if($z_data->items()){
+                            $housedata['house'] = $z_data;
+                        }    
                     }
+                    
                 }
             }
-            //评论数
-            $housedata['comcount'] = $db->comcount($housedata['house']->items());
-            //查询区域
-            $housedata['zone'] = $db->selectHouse($housedata['house']);
-            $housedata['housecount'] = $housedata['house']->total();
+            if(isset($housedata['house'])){
+                //评论数
+                $housedata['comcount'] = $db->comcount($housedata['house']->items());
+                //查询区域
+                $housedata['zone'] = $db->selectHouse($housedata['house']);
+                $housedata['housecount'] = $housedata['house']->total();
+            }else{
+                $housedata['zone'] = '';
+                $housedata['house'] = '';
+                $housedata['housecount'] = 0;
+            }
+            
         }else{
             $housedata['zone'] = '';
             $housedata['house'] = '';
@@ -60,7 +70,8 @@ class SearchController extends Controller
         $housedata['zoneall'] = $db->select('zone');
         //查看全部商圈
         $housedata['areaall'] = $db->select('area');
-        $housedata['price'] = '';
+        $housedata['price'] = $housedata['h_type'] = $housedata['types'] = $housedata['h_facility'] = $housedata['area'] = $housedata['zone'] = '';
+        $housedata['villa'] = $db->villaHouse();
         return view('searchs', $housedata);
 
     }
@@ -80,9 +91,17 @@ class SearchController extends Controller
         $h_type = $data['h_type'];
         //房屋类型
         $types = $data['types'];
-        $data['house'] = $db->allHouse($price, $h_type, $types);
+        //配套设施
+        $h_facility = $data['h_facility'];
+        //商圈
+        $zone = $data['zone'];
+        //行政区
+        $area = $data['area'];
+
+        $data['house'] = $db->allHouse($price, $h_type, $types, $h_facility, $zone, $area);
         //查看房源数量
         $data['housecount'] = $data['house']->total();
+        
         if($data['housecount']){
             //评论数
             $data['comcount'] = $db->comcount($data['house']->items()); 
@@ -100,6 +119,7 @@ class SearchController extends Controller
         $data['zoneall'] = $db->select('zone');
         //查看全部商圈
         $data['areaall'] = $db->select('area');
+        $data['villa'] = $db->villaHouse();
         //dd($data);
         return view('searchs', $data);
     }

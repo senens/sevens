@@ -1,6 +1,6 @@
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
-		
+		<?php use \yii\widgets\LinkPager; ?>
 		<ul class="breadcrumb">
 			<li>
 				<i class="icon-home home-icon"></i>
@@ -13,14 +13,14 @@
 			<li class="active">活动列表</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
@@ -55,80 +55,50 @@
 												<span class="lbl"></span>
 											</label>
 										</th>
-										<th>活动名称</th>
-										<th>活动详情</th>
-										<th>活动类型</th>
-										<th>开始时间</th>
-										<th>结束时间</th>
-										<th>状态</th>
-										<th>操作</th>
+										<th>广告主题</th>
+										<th>图片</th>
+										<th>背景颜色</th>
+										<th>添加时间</th>
+										<th>状态 </th>
+										<th>操作 </th>
 									</tr>
 								</thead>
-								<?php foreach($posts as $key=>$arr){  ?>
-
+								<?php foreach($data as $key=>$arr){  ?>
 								<tbody>
-									<tr>
+									<tr id="d<?=$arr['act_id'] ?>">
 										<td class="center">
 											<label>
 												<input type="checkbox" class="ace" />
 												<span class="lbl"></span>
 											</label>
 										</td>
-
 										<td><?php echo $arr['act_name'] ?></td>
-										<td><?php echo $arr['act_desc'] ?></td>
-										<td><?php echo $arr['act_type'] ?></td>
-										<td><?php echo $arr['act_start'] ?></td>
-										<td><?php echo $arr['act_end'] ?></td>
-										<td><?php echo $arr['act_state'] ?></td>
+										<td><?php echo $arr['act_url'] ?></td>
+										<td style="background:<?php echo $arr['act_bgcolor'] ?>"></td>
+										<td><?php echo $arr['act_time'] ?></td>
+										<td>
+											<?php
+												if($arr['act_status']=='1'){
+											?>	
+										显示中
+											<?php
+												}elseif($arr['act_status']=='0'){
+											?>	
+										没显示
+											<?php } ?>
+																			
 										<td>
 											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-												<a class="blue" href="index.php?r=account/add">
+												<a class="blue" href="index.php?r=active/activeadd">
 													<i class="icon-zoom-in bigger-130"></i>
 												</a>
 
-												<a class="green" href="index.php?r=account/edit">
-													<i class="icon-pencil bigger-130"></i>
-												</a>
-
-												<a class="red" href="index.php?r=account/del">
+												<a class="red" id="<?php echo $arr['act_id'] ?>" onclick="activedel(<?=$arr['act_id'] ?>)">
 													<i class="icon-trash bigger-130"></i>
 												</a>
+
 											</div>
-
-											<div class="visible-xs visible-sm hidden-md hidden-lg">
-												<div class="inline position-relative">
-													<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
-														<i class="icon-caret-down icon-only bigger-120"></i>
-													</button>
-
-													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-														<li>
-															<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																<span class="blue">
-																	<i class="icon-zoom-in bigger-120"></i>
-																</span>
-															</a>
-														</li>
-
-														<li>
-															<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																<span class="green">
-																	<i class="icon-edit bigger-120"></i>
-																</span>
-															</a>
-														</li>
-
-														<li>
-															<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																<span class="red">
-																	<i class="icon-trash bigger-120"></i>
-																</span>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
+											
 										</td>
 									</tr>
 
@@ -136,40 +106,12 @@
 									</tbody>
 									<?php  } ?>
 								</table>
+								<div style="text-align:center">
+								<?= LinkPager::widget(['pagination' => $pagination]) ?>
+								</div>
 							</div>
 
-							<div class="modal-footer no-margin-top">
-								<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
-									<i class="icon-remove"></i>
-									Close
-								</button>
-
-								<ul class="pagination pull-right no-margin">
-									<li class="prev disabled">
-										<a href="#">
-											<i class="icon-double-angle-left"></i>
-										</a>
-									</li>
-
-									<li class="active">
-										<a href="#">1</a>
-									</li>
-
-									<li>
-										<a href="#">2</a>
-									</li>
-
-									<li>
-										<a href="#">3</a>
-									</li>
-
-									<li class="next">
-										<a href="#">
-											<i class="icon-double-angle-right"></i>
-										</a>
-									</li>
-								</ul>
-							</div>
+							
 						</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
 				</div><!-- PAGE CONTENT ENDS -->
@@ -182,7 +124,7 @@
 
 		<!--[if !IE]> -->
 
-	<!--	<script src="assets/js/ajaxgoogle.js"></script>-->
+	<script src="assets/js/ajaxgoogle.js"></script>
 
 		<!-- <![endif]-->
 
@@ -259,3 +201,25 @@
 			})
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
+
+
+	<script>
+	//删除
+	function activedel(id){
+		//alert(id);die;
+		var data={'id':id};
+		var url= "index.php?r=active/activedel";
+		$.get(url,data,function(msg){
+			if(msg==1){
+				$('#d'+id).remove();
+		  	}
+		  	else{
+				alert("没删掉，调整一下再来试试吧");
+		  	}
+		})
+	}
+
+	
+
+</script>

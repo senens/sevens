@@ -1,6 +1,6 @@
 <div class="main-content">
 	<div class="breadcrumbs" id="breadcrumbs">
-		
+		<?php use \yii\widgets\LinkPager; ?>
 
 		<ul class="breadcrumb">
 			<li>
@@ -14,14 +14,14 @@
 			<li class="active">评论列表</li>
 		</ul><!-- .breadcrumb -->
 
-		<div class="nav-search" id="nav-search">
+		<!-- <div class="nav-search" id="nav-search">
 			<form class="form-search">
 				<span class="input-icon">
 					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
 					<i class="icon-search nav-search-icon"></i>
 				</span>
 			</form>
-		</div><!-- #nav-search -->
+		</div> --><!-- #nav-search -->
 	</div>
 
 	<div class="page-content">
@@ -57,7 +57,6 @@
 											</label>
 										</th>
 										<th>编号</th>
-										<th>主题</th>
 										<th>内容</th>
 										<th>时间</th>
 										<th>状态</th>
@@ -65,9 +64,9 @@
 										<th>操作</th>
 									</tr>
 								</thead>
-								<?php foreach($posts as $key=>$arr){ ?>
+								<?php foreach($data as $key=>$arr){ ?>
 								<tbody>
-									<tr>
+									<tr id="d<?=$arr['c_id'] ?>">
 										<td class="center">
 											<label>
 												<input type="checkbox" class="ace" />
@@ -75,7 +74,6 @@
 											</label>
 										</td>
 										<td><?php echo $arr['c_id'] ?></td>
-										<td><?php echo $arr['c_title'] ?></td>
 										<td><?php echo $arr['c_desc'] ?></td>
 										<td><?php echo $arr['c_time'] ?></td>
 										<td><?php echo $arr['c_status'] ?></td>
@@ -83,53 +81,22 @@
 										<td>
 											<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
 												
-												<a class="green" href="index.php?r=account/edit">
-													<i class="icon-pencil bigger-130"></i>
-												</a>
-
-												<a class="red" href="index.php?r=comment/del" onclick="dels()">
+												<a class="red" href="javascript:void(0)" onclick="commentdel(<?=$arr['c_id']?>)">
 													<i class="icon-trash bigger-130"></i>
 												</a>
+
+												
 											</div>
 
-											<div class="visible-xs visible-sm hidden-md hidden-lg">
-												<div class="inline position-relative">
-													<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
-														<i class="icon-caret-down icon-only bigger-120"></i>
-													</button>
-
-													<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-														<li>
-															<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																<span class="blue">
-																	<i class="icon-zoom-in bigger-120"></i>
-																</span>
-															</a>
-														</li>
-
-														<li>
-															<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																<span class="green">
-																	<i class="icon-edit bigger-120"></i>
-																</span>
-															</a>
-														</li>
-
-														<li>
-															<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																<span class="red">
-																	<i class="icon-trash bigger-120"></i>
-																</span>
-															</a>
-														</li>
-													</ul>
-												</div>
-											</div>
+											
 										</td>
 									</tr>
 								</tbody>
 								<?php } ?>
 							</table>
+							<div style="text-align:center">
+								<?= LinkPager::widget(['pagination' => $pagination]) ?>
+								</div>
 						</div>
 					</div>
 				</div>
@@ -219,3 +186,25 @@
 			})
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
+<script>
+	//删除
+	function commentdel(id){
+		//alert(id);die;
+
+		var data={'id':id};
+		var url= "index.php?r=comment/commentdel";
+		$.get(url,data,function(msg){
+			if(msg==1){
+				$("#d"+id).remove();
+		  	}
+		  	else{
+				alert("失败了，调整一下再来试试吧");
+		  	}
+		})
+	}
+
+	
+	
+
+</script>

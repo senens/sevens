@@ -62,9 +62,8 @@ $(document).ready(function(){
   <div class="auto960">
     <ul class="userMenu fRight">
       <li> <a title="网站主页" href="../">网站主页</a> </li>
-      <li> <a title="注册" href="../member/index_do.php?fmdo=user&dopost=regnew">注册</a> </li>
-      <li> <a title="登录" href="../member/login.php">登录</a> </li>
-      <li class="help"> <a title="DEDECMS 帮助中心" href="http://help.dedecms.com">帮助</a> </li>
+      <li> <a title="登录" href="{{URL('login')}}">登录</a> </li>
+
     </ul>
     <span>
     <script type="text/javascript">
@@ -84,10 +83,11 @@ document.write("午夜好，");
     <i class="green">游客</i> 你可以选择到 </span> </div>
 </div>
 <div class="wrapper">
-  <div class="logo fLeft"> <a href="/"> <img  style="margin:8px 0 0 25px;"alt="会员中心" src="{{URL::asset('../public')}}/templets/images/login_logo.gif"/></a></div>
+  <div class="logo fLeft"> <a href="/"> <img  style="margin:8px 0 0 25px;"alt="注册" src="{{URL::asset('../public')}}/templets/images/login_logo.gif"/></a></div>
   <div class="banner fRight"> <img src="{{URL::asset('../public')}}/templets/images/530x56.gif" width="530" height="56" /></div>
 </div>
 <div id="login" class="bor" >
+
 
   <div class="tip1"></div>
   <div class="theme fLeft">

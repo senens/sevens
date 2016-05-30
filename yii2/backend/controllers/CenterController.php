@@ -3,7 +3,7 @@ namespace backend\controllers;
 
 use yii\web\Controller;
 
-class CenterController extends Controller{
+class CenterController extends CommonController{
 
 	public $layout = 'main.php';
 	public function actionIndex(){
